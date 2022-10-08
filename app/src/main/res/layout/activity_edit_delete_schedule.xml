@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:fontFamily="@font/viga"
-        android:text="Welcome,"
+        android:text="Delete Schedule"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,21 +107,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.038" />
 
-    <TextView
-        android:id="@+id/firstnameview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:fontFamily="@font/viga"
-        android:text="name"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toEndOf="@+id/welcomeName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+
 
     <View
         android:id="@+id/view5"
@@ -226,12 +212,13 @@
         android:layout_height="49dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/viga"
+
         android:text="Edit/Delete"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -239,8 +226,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-63dp"
-        tools:layout_editor_absoluteY="-81dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="383dp"
@@ -266,7 +253,7 @@
                     android:layout_marginTop="36dp"
                     android:layout_marginEnd="28dp"
                     android:background="#afd6f7"
-                    android:fontFamily="@font/viga"
+                    android:fontFamily="@font/montserrat"
                     android:text="Edit"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="16sp"
@@ -279,10 +266,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="11dp"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/viga"
+                    android:fontFamily="@font/montserratbold"
                     android:paddingStart="10dp"
                     android:text="Medicine Name"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
                     android:textSize="22sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -293,8 +280,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="75dp"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="Time"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/medicine_nameTxt" />

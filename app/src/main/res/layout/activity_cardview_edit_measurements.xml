@@ -44,7 +44,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="start date"
-                android:fontFamily="@font/glacialreg"
+                android:fontFamily="@font/montserrat"
                 android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_measurement_name" />
@@ -56,7 +56,7 @@
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="8dp"
                 android:text="end date"
-                android:fontFamily="@font/glacialreg"
+                android:fontFamily="@font/montserrat"
                 android:textColor="#FFFFFF"
                 app:layout_constraintStart_toEndOf="@+id/start_date_edit"
                 app:layout_constraintTop_toBottomOf="@+id/edit_measurement_name" />
@@ -68,7 +68,7 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginTop="7dp"
                 android:text="time"
-                android:fontFamily="@font/glacialreg"
+                android:fontFamily="@font/montserrat"
                 android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/start_date_edit" />

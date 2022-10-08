@@ -30,8 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="24dp"
+                android:fontFamily="@font/montserrat"
                 android:text="Medication name"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -42,8 +43,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="128dp"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
                 android:text="time"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_medication_name" />
 
@@ -54,7 +56,7 @@
                 android:layout_marginStart="47dp"
                 android:layout_marginTop="24dp"
                 android:background="#afd6f7"
-                android:fontFamily="@font/viga"
+                android:fontFamily="@font/montserrat"
                 android:text="Edit"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#000000"

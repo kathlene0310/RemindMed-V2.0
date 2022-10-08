@@ -93,7 +93,7 @@
         app:srcCompat="@drawable/vitamin" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/dependent_manage_medications"
+        android:id="@+id/dependent_manage_medications2"
         android:layout_width="55dp"
         android:layout_height="61dp"
         android:layout_marginStart="48dp"

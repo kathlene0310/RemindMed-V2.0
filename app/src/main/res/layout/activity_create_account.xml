@@ -16,7 +16,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserratbold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
