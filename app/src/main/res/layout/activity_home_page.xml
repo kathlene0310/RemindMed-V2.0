@@ -12,31 +12,28 @@
         android:layout_width="55dp"
         android:layout_height="61dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="28dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_Home"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewHome"
+        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toTopOf="@+id/guideline109"
         app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/today_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_Today"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toEndOf="@+id/home_history"
-        app:layout_constraintTop_toTopOf="@+id/guideline44"
-        app:layout_constraintVertical_bias="0.746"
+        app:layout_constraintTop_toTopOf="@+id/guideline109"
         app:srcCompat="@drawable/todayiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -60,24 +57,30 @@
         android:id="@+id/chat_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         app:backgroundTint="#FFFFFF"
-        app:srcCompat="@drawable/chaticonv2"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="643dp" />
+        app:layout_constraintStart_toEndOf="@+id/home_historybtn"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:srcCompat="@drawable/chaticonv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="32dp"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/profileiconv2"
-        tools:layout_editor_absoluteX="329dp" />
+        app:layout_constraintStart_toEndOf="@+id/chat_dep"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/profileiconv2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -381,6 +384,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline112"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="634dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="701dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
