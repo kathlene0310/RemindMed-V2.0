@@ -174,15 +174,15 @@
         app:layout_constraintTop_toBottomOf="@+id/heightView" />
 
     <TextView
-        android:id="@+id/FAQ"
+        android:id="@+id/weightView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="FAQ"
+        android:layout_marginTop="16dp"
+        android:text="Simple Mode"
         android:textColor="#000000"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/editTextweight"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightView" />
 
@@ -340,6 +340,13 @@
         app:layout_constraintStart_toStartOf="@+id/guideline98"
         app:layout_constraintTop_toTopOf="@+id/guideline102"
         app:layout_constraintVertical_bias="0.514" />
+
+    <Switch
+        android:id="@+id/switchSimpleMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="313dp"
+        tools:layout_editor_absoluteY="454dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
