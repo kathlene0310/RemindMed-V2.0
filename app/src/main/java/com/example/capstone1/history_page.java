@@ -61,14 +61,14 @@ public class history_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_page);
-        firstname = findViewById(R.id.firstnameview);
+        //firstname = findViewById(R.id.firstnameview);
         rootAuthen = FirebaseAuth.getInstance();
         userId = rootAuthen.getCurrentUser().getUid();
         clear = findViewById(R.id.clearAll_medications);
         profileBtn = findViewById(R.id.profile_history_two);
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        /*documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -87,7 +87,7 @@ public class history_page extends AppCompatActivity {
                     firstname.setText(" ");
                 }
             }
-        });
+        });*/
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(true);

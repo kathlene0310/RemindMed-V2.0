@@ -29,37 +29,47 @@ public class HomeSession extends Application {
         FirebaseAuth rootAuthen = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = rootAuthen.getCurrentUser();
         FirebaseFirestore fstore = FirebaseFirestore.getInstance();
-        userId = rootAuthen.getCurrentUser().getUid();
 
-        DocumentReference df = fstore.collection("users").document(userId);
-        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                DocumentSnapshot doc = task.getResult();
-                if(doc.exists()) {
-                    int r  = Integer.parseInt(doc.get("role").toString());
-                    role = r;
-                    Log.d("DATA", "TEST" + role);
 
-                    if(firebaseUser !=null){
+        if(firebaseUser !=null) {
+            userId = rootAuthen.getCurrentUser().getUid();
+            DocumentReference df = fstore.collection("users").document(userId);
+            df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    DocumentSnapshot doc = task.getResult();
+                    if (doc.exists()) {
 
-                        if(role == 1) {
-                            Intent intent = new Intent(HomeSession.this, home.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
+                        try {
+                            int r = Integer.parseInt(doc.get("role").toString());
+
+                            role = r;
+                            Log.d("DATA", "TEST" + role);
+
+
+                            if (role == 1) {
+                                Intent intent = new Intent(HomeSession.this, home.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            } else {
+                                Intent intent = new Intent(HomeSession.this, home_page.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                //startActivity(new Intent(HomeSession.this, home_page.class));
+                            }
                         }
-                        else {
+                        catch(NullPointerException e) {
+                            Log.d("EXCEPTION", "User may be a guest, ERROR" + e);
                             Intent intent = new Intent(HomeSession.this, home_page.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
-                            //startActivity(new Intent(HomeSession.this, home_page.class));
                         }
-                    }
 
+                    }
                 }
-            }
-        });
+            });
+        }
 
 
 
