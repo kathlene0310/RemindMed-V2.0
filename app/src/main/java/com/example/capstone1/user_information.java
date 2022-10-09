@@ -66,16 +66,17 @@ public class user_information extends AppCompatActivity {
         rootAuthen = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         firebaseUser = rootAuthen.getCurrentUser();
-        faq = (TextView)findViewById(R.id.FAQ);
+        //faq = (TextView)findViewById(R.id.FAQ);
         spnHeight = findViewById(R.id.spinnerHeight);
         spnWeight = findViewById(R.id.spinnerWeight);
+        /*
         faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(user_information.this, Faq.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
         ArrayAdapter<String> adapterWeight = new ArrayAdapter<String>(user_information.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array

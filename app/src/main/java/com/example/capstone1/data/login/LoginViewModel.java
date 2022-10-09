@@ -1,4 +1,4 @@
-package com.example.capstone1.ui.login;
+package com.example.capstone1.data.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

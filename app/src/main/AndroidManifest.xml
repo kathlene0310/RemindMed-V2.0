@@ -21,6 +21,21 @@
             android:name=".Guest_FAQ"
             android:exported="true"/>
         <activity
+            android:name=".choose_role"
+            android:exported="true"/>
+        <activity
+            android:name=".dependent.home"
+            android:exported="true"/>
+        <activity
+            android:name=".dependent.profile"
+            android:exported="true"/>
+        <activity
+            android:name=".dependent.user_list"
+            android:exported="true"/>
+        <activity
+            android:name=".dependent.user_management"
+            android:exported="true"/>
+        <activity
             android:name=".FAQTTS"
             android:exported="true" />
         <activity
@@ -231,7 +246,7 @@
             android:name=".home_page"
             android:exported="true" />
         <activity
-            android:name=".ui.login.login_page"
+            android:name=".data.login.login_page"
             android:exported="true"
             android:label="@string/title_activity_login_page" />
         <activity

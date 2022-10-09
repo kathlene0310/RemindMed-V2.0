@@ -1,4 +1,4 @@
-package com.example.capstone1.ui.login;
+package com.example.capstone1.data.login;
 
 import android.app.Activity;
 
@@ -18,16 +18,12 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstone1.R;
-import com.example.capstone1.ui.login.LoginViewModel;
-import com.example.capstone1.ui.login.LoginViewModelFactory;
 import com.example.capstone1.databinding.ActivityLoginPageBinding;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class login_page extends AppCompatActivity {
 

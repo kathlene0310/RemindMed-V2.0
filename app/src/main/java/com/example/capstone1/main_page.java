@@ -70,7 +70,7 @@ public class main_page extends AppCompatActivity {
 
 
     public void Main_To_Create() {
-        Intent intent = new Intent(this, create_account.class);
+        Intent intent = new Intent(this, choose_role.class);
         startActivity(intent);
     }
 

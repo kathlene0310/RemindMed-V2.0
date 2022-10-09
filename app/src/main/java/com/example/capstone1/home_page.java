@@ -87,8 +87,11 @@ public class home_page extends AppCompatActivity {
                 try{
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                         Base64.Decoder decoder = Base64.getDecoder();
-                        byte [] bytes =decoder.decode(value.getString("firstname"));firstname.setText(new String(bytes));
+                        byte [] bytes =decoder.decode(value.getString("firstname"));
+                        firstname.setText(new String(bytes));
+
                     }
+
                 }catch (Exception e)
                 {
                     firstname.setText(" ");

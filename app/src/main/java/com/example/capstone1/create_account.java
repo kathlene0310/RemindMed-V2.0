@@ -75,6 +75,7 @@ public class create_account extends AppCompatActivity {
     FirebaseFirestore fstore;
     String userId;
     CheckBox termsandconditions;
+    int role = 0;
 
     @Override
     public void onStart() {
@@ -90,6 +91,15 @@ public class create_account extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
+        if(getIntent().hasExtra("role")) {
+            role = getIntent().getIntExtra("role", 0);
+            Log.d(TAG, "Your role is: " + role);
+        }
+        else {
+            startActivity(new Intent(getApplicationContext(), choose_role.class));
+            Toast.makeText(getApplicationContext(), "No role found! redirecting to choose role page", Toast.LENGTH_LONG);
+        }
+
         first = findViewById(R.id.first_nameBox);
         last = findViewById(R.id.last_nameBox);
         password = findViewById(R.id.passwordBoxtxt);
@@ -97,10 +107,10 @@ public class create_account extends AppCompatActivity {
         emailInput = findViewById(R.id.emailBox);
         buttonSignUp = findViewById(R.id.btnSign);
         //gender = findViewById(R.id.editTextgender);
-        birthyr = findViewById(R.id.editTextbirth);
-        height = findViewById(R.id.editTextheight);
-        weight = findViewById(R.id.editTextweight);
-        buttonSave = findViewById(R.id.btnSave);
+       // birthyr = findViewById(R.id.editTextbirth);
+        //height = findViewById(R.id.editTextheight);
+        //weight = findViewById(R.id.editTextweight);
+        //buttonSave = findViewById(R.id.btnSave);
         termsandconditions = findViewById(R.id.TandD);
 
         result = findViewById(R.id.textViewresult);
@@ -312,6 +322,7 @@ public class create_account extends AppCompatActivity {
                             user.put("email",Email);
                             user.put("password",empass);
                             user.put("accounttype",1);
+                            user.put("role", role); // added role
 
 
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {

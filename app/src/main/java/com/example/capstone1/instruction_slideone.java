@@ -75,6 +75,8 @@ public class instruction_slideone extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = rootAuthen.getCurrentUser();
         updateUI(currentUser);
+
+
     }
     private void updateUI(FirebaseUser user) {
         if(user==null){

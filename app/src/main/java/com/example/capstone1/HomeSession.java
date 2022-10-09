@@ -2,24 +2,66 @@ package com.example.capstone1;
 
 import android.app.Application;
 import android.content.Intent;
+import android.util.Log;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.example.capstone1.dependent.home;
 
 public class HomeSession extends Application {
+    //FirebaseFirestore fstore = FirebaseFirestore.getInstance();
+    String userId;
+    int role = 0;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         FirebaseAuth rootAuthen = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = rootAuthen.getCurrentUser();
+        FirebaseFirestore fstore = FirebaseFirestore.getInstance();
+        userId = rootAuthen.getCurrentUser().getUid();
 
-        if(firebaseUser !=null){
-            Intent intent = new Intent(HomeSession.this, home_page.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            //startActivity(new Intent(HomeSession.this, home_page.class));
-        }
+        DocumentReference df = fstore.collection("users").document(userId);
+        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot doc = task.getResult();
+                if(doc.exists()) {
+                    int r  = Integer.parseInt(doc.get("role").toString());
+                    role = r;
+                    Log.d("DATA", "TEST" + role);
+
+                    if(firebaseUser !=null){
+
+                        if(role == 1) {
+                            Intent intent = new Intent(HomeSession.this, home.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                        else {
+                            Intent intent = new Intent(HomeSession.this, home_page.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            //startActivity(new Intent(HomeSession.this, home_page.class));
+                        }
+                    }
+
+                }
+            }
+        });
+
+
+
     }
 }

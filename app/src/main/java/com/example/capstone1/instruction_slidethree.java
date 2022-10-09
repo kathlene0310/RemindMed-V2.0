@@ -4,18 +4,58 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ImageView;
+
+import com.example.capstone1.dependent.home;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.annotations.Nullable;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class instruction_slidethree extends AppCompatActivity {
     private float x1, x2, y1, y2;
     private ImageView button;
+    FirebaseFirestore fstore = FirebaseFirestore.getInstance();
+    FirebaseAuth rootAuthen;
+    String userId;
+    int role;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruction_slidethree);
+
+
+        rootAuthen = FirebaseAuth.getInstance();
+        userId = rootAuthen.getCurrentUser().getUid();
+
+        DocumentReference documentReference = fstore.collection("users").document(userId);
+        Log.d("TAG","UIDuser: "+ userId);
+
+
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (error != null) {
+                    Log.w("ERR", "listen:error", error);
+
+                }
+                try {
+                    int r = Integer.parseInt(value.get("role").toString());
+                    role = r;
+                    Log.d("ROLE", "YOUR ROLE:" + role);
+                }
+                catch (Exception e) {
+
+                }
+            }
+        });
 
     }
 
@@ -42,8 +82,14 @@ public class instruction_slidethree extends AppCompatActivity {
                 }
                 else if (x1 > x2)
                 {
-                    Intent intent = new Intent(instruction_slidethree.this, home_page.class);
-                    startActivity(intent);
+
+                    if(role == 1) {
+                        startActivity(new Intent(getApplicationContext(), home.class));
+                    }
+                    else {
+                        Intent intent = new Intent(instruction_slidethree.this, home_page.class);
+                        startActivity(intent);
+                    }
                 }
                 break;
         }

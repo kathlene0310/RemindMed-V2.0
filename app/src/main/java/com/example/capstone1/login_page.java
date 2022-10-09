@@ -65,6 +65,7 @@ public class login_page extends AppCompatActivity {
                         if(task.isSuccessful()){
                             if(rootAuthen.getCurrentUser().isEmailVerified()){
                                 Toast.makeText(login_page.this, "Logged in Succesfully!", Toast.LENGTH_SHORT).show();
+
                                 startActivity(new Intent(getApplicationContext(), instruction_slideone.class));
                                 progressDialog.setMessage("Loading");
                                 progressDialog.show();
