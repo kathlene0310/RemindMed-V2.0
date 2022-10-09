@@ -24,44 +24,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:fontFamily="@font/viga"
-        android:text="Welcome,"
+        android:fontFamily="@font/montserratbold"
+        android:text="Welcome!"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <TextView
         android:id="@+id/firstnameview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:fontFamily="@font/viga"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="640dp"
+        android:fontFamily="@font/montserrat"
         android:text="name"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toEndOf="@+id/welcomeName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName"
+        app:layout_constraintVertical_bias="0.909" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="135dp"
-        android:layout_height="88dp"
+        android:layout_width="103dp"
+        android:layout_height="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/pills" />
+        app:srcCompat="@drawable/pills_v2" />
 
     <CalendarView
         android:id="@+id/calendarViewTD"
@@ -85,6 +86,7 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarViewTD" />
 
@@ -106,6 +108,7 @@
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +122,7 @@
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toEndOf="@+id/guideline6"
@@ -132,6 +136,7 @@
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toEndOf="@+id/guideline7"
@@ -144,6 +149,7 @@
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
@@ -156,13 +162,13 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        app:backgroundTint="@android:color/transparent"
+        app:backgroundTint="@android:color/white"
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/textViewHome"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/hoome" />
+        app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/TodayT"
@@ -176,7 +182,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toEndOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/today" />
+        app:srcCompat="@drawable/todayiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/HistoryT"
@@ -190,7 +196,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toEndOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/ic_history" />
+        app:srcCompat="@drawable/historyiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ProfileT"
@@ -204,7 +210,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profileiconv2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -235,6 +241,7 @@
         app:layout_constraintGuide_end="100dp" />
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="410dp"
         android:layout_height="257dp"
         android:layout_marginTop="12dp"
@@ -295,6 +302,29 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/medpills" />
+
+                    <TextView
+                        android:id="@+id/medicineNameTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Medicine Name"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        tools:layout_editor_absoluteX="104dp"
+                        tools:layout_editor_absoluteY="18dp" />
+
+                    <TextView
+                        android:id="@+id/time_medication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Time"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        tools:layout_editor_absoluteX="320dp"
+                        tools:layout_editor_absoluteY="20dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
@@ -306,35 +336,11 @@
                     android:text="Daily"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
+                    android:fontFamily="@font/montserrat"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:id="@+id/medicineNameTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="47dp"
-                    android:layout_marginEnd="35dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Medicine Name"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/dosage_one"
-                    app:layout_constraintEnd_toStartOf="@+id/time_medication"
-                    app:layout_constraintStart_toEndOf="@+id/daily" />
-
-                <TextView
-                    android:id="@+id/time_medication"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginBottom="64dp"
-                    android:text="Time"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/medicineNameTxt" />
+                s
 
                 <TextView
                     android:id="@+id/dosage_one"
@@ -342,6 +348,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="161dp"
                     android:layout_marginBottom="25dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="Dosage"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
@@ -353,5 +360,17 @@
         </androidx.cardview.widget.CardView>
 
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="94dp"
+        android:layout_height="91dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logov2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
