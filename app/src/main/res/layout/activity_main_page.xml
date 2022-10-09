@@ -8,22 +8,22 @@
 
     tools:context=".main_page">
 
+
     <ImageView
         android:id="@+id/logo1"
         android:layout_width="577dp"
         android:layout_height="370dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logov2" />
-
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="285dp"
         android:layout_height="69dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_roundmain"
         android:fontFamily="@font/glacialreg"
         android:text="LOGIN"
@@ -31,9 +31,24 @@
         android:textColor="#2e276c"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guest_btn" />
+
+    <Button
+        android:id="@+id/createacc_button"
+        android:layout_width="286dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="172dp"
+        android:background="@drawable/edit_roundmain"
+        android:fontFamily="@font/glacialreg"
+        android:text="CREATE ACCOUNT"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2e276c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo1" />
 
     <Button
         android:id="@+id/guest_btn"
@@ -48,21 +63,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo1" />
-
-    <Button
-        android:id="@+id/createacc_button"
-        android:layout_width="286dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="252dp"
-        android:background="@drawable/edit_roundmain"
-        android:fontFamily="@font/glacialreg"
-        android:text="CREATE ACCOUNT"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo1" />
 

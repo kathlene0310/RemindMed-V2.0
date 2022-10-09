@@ -29,7 +29,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:textColor="#FFFF"
         android:text="Submit"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -98,7 +98,7 @@
         android:id="@+id/first_nameBox"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fontFamily="@font/glacialreg"
+        android:fontFamily="@font/montserrat"
 
         android:ems="10"
         android:hint="First Name"
@@ -122,7 +122,7 @@
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:paddingRight="10dp"
-        android:fontFamily="@font/glacialreg"
+        android:fontFamily="@font/montserrat"
 
         app:layout_constraintBottom_toTopOf="@+id/emailBox"
         app:layout_constraintDimensionRatio="7:1"
@@ -135,7 +135,7 @@
         android:id="@+id/emailBox"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fontFamily="@font/glacialreg"
+        android:fontFamily="@font/montserrat"
 
         android:ems="10"
         android:hint="Email"
@@ -175,7 +175,7 @@
             android:background="@drawable/background_transparent"
             android:hint="Password"
             android:inputType="textPassword"
-            android:fontFamily="@font/glacialreg"/>
+            android:fontFamily="@font/montserrat"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -204,7 +204,7 @@
             android:background="@drawable/background_transparent"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:fontFamily="@font/glacialreg"/>
+            android:fontFamily="@font/montserrat"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

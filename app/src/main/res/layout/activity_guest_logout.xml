@@ -66,7 +66,7 @@
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
 
         android:text="Logout"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"

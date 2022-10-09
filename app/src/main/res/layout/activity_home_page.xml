@@ -18,7 +18,8 @@
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline109"
+        app:layout_constraintTop_toTopOf="@+id/guideline1241"
+
         app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -33,53 +34,51 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toEndOf="@+id/home_history"
-        app:layout_constraintTop_toTopOf="@+id/guideline109"
+        app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/todayiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_historybtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="24dp"
+
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHistory"
+        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toEndOf="@+id/today_history"
-        app:layout_constraintTop_toTopOf="@+id/guideline44"
-        app:layout_constraintVertical_bias="0.989"
+        app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/historyiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/chat_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toEndOf="@+id/home_historybtn"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/guideline1241"
+
         app:srcCompat="@drawable/chaticonv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="18dp"
+
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toEndOf="@+id/chat_dep"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/profileiconv2" />
 
     <androidx.appcompat.widget.Toolbar
@@ -96,8 +95,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="97dp"
-        android:layout_height="91dp"
+        android:layout_width="88dp"
+        android:layout_height="87dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -112,10 +111,10 @@
         android:layout_height="91dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
+        app:layout_constraintVertical_bias="0.006"
         app:srcCompat="@drawable/logov2" />
 
     <TextView
@@ -200,69 +199,64 @@
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="3dp"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_history" />
 
     <TextView
         android:id="@+id/textViewToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="3dp"
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintStart_toEndOf="@+id/textViewHome"
         app:layout_constraintTop_toBottomOf="@+id/today_history" />
 
     <TextView
         android:id="@+id/textViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="2dp"
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
-        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toEndOf="@+id/textViewToday"
-        app:layout_constraintTop_toTopOf="@+id/guideline44"
-        app:layout_constraintVertical_bias="0.987" />
+        app:layout_constraintTop_toBottomOf="@+id/home_historybtn" />
 
     <TextView
         android:id="@+id/textViewChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="2dp"
         android:text="Chat"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toEndOf="@+id/textViewHistory" />
+        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
+        app:layout_constraintTop_toBottomOf="@+id/chat_dep" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="2dp"
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
-        app:layout_constraintStart_toEndOf="@+id/guideline8" />
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toEndOf="@+id/textViewChat"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -320,6 +314,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".75" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1241"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
     <Button
         android:id="@+id/changeLayout"
         android:layout_width="168dp"
@@ -333,8 +334,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHome" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHome"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/changeLayout2"
@@ -386,18 +389,11 @@
         app:layout_constraintGuide_percent=".03" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline112"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="634dp" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline108"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="701dp" />
+        app:layout_constraintGuide_begin="704dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -117,7 +117,7 @@
         android:layout_width="64dp"
         android:layout_height="68dp"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#E73927"
+        android:backgroundTint="#2E276C"
         android:onClick="laterhm_To_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -246,16 +246,16 @@
         android:id="@+id/Home_page_button_later"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="laterhm_To_home"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHome"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/hoome" />
+        app:layout_constraintTop_toTopOf="@+id/guideline51"
+        app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Today_page_button_later"
