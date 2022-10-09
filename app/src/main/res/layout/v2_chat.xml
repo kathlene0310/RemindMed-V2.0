@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/chatLogo"
         android:layout_width="79dp"
         android:layout_height="91dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,7 +107,7 @@
         app:srcCompat="@drawable/logov2" />
 
     <TextView
-        android:id="@+id/welcomeName"
+        android:id="@+id/chatWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
@@ -140,7 +140,7 @@
         app:srcCompat="@drawable/chaticonv2" />
 
     <TextView
-        android:id="@+id/textView602"
+        android:id="@+id/chatChat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserratbold"
@@ -166,7 +166,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewHome"
+        android:id="@+id/textChatHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -179,7 +179,7 @@
         app:layout_constraintTop_toBottomOf="@+id/home_chat" />
 
     <TextView
-        android:id="@+id/textViewToday"
+        android:id="@+id/textChatToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
@@ -188,11 +188,11 @@
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewHome"
+        app:layout_constraintStart_toEndOf="@+id/textChatHome"
         app:layout_constraintTop_toBottomOf="@+id/today_chat" />
 
     <TextView
-        android:id="@+id/textViewHistory"
+        android:id="@+id/textChatHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -201,11 +201,11 @@
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewToday"
+        app:layout_constraintStart_toEndOf="@+id/textChatToday"
         app:layout_constraintTop_toBottomOf="@+id/home_chat" />
 
     <TextView
-        android:id="@+id/textViewChat"
+        android:id="@+id/textChatChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -214,11 +214,11 @@
         android:text="Chat"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
+        app:layout_constraintStart_toEndOf="@+id/textChatHistory"
         app:layout_constraintTop_toBottomOf="@+id/chat_chat" />
 
     <TextView
-        android:id="@+id/textViewProfile"
+        android:id="@+id/textChatProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
@@ -229,7 +229,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toEndOf="@+id/textViewChat"
+        app:layout_constraintStart_toEndOf="@+id/textChatChat"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/profile_chat" />
 
