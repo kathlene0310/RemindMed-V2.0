@@ -32,8 +32,14 @@ public class instruction_slidethree extends AppCompatActivity {
         setContentView(R.layout.activity_instruction_slidethree);
 
 
+
         rootAuthen = FirebaseAuth.getInstance();
-        userId = rootAuthen.getCurrentUser().getUid();
+        try {
+            userId = rootAuthen.getCurrentUser().getUid();
+        }
+        catch(NullPointerException e) {
+            startActivity(new Intent(getApplicationContext(), home_page.class));
+        }
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
         Log.d("TAG","UIDuser: "+ userId);

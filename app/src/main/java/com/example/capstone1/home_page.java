@@ -30,6 +30,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import com.example.capstone1.v2.chat;
+
 import java.util.ArrayList;
 import java.util.Base64;
 
@@ -227,6 +229,11 @@ public class home_page extends AppCompatActivity {
 
     public void Home_To_Home(View view) {
         Intent intent = new Intent(home_page.this, home_page.class);
+        startActivity(intent);
+    }
+
+    public void Home_To_Chat(View view) {
+        Intent intent = new Intent(home_page.this, chat.class);
         startActivity(intent);
     }
 

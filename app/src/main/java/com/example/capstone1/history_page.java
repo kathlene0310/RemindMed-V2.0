@@ -37,6 +37,8 @@ import com.google.firebase.functions.FirebaseFunctions;
 import com.google.firebase.functions.HttpsCallableReference;
 import com.google.firebase.functions.HttpsCallableResult;
 
+
+import com.example.capstone1.v2.chat;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
@@ -183,6 +185,11 @@ public class history_page extends AppCompatActivity {
 
     public void History_To_User(View view) {
         Intent intent = new Intent(history_page.this, user_information.class);
+        startActivity(intent);
+    }
+
+    public void History_To_Chat(View view) {
+        Intent intent = new Intent(history_page.this, chat.class);
         startActivity(intent);
     }
     public void medHistory_to_measurement(View view){

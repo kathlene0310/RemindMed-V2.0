@@ -3,6 +3,7 @@ package com.example.capstone1;
 import android.app.Application;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
