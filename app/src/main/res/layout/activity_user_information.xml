@@ -20,18 +20,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="0dp"
-        android:layout_height="68dp"
+        android:layout_width="63dp"
+        android:layout_height="72dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
         android:onClick="User_To_Home"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/userInformation"
-        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/backarrow" />
-
 
     <TextView
         android:id="@+id/userInformation"
@@ -41,6 +42,7 @@
         android:text="User Information"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
+        android:fontFamily="@font/montserratbold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.589"
@@ -55,6 +57,7 @@
         android:hint="Year of Birth"
         android:inputType="number"
         android:paddingStart="10dp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
@@ -71,6 +74,7 @@
         android:hint="Height"
         android:inputType="numberDecimal"
         android:paddingStart="10dp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
@@ -87,6 +91,7 @@
         android:hint="Weight"
         android:inputType="number"
         android:paddingStart="10dp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
@@ -103,6 +108,7 @@
         android:text="Email"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,6 +122,7 @@
         android:text="Account Settings"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,6 +136,7 @@
         android:text="Gender"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,6 +150,7 @@
         android:text="Year of birth"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,6 +164,7 @@
         android:text="Height"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toStartOf="@+id/editTextheight"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
@@ -168,6 +178,7 @@
         android:text="Weight"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toStartOf="@+id/editTextweight"
         app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,6 +192,7 @@
         android:text="Simple Mode"
         android:textColor="#000000"
         android:textSize="22sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toStartOf="@+id/editTextweight"
         app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
@@ -192,13 +204,13 @@
         android:layout_height="49dp"
         android:layout_marginTop="19dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserratbold"
 
         android:text="Logout"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSave" />
@@ -209,7 +221,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="19dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
 
         android:text="Delete Account"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -227,7 +239,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="88dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserratbold"
         android:text="Save"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
@@ -244,6 +256,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.859"
@@ -268,7 +281,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14"
-        app:srcCompat="@drawable/ic_arrow_next" />
+        app:srcCompat="@drawable/backarrowreverse" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline93"
@@ -345,8 +358,12 @@
         android:id="@+id/switchSimpleMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="313dp"
-        tools:layout_editor_absoluteY="454dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.643" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
