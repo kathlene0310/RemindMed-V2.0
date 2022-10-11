@@ -76,18 +76,18 @@
 
     <TextView
         android:id="@+id/simple_mode_home_page_header"
-        android:layout_width="201dp"
-        android:layout_height="91dp"
+        android:layout_width="191dp"
+        android:layout_height="45dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Hello, Mina! Welcome to Simple Mode"
+        android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <TextView
         android:id="@+id/textview_view_medication"

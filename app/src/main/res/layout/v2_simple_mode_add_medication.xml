@@ -16,7 +16,7 @@
         android:fontFamily="@font/viga"
         android:text="Add Reminder"
 
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,17 +88,17 @@
 
     <TextView
         android:id="@+id/textView31"
-        android:layout_width="201dp"
-        android:layout_height="91dp"
-        android:text="Hello, Mina! Welcome to Simple Mode"
+        android:layout_width="176dp"
+        android:layout_height="42dp"
+        android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintHorizontal_bias="0.748"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
         android:id="@+id/textView18"

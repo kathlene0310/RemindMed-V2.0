@@ -100,52 +100,18 @@
         android:id="@+id/home_history"
         android:layout_width="55dp"
         android:layout_height="61dp"
-        android:layout_marginStart="24dp"
         android:layout_marginBottom="28dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_Home"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/textViewHome"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/homeiconv2" />
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/today_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="28dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="Home_To_Today"
-        app:backgroundTint="#FFFFFF"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/home_history"
-        app:layout_constraintTop_toTopOf="@+id/guideline44"
-        app:layout_constraintVertical_bias="0.746"
-        app:srcCompat="@drawable/todayiconv2" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/home_historybtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="4dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="Home_To_History"
-        app:backgroundTint="#FFFFFF"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHistory"
-        app:layout_constraintStart_toEndOf="@+id/today_history"
-        app:layout_constraintTop_toTopOf="@+id/guideline44"
-        app:layout_constraintVertical_bias="0.989"
-        app:srcCompat="@drawable/historyiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_history"
@@ -157,68 +123,39 @@
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/more"
-        tools:layout_editor_absoluteX="329dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:srcCompat="@drawable/profileiconv2"
         tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
+        android:fontFamily="@font/montserratbold"
         android:text="Home"
-        android:fontFamily="@font/montserratbold"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <TextView
-        android:id="@+id/textViewToday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="Today"
-        android:textColor="#2e276c"
-        android:textSize="18sp"
-        android:fontFamily="@font/montserratbold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
-        app:layout_constraintTop_toBottomOf="@+id/today_history"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/guideline6" />
 
-    <TextView
-        android:id="@+id/textViewHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text="History"
-        android:textColor="#2e276c"
-        android:fontFamily="@font/montserratbold"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toEndOf="@+id/textViewToday"
-        app:layout_constraintTop_toTopOf="@+id/guideline44"
-        app:layout_constraintVertical_bias="0.987" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:text="More"
         android:fontFamily="@font/montserratbold"
+        android:text="Account"
         android:textColor="#2e276c"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
-        app:layout_constraintStart_toEndOf="@+id/guideline8" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
