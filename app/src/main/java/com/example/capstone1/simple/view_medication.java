@@ -1,4 +1,4 @@
-package com.example.capstone1.dependent;
+package com.example.capstone1.simple;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.R;
 
-public class user_management extends AppCompatActivity {
+public class view_medication extends AppCompatActivity {
     Button loginBtn;
     int role = 0;
     String[] options = {"Dependent", "User"};
@@ -17,23 +17,19 @@ public class user_management extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.v2_dependent_user_management);
-
-
-
-
+        setContentView(R.layout.v2_simple_mode_view_medication);
 
 
 
     }
 
-    public void Profile_To_Account(View view) {
-        Intent intent = new Intent(this, account.class);
+    public void VMedication_To_Home(View view) {
+        Intent intent = new Intent(this, shome_page.class);
         startActivity(intent);
     }
 
-    public void Profile_To_Home(View view) {
-        Intent intent = new Intent(this, home.class);
+    public void VMedication_To_Profile(View view) {
+        Intent intent = new Intent(this, profile.class);
         startActivity(intent);
     }
 }

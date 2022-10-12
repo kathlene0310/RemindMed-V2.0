@@ -186,4 +186,14 @@ public class profile extends AppCompatActivity {
         }
     }
 
+    public void Profile_To_Account(View view) {
+        Intent intent = new Intent(this, account.class);
+        startActivity(intent);
+    }
+
+    public void Profile_To_Home(View view) {
+        Intent intent = new Intent(this, home.class);
+        startActivity(intent);
+    }
+
 }

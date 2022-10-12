@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone1.v2.SharedPref;
+import com.example.capstone1.simple.shome_page;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -49,14 +52,33 @@ public class home_page extends AppCompatActivity {
     ArrayList<measurement_info_today> myMeasurementArrayList;
     ProgressDialog progressDialog;
     Button addMed, addHM, changeLayout, changeLayout2, switchMeasurement;
+    Boolean simpleMode;
+    SharedPref sf;
     int layout = 1;
     int recyclerlayout = 1;
-    long accounttype ;
+    long accounttype;
+    int newLayout = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        try {
+            sf = new SharedPref(getApplicationContext());
+            if(sf.getSimpleMode() == true) {
+               startActivity(new Intent(getApplicationContext(), shome_page.class));
+            }
+
+
+        }catch (Exception e) {
+            Log.d("Except", "EXCEPTION" + e);
+            startActivity(new Intent(getApplicationContext(), main_page.class));
+        }
+
+        //setContentView(R.layout.activity_home_page);
+
+
         addMed = (Button) findViewById(R.id.add_medications_btn);
         addHM = (Button) findViewById(R.id.add_measurements_btn);
         profileBtn = findViewById(R.id.profile_history);
@@ -70,37 +92,44 @@ public class home_page extends AppCompatActivity {
         // progressDialog.show();
         firstname = findViewById(R.id.firstnameview);
 
-        rootAuthen = FirebaseAuth.getInstance();
-        userId = rootAuthen.getCurrentUser().getUid();
+        try {
+            rootAuthen = FirebaseAuth.getInstance();
+            userId = rootAuthen.getCurrentUser().getUid();
+        } catch (Exception e) {
+            Log.d("TAG", "EXCEPTION" + e);
+            Toast.makeText(getApplicationContext(), "Unexpected Error occurred, please login again", Toast.LENGTH_LONG).show();
+            userId = "";
+        }
 
-        DocumentReference documentReference = fstore.collection("users").document(userId);
-        Log.d("TAG","UIDuser: "+ userId);
+
+            DocumentReference documentReference = fstore.collection("users").document(userId);
+            Log.d("TAG", "UIDuser: " + userId);
 
 
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    Log.w(TAG, "listen:error", error);
-                    firstname.setText(" ");
-                    return;
-                }
-
-                try{
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                        Base64.Decoder decoder = Base64.getDecoder();
-                        byte [] bytes =decoder.decode(value.getString("firstname"));
-                        firstname.setText(new String(bytes));
-
+            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (error != null) {
+                        Log.w(TAG, "listen:error", error);
+                        firstname.setText(" ");
+                        return;
                     }
 
-                }catch (Exception e)
-                {
-                    firstname.setText(" ");
-                }
+                    try {
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                            Base64.Decoder decoder = Base64.getDecoder();
+                            byte[] bytes = decoder.decode(value.getString("firstname"));
+                            firstname.setText(new String(bytes));
 
-            }
-        });
+                        }
+
+                    } catch (Exception e) {
+                        firstname.setText(" ");
+                    }
+
+                }
+            });
+
 
 
         recyclerView = findViewById(R.id.recyclerViewHome);

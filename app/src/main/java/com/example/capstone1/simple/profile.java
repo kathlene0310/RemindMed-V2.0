@@ -1,4 +1,5 @@
-package com.example.capstone1;
+package com.example.capstone1.simple;
+
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,8 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,6 +22,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone1.R;
+import com.example.capstone1.main_page;
+import com.example.capstone1.user_information;
 import com.example.capstone1.v2.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,7 +40,8 @@ import com.google.firebase.firestore.SetOptions;
 import java.util.HashMap;
 import java.util.Map;
 
-public class user_information extends AppCompatActivity {
+public class profile extends AppCompatActivity {
+
     public static final String TAG = "TAG";
     EditText birthyr, height, weight;
     int weightChoice, heightChoice;
@@ -53,10 +57,11 @@ public class user_information extends AppCompatActivity {
     Boolean simpleMode;
     SharedPref sf;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_information);
+        setContentView(R.layout.v2_simple_mode_profile);
 
         try {
             sf = new SharedPref(getApplicationContext());
@@ -64,6 +69,7 @@ public class user_information extends AppCompatActivity {
         }catch (Exception e) {
             Log.d("Except", "EXCEPTION" + e);
         }
+
 
         email = (TextView) findViewById(R.id.emailview);
 
@@ -79,24 +85,18 @@ public class user_information extends AppCompatActivity {
         firebaseUser = rootAuthen.getCurrentUser();
         //faq = (TextView)findViewById(R.id.FAQ);
         spnHeight = findViewById(R.id.spinnerHeight);
-        spnWeight = findViewById(R.id.spinnerWeight);
+        spnWeight = findViewById(R.id.spinnerWeight_two);
         switchSimpleMode = findViewById(R.id.switchSimpleMode);
-        /*
-        faq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(user_information.this, Faq.class);
-                startActivity(intent);
-            }
-        });*/
 
-        ArrayAdapter<String> adapterWeight = new ArrayAdapter<String>(user_information.this,
+
+
+        ArrayAdapter<String> adapterWeight = new ArrayAdapter<String>(profile.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array
                 .weight));
         adapterWeight.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnWeight.setAdapter(adapterWeight);
 
-        ArrayAdapter<String> adapterHeight = new ArrayAdapter<String>(user_information.this,
+        ArrayAdapter<String> adapterHeight = new ArrayAdapter<String>(profile.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.height));
 
         adapterWeight.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -126,11 +126,9 @@ public class user_information extends AppCompatActivity {
         });
 
 
-
-
         userId = rootAuthen.getCurrentUser().getUid();
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(user_information.this,
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(profile.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.gender));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(myAdapter);
@@ -166,7 +164,7 @@ public class user_information extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(user_information.this, "User information added", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(profile.this, "User information added", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -212,23 +210,12 @@ public class user_information extends AppCompatActivity {
             }
         });
 
-        //logout
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(user_information.this, main_page.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
 
         //delete account
         buttonDeleteAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dialog = new AlertDialog.Builder(user_information.this);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(profile.this);
                 dialog.setTitle("Are you sure?");
                 dialog.setMessage("Deleting this account will permanently remove your account from the system");
                 dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
@@ -238,14 +225,14 @@ public class user_information extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(user_information.this, "Account Deleted", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(profile.this, "Account Deleted", Toast.LENGTH_LONG).show();
 
-                                    Intent intent = new Intent(user_information.this, main_page.class);
+                                    Intent intent = new Intent(profile.this, main_page.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
                                 } else {
-                                    Toast.makeText(user_information.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(profile.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
 
                                 }
                             }
@@ -264,7 +251,19 @@ public class user_information extends AppCompatActivity {
             }
         });
 
-        //simple mode toggle
+
+        //logout
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(profile.this, main_page.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
+
         switchSimpleMode.setChecked(sf.getSimpleMode());
 
         switchSimpleMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -276,23 +275,16 @@ public class user_information extends AppCompatActivity {
                 }
             }
         });
+
     }
 
-    public void User_To_Account(View view) {
-        Intent intent = new Intent(user_information.this, change_name.class);
+    public void SProfile_To_Home(View view) {
+        Intent intent = new Intent(this, shome_page.class);
         startActivity(intent);
     }
 
-    /*
-        public void Logout (View view){
-            Intent intent = new Intent(user_information.this, main_page.class);
-            startActivity(intent);
-
-        }
-
-     */
-    public void User_To_Home(View view) {
-        Intent intent = new Intent(user_information.this, home_page.class);
+    public void SProfile_To_Profile(View view) {
+        Intent intent = new Intent(this, profile.class);
         startActivity(intent);
     }
 }

@@ -240,6 +240,24 @@
             android:name=".create_account"
             android:exported="true" />
         <activity
+            android:name=".simple.shome_page"
+            android:exported="true" />
+        <activity
+            android:name=".simple.profile"
+            android:exported="true" />
+        <activity
+            android:name=".simple.add_dependent"
+            android:exported="true" />
+        <activity
+            android:name=".simple.add_medication"
+            android:exported="true" />
+        <activity
+            android:name=".simple.startup"
+            android:exported="true" />
+        <activity
+            android:name=".simple.view_medication"
+            android:exported="true" />
+        <activity
             android:name=".pdf_form"
             android:exported="true" />
         <activity

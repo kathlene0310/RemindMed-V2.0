@@ -131,4 +131,14 @@ public class user_list extends AppCompatActivity {
 
 
     }
+
+    public void UserList_To_Account(View view) {
+        Intent intent = new Intent(this, account.class);
+        startActivity(intent);
+    }
+
+    public void UserList_To_Home(View view) {
+        Intent intent = new Intent(this, home.class);
+        startActivity(intent);
+    }
 }

@@ -8,6 +8,17 @@
     tools:context=".user_information">
 
 
+    <Spinner
+        android:id="@+id/spinnerWeight_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline103"
+        app:layout_constraintEnd_toStartOf="@+id/guideline100"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline98"
+        app:layout_constraintTop_toTopOf="@+id/guideline102"
+        app:layout_constraintVertical_bias="0.514" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="421dp"
@@ -27,7 +38,7 @@
         android:layout_height="72dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
-        android:onClick="User_To_Home"
+        android:onClick="SProfile_To_Home"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/userInformation"
         app:layout_constraintHorizontal_bias="0.0"
