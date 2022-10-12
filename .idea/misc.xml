@@ -329,7 +329,25 @@
         <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2.0/app/src/main/res/layout/activity_today.xml" value="0.358695652173913" />
         <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2.0/app/src/main/res/layout/alarms_set.xml" value="0.1757852077001013" />
         <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2.0/app/src/main/res/layout/choose_role.xml" value="0.3769911504424779" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/drawable/edit_skip.xml" value="0.3415" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/drawable/edittext3.xml" value="0.3415" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_health_measurement_later.xml" value="0.3578125" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_health_measurement_pdf_choices.xml" value="0.35144927536231885" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_health_measurements.xml" value="0.35144927536231885" />
         <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_main_page.xml" value="0.26132246376811596" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_new_measurements_heartrate.xml" value="0.3578125" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/activity_new_medications.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/take_medication.xml" value="0.28442028985507245" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_account_settings.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_chat.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_choose_role.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_dependent_view_user_list.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_refill_medication.xml" value="0.2965811965811966" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_simple_mode_add_dependent.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_simple_mode_add_medication.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_simple_mode_home_page.xml" value="0.3625" />
+        <entry key="..\:/Users/kathlene/AndroidStudioProjects/RemindMedV2/app/src/main/res/layout/v2_take_medication.xml" value="0.32167832167832167" />
         <entry key="..\:/Users/vjtvi/Desktop/Android Studio/RemindMedV2.0/app/src/main/res/layout/activity_alarm_notification.xml" value="0.322463768115942" />
         <entry key="..\:/Users/vjtvi/Desktop/Android Studio/RemindMedV2.0/app/src/main/res/layout/activity_cardview_edit_measurements.xml" value="0.322463768115942" />
         <entry key="..\:/Users/vjtvi/Desktop/Android Studio/RemindMedV2.0/app/src/main/res/layout/activity_cardview_history_measurements.xml" value="0.322463768115942" />
