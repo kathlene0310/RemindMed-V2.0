@@ -54,13 +54,15 @@
         android:layout_width="85dp"
         android:layout_height="15dp"
 
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="120dp"
         android:fontFamily="@font/montserratbold"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
         android:textStyle="italic"
-        app:layout_constraintTop_toBottomOf="@+id/userInformation"
-        tools:layout_editor_absoluteX="206dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInformation" />
 
     <EditText
         android:id="@+id/editTextbirth"

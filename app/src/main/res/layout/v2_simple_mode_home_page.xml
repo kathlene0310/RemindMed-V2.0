@@ -76,30 +76,31 @@
         android:id="@+id/imageView17"
         android:layout_width="130dp"
         android:layout_height="94dp"
-        app:srcCompat="@drawable/logov2"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2" />
 
     <ImageView
         android:id="@+id/imageBack_bloodpressure"
         android:layout_width="42dp"
         android:layout_height="49dp"
-        app:srcCompat="@drawable/backarrow"
         android:onClick="laterbs_To_lhm"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow" />
 
     <TextView
         android:id="@+id/simple_mode_home_page_header"
         android:layout_width="87dp"
         android:layout_height="17dp"
+        android:layout_marginEnd="80dp"
         android:fontFamily="@font/montserratbold"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
         android:textStyle="italic"
-        app:layout_constraintTop_toBottomOf="@+id/textView60"
-        tools:layout_editor_absoluteX="228dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView60" />
 
     <TextView
         android:id="@+id/textview_view_medication"
@@ -206,26 +207,29 @@
         android:id="@+id/home_history2"
         android:layout_width="55dp"
         android:layout_height="61dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="SHome_To_Home"
         app:backgroundTint="#FFFFFF"
-        app:srcCompat="@drawable/homeiconv2"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="643dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_history2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="SHome_To_Profile"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/profileiconv2"
-        tools:layout_editor_absoluteX="259dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        app:srcCompat="@drawable/profileiconv2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
