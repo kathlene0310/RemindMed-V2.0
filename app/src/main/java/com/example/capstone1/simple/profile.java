@@ -24,7 +24,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.R;
 import com.example.capstone1.main_page;
+import com.example.capstone1.change_name;
 import com.example.capstone1.user_information;
+import com.example.capstone1.v2.tts;
 import com.example.capstone1.v2.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -85,7 +87,7 @@ public class profile extends AppCompatActivity {
         firebaseUser = rootAuthen.getCurrentUser();
         //faq = (TextView)findViewById(R.id.FAQ);
         spnHeight = findViewById(R.id.spinnerHeight);
-        spnWeight = findViewById(R.id.spinnerWeight_two);
+        spnWeight = findViewById(R.id.spinnerWeight);
         switchSimpleMode = findViewById(R.id.switchSimpleMode);
 
 
@@ -101,6 +103,7 @@ public class profile extends AppCompatActivity {
 
         adapterWeight.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnHeight.setAdapter(adapterHeight);
+
 
         spnWeight.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -285,6 +288,16 @@ public class profile extends AppCompatActivity {
 
     public void SProfile_To_Profile(View view) {
         Intent intent = new Intent(this, profile.class);
+        startActivity(intent);
+    }
+
+    public void SProfile_To_AccountSettings(View view) {
+        Intent intent = new Intent(this, change_name.class);
+        startActivity(intent);
+    }
+
+    public void SProfile_To_SendReport(View view) {
+        Intent intent = new Intent(this, tts.class);
         startActivity(intent);
     }
 }

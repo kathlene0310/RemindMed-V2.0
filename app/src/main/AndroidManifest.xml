@@ -30,7 +30,16 @@
             android:name=".dependent.profile"
             android:exported="true"/>
         <activity
+            android:name=".dependent.account"
+            android:exported="true"/>
+        <activity
             android:name=".dependent.user_list"
+            android:exported="true"/>
+        <activity
+            android:name=".simple.add_dependent"
+            android:exported="true"/>
+        <activity
+            android:name=".user_information"
             android:exported="true"/>
         <activity
             android:name=".dependent.user_management"
@@ -225,9 +234,6 @@
             android:name=".new_medications"
             android:exported="true" />
         <activity
-            android:name=".user_information"
-            android:exported="true" />
-        <activity
             android:name=".recover"
             android:exported="true" />
         <activity
@@ -240,13 +246,13 @@
             android:name=".create_account"
             android:exported="true" />
         <activity
+            android:name=".v2.tts"
+            android:exported="true" />
+        <activity
             android:name=".simple.shome_page"
             android:exported="true" />
         <activity
             android:name=".simple.profile"
-            android:exported="true" />
-        <activity
-            android:name=".simple.add_dependent"
             android:exported="true" />
         <activity
             android:name=".simple.add_medication"

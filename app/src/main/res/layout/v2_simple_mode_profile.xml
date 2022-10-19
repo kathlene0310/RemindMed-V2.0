@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".user_information">
+    tools:context=".simple.profile">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -27,7 +27,7 @@
         android:layout_height="72dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
-        android:onClick="User_To_Home"
+        android:onClick="SProfile_To_Home"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/userInformation"
         app:layout_constraintHorizontal_bias="0.0"
@@ -282,7 +282,7 @@
         android:layout_marginTop="75dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="User_To_Account"
+        android:onClick="SProfile_To_AccountSettings"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
         app:layout_constraintBottom_toBottomOf="parent"

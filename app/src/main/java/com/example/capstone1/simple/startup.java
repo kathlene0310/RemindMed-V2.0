@@ -17,7 +17,7 @@ public class startup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.v2_simple_mode_startup);
+        //setContentView(R.layout.v2_simple_mode_startup);
 
 
 

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone1.v2.tts;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -132,6 +133,10 @@ public class change_name extends AppCompatActivity {
     }
     public void Change_To_Reset (View view){
         Intent intent = new Intent(change_name.this, change_password.class);
+        startActivity(intent);
+    }
+    public void Change_To_TTS (View view){
+        Intent intent = new Intent(change_name.this, tts.class);
         startActivity(intent);
     }
 }

@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class shome_page extends AppCompatActivity {
     Button loginBtn;
-    Spinner add, view;
+    Spinner add, view, add_dependent;
     SharedPref sf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +41,13 @@ public class shome_page extends AppCompatActivity {
 
         add = findViewById(R.id.frequency_set_later_bs);
         view = findViewById(R.id.frequency_set_later_bs3);
-
+        add_dependent = findViewById(R.id.frequency_set_later_bs4);
         add.setOnTouchListener(Spinner_OnTouch);
         add.setOnKeyListener(Spinner_OnKey);
         view.setOnTouchListener(Spinner_OnTouch2);
         view.setOnKeyListener(Spinner_OnKey2);
+        add_dependent.setOnTouchListener(Spinner_OnTouch3);
+        add_dependent.setOnKeyListener(Spinner_OnKey3);
 
 
     }
@@ -100,6 +102,25 @@ public class shome_page extends AppCompatActivity {
         }
     };
 
+    private View.OnTouchListener Spinner_OnTouch3 = new View.OnTouchListener() {
+        public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                startActivity(new Intent(getApplicationContext(), add_dependent.class));
+            }
+            return true;
+        }
+    };
+
+    private View.OnKeyListener Spinner_OnKey3 = new View.OnKeyListener() {
+        public boolean onKey(View v, int keyCode, KeyEvent event) {
+            if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+                startActivity(new Intent(getApplicationContext(), add_dependent.class));
+                return true;
+            } else {
+                return false;
+            }
+        }
+    };
 
 
 
