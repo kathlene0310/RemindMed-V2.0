@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".user_information">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="421dp"
+        android:layout_height="92dp"
+        android:background="#2e276c"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/imageBack"
+        android:layout_width="63dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#2e276c"
+        android:onClick="User_To_Home"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/userInformation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/backarrow" />
+
+    <TextView
+        android:id="@+id/userInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Account Settings"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:fontFamily="@font/montserratbold"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_round"
+        android:fontFamily="@font/montserratbold"
+        android:text="Cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+
+    <Spinner
+        android:id="@+id/speed_spinner"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/year_of_birth"
+        tools:layout_editor_absoluteX="235dp" />
+
+    <TextView
+        android:id="@+id/pronunciationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Pronunciation"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/pitchView" />
+
+    <Spinner
+        android:id="@+id/pitch_spinner"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/speed_spinner"
+        tools:layout_editor_absoluteX="235dp" />
+
+    <TextView
+        android:id="@+id/pitchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Pitch"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/speedView" />
+
+    <TextView
+        android:id="@+id/speedView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Speed"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/year_of_birth" />
+
+    <TextView
+        android:id="@+id/year_of_birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Text-to-Speech Configuration"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Spinner
+        android:id="@+id/pronunciation_spinner"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/pitch_spinner"
+        tools:layout_editor_absoluteX="235dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/edit_round2"
+        android:fontFamily="@font/montserratbold"
+        android:text="Save"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline93"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

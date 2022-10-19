@@ -8,17 +8,6 @@
     tools:context=".user_information">
 
 
-    <Spinner
-        android:id="@+id/spinnerWeight_two"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline103"
-        app:layout_constraintEnd_toStartOf="@+id/guideline100"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline98"
-        app:layout_constraintTop_toTopOf="@+id/guideline102"
-        app:layout_constraintVertical_bias="0.514" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="421dp"
@@ -38,26 +27,40 @@
         android:layout_height="72dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
-        android:onClick="SProfile_To_Home"
+        android:onClick="User_To_Home"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/userInformation"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/backarrow" />
 
+
     <TextView
         android:id="@+id/userInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/montserratbold"
         android:text="User Information"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        android:fontFamily="@font/montserratbold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintHorizontal_bias="0.786"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/simple_mode_home_page_header"
+        android:layout_width="85dp"
+        android:layout_height="15dp"
+
+        android:fontFamily="@font/montserratbold"
+        android:text="Simple Mode"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/userInformation"
+        tools:layout_editor_absoluteX="206dp" />
 
     <EditText
         android:id="@+id/editTextbirth"
@@ -65,16 +68,16 @@
         android:layout_height="44dp"
         android:background="@drawable/edittext3"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Year of Birth"
         android:inputType="number"
         android:paddingStart="10dp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/genderView"
         app:layout_constraintTop_toBottomOf="@+id/gender_spinner"
-        app:layout_constraintVertical_bias="0.040" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <EditText
         android:id="@+id/editTextheight"
@@ -82,16 +85,16 @@
         android:layout_height="44dp"
         android:background="@drawable/edittext3"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Height"
         android:inputType="numberDecimal"
         android:paddingStart="10dp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/genderView"
         app:layout_constraintTop_toBottomOf="@+id/editTextbirth"
-        app:layout_constraintVertical_bias="0.040" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <EditText
         android:id="@+id/editTextweight"
@@ -110,45 +113,64 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextheight"
         app:layout_constraintVertical_bias="0.040" />
 
-
-    <Switch
-        android:id="@+id/switchSimpleMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
-
     <TextView
         android:id="@+id/emailview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:paddingStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="Email"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/account_settingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Account Settings"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/emailview" />
+
+    <TextView
+        android:id="@+id/account_send_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Send Report"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/account_settingView" />
+
+    <TextView
+        android:id="@+id/genderView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Gender"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toBottomOf="@+id/account_settingView" />
 
     <TextView
         android:id="@+id/year_of_birth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="Year of birth"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/genderView" />
 
     <TextView
@@ -156,13 +178,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat"
         android:text="Height"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintEnd_toStartOf="@+id/editTextheight"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/year_of_birth" />
 
     <TextView
@@ -170,27 +190,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat"
         android:text="Weight"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintEnd_toStartOf="@+id/editTextweight"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/heightView" />
 
     <TextView
         android:id="@+id/weightView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat"
         android:text="Simple Mode"
         android:textColor="#000000"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextweight"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/weightView" />
 
     <Button
@@ -232,7 +248,7 @@
         android:id="@+id/btnSave"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserratbold"
         android:text="Save"
@@ -241,7 +257,6 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextweight" />
 
@@ -249,28 +264,51 @@
         android:id="@+id/gender_spinner"
         android:layout_width="140dp"
         android:layout_height="44dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/edittext3"
         android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/genderView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintTop_toBottomOf="@+id/accountSetting_button2"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/genderView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="Gender"
-        android:textColor="#000000"
-        android:textSize="22sp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/accountSetting_button"
+        android:layout_width="37dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="75dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="User_To_Account"
+        app:backgroundTint="#FFFFFF"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="185dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134"
+        app:srcCompat="@drawable/backarrowreverse" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/accountSetting_button2"
+        android:layout_width="37dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="User_To_Account"
+        app:backgroundTint="#FFFFFF"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountSetting_button"
+        app:srcCompat="@drawable/backarrowreverse" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline93"
@@ -323,14 +361,33 @@
 
     <Spinner
         android:id="@+id/spinnerHeight"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline102"
+        android:layout_width="128dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline100"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline98"
-        app:layout_constraintTop_toTopOf="@+id/guideline101"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/year_of_birth" />
+
+    <Spinner
+        android:id="@+id/spinnerWeight"
+        android:layout_width="129dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline100"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline98"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerHeight" />
+
+    <Switch
+        android:id="@+id/switchSimpleMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline103" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

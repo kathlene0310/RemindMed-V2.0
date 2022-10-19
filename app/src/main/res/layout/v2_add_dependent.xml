@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
 
+    <Button
+        android:id="@+id/btnSave2"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/edit_round2"
+        android:fontFamily="@font/montserratbold"
+        android:text="Save"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,38 +33,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="101dp"
-        android:layout_height="93dp"
-        app:srcCompat="@drawable/logov2"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <ImageButton
-        android:id="@+id/imageBack_bloodpressure"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
-        android:backgroundTint="#2e276c"
-        android:onClick="laterbs_To_lhm"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/imageView19"
+        android:layout_width="79dp"
+        android:layout_height="92dp"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backarrow" />
-
+        app:srcCompat="@drawable/logov2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Simple Mode"
+        android:layout_marginTop="28dp"
+        android:text="Add Dependent"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toEndOf="@+id/imageBack_bloodpressure" />
-
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView18"
@@ -60,44 +64,43 @@
         android:textColor="#000000"
         android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="381dp" />
+        tools:layout_editor_absoluteY="382dp" />
 
     <TextView
-        android:id="@+id/frequency_txt1"
+        android:id="@+id/frequency_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="180dp"
         android:fontFamily="@font/montserrat"
-        android:text="Dependents "
+        android:text="Week"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="187dp" />
+        tools:layout_editor_absoluteY="441dp" />
 
     <TextView
-        android:id="@+id/frequency_txt13"
+        android:id="@+id/frequency_txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="64dp"
         android:fontFamily="@font/montserrat"
-        android:text="Enter Dependent's Email Address "
+        android:text="Enter Dependents' Email Address"
         android:textColor="#000000"
-        android:textSize="21sp"
+        android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="218dp" />
+        tools:layout_editor_absoluteY="203dp" />
 
     <Spinner
         android:id="@+id/frequency_set_later_bs"
         android:layout_width="283dp"
         android:layout_height="65dp"
-        android:layout_marginTop="24dp"
         android:background="@drawable/edittext3"
         android:backgroundTint="#2e276c"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_txt1"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351" />
 
     <Spinner
         android:id="@+id/frequency_set_later_bs8"
@@ -108,55 +111,25 @@
         android:backgroundTint="#2e276c"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_txt1"
-        app:layout_constraintVertical_bias="0.398" />
-
-    <Button
-        android:id="@+id/save_bs_later"
-        android:layout_width="247dp"
-        android:layout_height="49dp"
-        android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserrat"
-        android:text="Skip"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="620dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.616" />
 
     <Button
         android:id="@+id/cancel_bs_later"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:background="@drawable/editttextcancel"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="laterbs_To_lhm"
-        android:text="Enter Simple Mode"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
+        android:text="Cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_bs_later"
-        app:layout_constraintVertical_bias="0.323" />
-
-    <TextView
-        android:id="@+id/frequency_txt12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Week"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="436dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSave2" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -168,6 +141,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.625" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@
         android:layout_marginEnd="92dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/viga"
-        android:text="Add Reminder"
+        android:text="Add Medication"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
@@ -88,17 +88,30 @@
 
     <TextView
         android:id="@+id/textView31"
-        android:layout_width="176dp"
-        android:layout_height="42dp"
-        android:text="Simple Mode"
+        android:layout_width="233dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="Add Medications"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
+
+    <TextView
+        android:id="@+id/simple_mode_home_page_header"
+        android:layout_width="85dp"
+        android:layout_height="15dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="Simple Mode"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/textView31"
+        tools:layout_editor_absoluteX="225dp" />
 
     <TextView
         android:id="@+id/textView18"
