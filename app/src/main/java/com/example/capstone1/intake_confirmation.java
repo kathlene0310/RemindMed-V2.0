@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.Voice;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -25,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.capstone1.v2.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -51,6 +53,8 @@ import java.util.Map;
 import java.util.Random;
 
 public class intake_confirmation extends AppCompatActivity {
+    Float speed, pitch;
+    String voice;
     TextView medName, medAmount, dateTakentxt;
     String title, amount, time, date, enddate, dosage, userId, text, notify;
     Date myDate;
@@ -66,7 +70,7 @@ public class intake_confirmation extends AppCompatActivity {
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private medication_info medication_info;
     private static final String TAG = "intake_confirmation";
-
+    SharedPref sf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +87,10 @@ public class intake_confirmation extends AppCompatActivity {
         userId = rootAuthen.getCurrentUser().getUid();
         tts = findViewById(R.id.ttsButton);
 
+        String voice = sf.getVoice();
+        Float speed = sf.getSpeed();
+        Float pitch = sf.getPitch();
 
-        getData();
         setData();
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
@@ -434,7 +440,23 @@ public class intake_confirmation extends AppCompatActivity {
 
     private void speak() {
 
+
+        if(!voice.isEmpty()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                for (Voice tmpVoice : textToSpeech.getVoices()) {
+                    if (tmpVoice.getName().equals(voice)) {
+                        textToSpeech.setVoice(tmpVoice);
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        textToSpeech.setPitch(pitch);
+        textToSpeech.setSpeechRate(speed);
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+
 
     }
 

@@ -76,6 +76,7 @@ public class tts extends AppCompatActivity {
                     }
                     else
                     {
+
                         listVoice = new ArrayList<String>();
                         test.setEnabled(true);
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -105,6 +106,7 @@ public class tts extends AppCompatActivity {
 
                                 }
                             });
+                            voice.setSelection(35);
                         }
 
                     }
@@ -131,7 +133,7 @@ public class tts extends AppCompatActivity {
             public void onClick(View v) {
                 sf.setPitch(1.0f);
                 sf.setSpeed(1.0f);
-                voice.setSelection(33);
+                voice.setSelection(35);
                 pitch.setText("1.0");
                 speed.setText("1.0");
 
@@ -174,7 +176,7 @@ public class tts extends AppCompatActivity {
             public void onClick(View v) {
                 sf.setPitch(Float.parseFloat(pitch.getText().toString()));
                 sf.setSpeed(Float.parseFloat(speed.getText().toString()));
-
+                sf.setVoice(selectedVoice);
                 Toast.makeText(getApplicationContext(), "Saved Configuration", Toast.LENGTH_LONG).show();
             }
         });

@@ -54,6 +54,14 @@ public class SharedPref {
         this.myEdit.commit();
     }
 
+    public void setVoice(String voice_name) {
+        this.myEdit.putString("voice", voice_name);
+        this.myEdit.commit();
+    }
+
+    public String getVoice() {
+        return this.sharedPreferences.getString("voice", "en");
+    }
     public Float getPitch() {
         return this.sharedPreferences.getFloat("pitch", 1);
     }

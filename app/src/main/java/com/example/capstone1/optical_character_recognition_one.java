@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.capstone1.v2.SharedPref;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -47,10 +48,13 @@ public class optical_character_recognition_one extends AppCompatActivity {
     int REQUEST_IMAGE_COUNT = 3;
     TextView displayText;
 
+    SharedPref sf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_optical_character_recognition_one);
+
+        sf = new SharedPref(getApplicationContext());
 
         captureImage = (Button) findViewById(R.id.captureCount);
         saveText = (Button) findViewById(R.id.pasteCount);
