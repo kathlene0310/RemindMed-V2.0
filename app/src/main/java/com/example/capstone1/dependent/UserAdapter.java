@@ -38,6 +38,9 @@ public class UserAdapter extends ArrayAdapter<User> {
 
         User currentMovie = userLIst.get(position);
 
+        TextView uid = (TextView) listItem.findViewById(R.id.txtUID);
+        uid.setText(currentMovie.getUserid());
+
         TextView name = (TextView) listItem.findViewById(R.id.txtFirstname);
         name.setText(currentMovie.getFirstname());
 

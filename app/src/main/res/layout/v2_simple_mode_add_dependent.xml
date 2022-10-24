@@ -116,6 +116,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frequency_txt2" />
 
+    <EditText
+        android:id="@+id/dependentEmail"
+        android:layout_width="249dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/cancel_bs_later"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.357" />
+
     <Spinner
         android:id="@+id/frequency_set_later_bs8"
         android:layout_width="283dp"
@@ -136,7 +150,7 @@
         android:layout_marginTop="141dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
-        android:text="Skip"
+        android:text="Submit"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -153,7 +167,7 @@
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="laterbs_To_lhm"
-        android:text="Enter Simple Mode"
+        android:text="Cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
         android:textStyle="bold"

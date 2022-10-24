@@ -7,6 +7,17 @@
     android:background="@drawable/background_gradient"
     tools:context=".v2.chat">
 
+    <ListView
+        android:id="@+id/userLIst"
+        android:layout_width="409dp"
+        android:layout_height="411dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.687" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_chat2"
         android:layout_width="55dp"
@@ -296,51 +307,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="704dp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="415dp"
-        android:layout_height="47dp"
-        android:backgroundTint="#2e276c"
-
-        android:text="NAME"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="412dp"
-        android:layout_height="49dp"
-        android:backgroundTint="#2e276c"
-
-        android:text="NAME"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="410dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#2e276c"
-        android:text="NAME"
-        android:textColor="@color/white"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -240,10 +240,19 @@
             android:name=".v2.chat"
             android:exported="true" />
         <activity
+            android:name=".v2.ChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".dependent.d_chat"
+            android:exported="true" />
+        <activity
             android:name=".forgot_password"
             android:exported="true" />
         <activity
             android:name=".create_account"
+            android:exported="true" />
+        <activity
+            android:name=".v2.actual_chat"
             android:exported="true" />
         <activity
             android:name=".v2.tts"

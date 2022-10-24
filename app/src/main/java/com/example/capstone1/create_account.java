@@ -44,8 +44,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -76,6 +78,7 @@ public class create_account extends AppCompatActivity {
     String userId;
     CheckBox termsandconditions;
     int role = 0;
+    DatabaseReference RootRef;
 
     @Override
     public void onStart() {
@@ -285,6 +288,14 @@ public class create_account extends AppCompatActivity {
 
                 }
 
+
+
+
+                RootRef= FirebaseDatabase.getInstance().getReference();
+
+                String deviceToken= FirebaseInstanceId.getInstance().getToken();
+
+
                 rootAuthen.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -294,6 +305,8 @@ public class create_account extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
+
+
 
                                     }else {
                                         Toast.makeText(create_account.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -323,11 +336,36 @@ public class create_account extends AppCompatActivity {
                             user.put("password",empass);
                             user.put("accounttype",1);
                             user.put("role", role); // added role
+                            user.put("uid", userId);
+                            user.put("name", firstname);
+                            user.put("status", "TEST");
 
 
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
+
+                                    RootRef.child("Users").child(userId).setValue("");
+                                    RootRef.child("Users").child(userId).child("device_token").setValue(deviceToken)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+
+                                                    RootRef.child("Users").child(userId).updateChildren(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if(task.isSuccessful())
+                                                            {
+                                                                Log.d("REALTIME", "SUCCESS!");
+                                                            }
+                                                            else
+                                                            {
+
+                                                            }
+                                                        }
+                                                    });
+                                                }
+                                            });
                                     Log.d(TAG, "onSuccess: user profile is created for " + userId);
                                 }
                             });
