@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone1.simple.add_dependent;
 import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.simple.shome_page;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -69,6 +70,7 @@ public class home_page extends AppCompatActivity {
             if(sf.getSimpleMode() == true) {
                startActivity(new Intent(getApplicationContext(), shome_page.class));
             }
+
 
 
         }catch (Exception e) {
@@ -263,6 +265,11 @@ public class home_page extends AppCompatActivity {
 
     public void Home_To_Chat(View view) {
         Intent intent = new Intent(home_page.this, chat.class);
+        startActivity(intent);
+    }
+
+    public void Home_To_AddDepedendent(View view) {
+        Intent intent = new Intent(home_page.this, add_dependent.class);
         startActivity(intent);
     }
 

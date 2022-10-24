@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".user_information">
+    tools:context=".v2.tts">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -27,7 +27,7 @@
         android:layout_height="72dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
-        android:onClick="User_To_Home"
+        android:onClick="Back"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/userInformation"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,31 +49,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Button
-        android:id="@+id/btnCancel"
-        android:layout_width="247dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
-        android:text="Cancel"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
-
     <Spinner
         android:id="@+id/speed_spinner"
         android:layout_width="140dp"
         android:layout_height="44dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/edittext3"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toBottomOf="@+id/year_of_birth"
-        tools:layout_editor_absoluteX="235dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_of_birth" />
 
     <TextView
         android:id="@+id/pronunciationView"
@@ -84,6 +69,7 @@
         android:text="Pronunciation"
         android:textColor="#000000"
         android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/pronunciation_spinner"
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/pitchView" />
 
@@ -92,10 +78,11 @@
         android:layout_width="140dp"
         android:layout_height="44dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/edittext3"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toBottomOf="@+id/speed_spinner"
-        tools:layout_editor_absoluteX="235dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed_spinner" />
 
     <TextView
         android:id="@+id/pitchView"
@@ -106,6 +93,8 @@
         android:text="Pitch"
         android:textColor="#000000"
         android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/pitch_spinner"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/speedView" />
 
@@ -118,6 +107,8 @@
         android:text="Speed"
         android:textColor="#000000"
         android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/speed_spinner"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/year_of_birth" />
 
@@ -138,16 +129,70 @@
         android:layout_width="140dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/edittext3"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toBottomOf="@+id/pitch_spinner"
-        tools:layout_editor_absoluteX="235dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pitch_spinner" />
+
+    <Button
+        android:id="@+id/btnTest"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="456dp"
+        android:background="@drawable/edit_round2"
+        android:enabled="false"
+        android:fontFamily="@font/montserratbold"
+        android:text="Test"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_round"
+        android:fontFamily="@font/montserratbold"
+        android:onClick="Back"
+        android:text="Cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_round"
+        android:fontFamily="@font/montserratbold"
+        android:onClick="Back"
+        android:text="Reset"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTest"
+        app:layout_constraintVertical_bias="0.071" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="580dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserratbold"
         android:text="Save"
@@ -165,6 +210,34 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
+
+    <EditText
+        android:id="@+id/eSpeed"
+        android:layout_width="121dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
+
+    <EditText
+        android:id="@+id/ePitch"
+        android:layout_width="121dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

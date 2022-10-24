@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +24,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.R;
+import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.change_name;
 import com.example.capstone1.user_information;
@@ -299,5 +301,19 @@ public class profile extends AppCompatActivity {
     public void SProfile_To_SendReport(View view) {
         Intent intent = new Intent(this, tts.class);
         startActivity(intent);
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            startActivity(new Intent(getApplicationContext(), home_page.class));
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    public void onBackPressed() {
+
+        startActivity(new Intent(getApplicationContext(), home_page.class));
+
+        return;
     }
 }

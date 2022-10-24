@@ -38,7 +38,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class add_dependent extends AppCompatActivity {
-    Button submit;
+    Button submit, cancel;
     EditText dEmail;
     FirebaseAuth rootAuthen;
     FirebaseFirestore fstore;
@@ -51,6 +51,7 @@ public class add_dependent extends AppCompatActivity {
         setContentView(R.layout.v2_simple_mode_add_dependent);
         dEmail = findViewById(R.id.dependentEmail);
         submit = findViewById(R.id.save_bs_later);
+        cancel = findViewById(R.id.cancel_bs_later);
 
         try {
             rootAuthen = FirebaseAuth.getInstance();
@@ -61,6 +62,14 @@ public class add_dependent extends AppCompatActivity {
         catch(Exception e) {
             Log.d("ERR", "ERR" + e);
         }
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -206,6 +215,10 @@ public class add_dependent extends AppCompatActivity {
 
 
 
+
+    public void Back(View view) {
+        finish();
+    }
 
     public void Dependent_To_Home(View view) {
         Intent intent = new Intent(this, shome_page.class);

@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -294,5 +295,20 @@ public class user_information extends AppCompatActivity {
     public void User_To_Home(View view) {
         Intent intent = new Intent(user_information.this, home_page.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            startActivity(new Intent(user_information.this, home_page.class));
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    public void onBackPressed() {
+
+        startActivity(new Intent(user_information.this, home_page.class));
+
+        return;
     }
 }
