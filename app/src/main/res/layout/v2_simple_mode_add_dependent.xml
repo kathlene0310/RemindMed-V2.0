@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="672dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Add Dependent"
+        android:text="ADD DEPENDENT"
         android:textColor="#FFFFFF"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,14 +54,14 @@
 
     <TextView
         android:id="@+id/simple_mode_home_page_header"
-        android:layout_width="85dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+
         android:layout_marginEnd="104dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
-        android:textSize="12sp"
+        android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView46" />
@@ -70,12 +70,13 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="92dp"
+        android:fontFamily="@font/montserratbold"
         android:text="Send Report every:"
         android:textColor="#000000"
-        android:textSize="21sp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
 
@@ -97,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="111dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserratbold"
         android:text="Enter Dependents' Email Address"
         android:textColor="#000000"
         android:textSize="17sp"
@@ -121,6 +122,7 @@
         android:layout_width="249dp"
         android:layout_height="46dp"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/cancel_bs_later"
@@ -128,7 +130,7 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="0.363" />
 
     <Spinner
         android:id="@+id/frequency_set_later_bs8"
@@ -147,7 +149,7 @@
         android:id="@+id/save_bs_later"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="Submit"
@@ -182,6 +184,7 @@
         android:layout_width="279dp"
         android:layout_height="59dp"
         android:outlineSpotShadowColor="#2E276C"
+        android:fontFamily="@font/montserrat"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

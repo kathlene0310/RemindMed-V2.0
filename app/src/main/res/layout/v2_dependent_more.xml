@@ -21,12 +21,8 @@
         android:id="@+id/imageView16"
         android:layout_width="79dp"
         android:layout_height="91dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
         app:srcCompat="@drawable/logov2_" />
 
 
@@ -68,37 +64,32 @@
 
     <TextView
         android:id="@+id/dependent_home_page_text"
-        android:layout_width="146dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="114dp"
+        android:layout_height="21dp"
         android:fontFamily="@font/montserrat"
+        android:textStyle="italic"
         android:gravity="center"
         android:text="Dependent"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/dependent_manage_profile_text" />
 
     <TextView
         android:id="@+id/dependent_manage_profile_text"
-        android:layout_width="292dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserratbold"
         android:gravity="center"
-        android:text="Account Settings"
+        android:text="ACCOUNT SETTINGS"
         android:textColor="#FFFFFF"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

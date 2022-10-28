@@ -21,48 +21,40 @@
         android:id="@+id/imageView16"
         android:layout_width="79dp"
         android:layout_height="91dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
         app:srcCompat="@drawable/logov2_" />
+
+
     <TextView
         android:id="@+id/dependent_home_page_text"
-        android:layout_width="146dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="108dp"
+        android:layout_height="23dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
+        android:textStyle="italic"
         android:text="Dependent"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/dependent_manage_profile_text" />
 
 
     <TextView
         android:id="@+id/dependent_manage_profile_text"
-        android:layout_width="322dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_width="298dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserratbold"
         android:gravity="center"
-        android:text="User Management"
+        android:textStyle=""
+        android:text="USER MANAGEMENT"
         android:textColor="#FFFFFF"
-        android:textSize="29sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo1"
@@ -111,7 +103,7 @@
         android:id="@+id/textView602"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="User Management"
         android:textColor="#2e276c"
         android:textSize="18sp"
@@ -127,7 +119,7 @@
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Manage Medications"
         android:textColor="#2e276c"
         android:textSize="18sp"
@@ -142,7 +134,7 @@
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="View Logs"
         android:textColor="#2e276c"
         android:textSize="18sp"

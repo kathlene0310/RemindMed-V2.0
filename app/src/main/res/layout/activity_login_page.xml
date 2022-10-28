@@ -12,12 +12,12 @@
 
     <ImageView
         android:id="@+id/logo1"
-        android:layout_width="278dp"
-        android:layout_height="317dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="314dp"
+        android:layout_height="341dp"
+        android:layout_marginTop="40dp"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logov2_loginpage" />
@@ -26,8 +26,7 @@
         android:id="@+id/emailinput"
         android:layout_width="287dp"
         android:layout_height="52dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/edittext"
+        android:layout_marginTop="40dp"
         android:ems="100"
         android:fontFamily="@font/montserrat"
         android:hint="Email"
@@ -35,38 +34,45 @@
         android:paddingStart="15dp"
         android:paddingRight="10dp"
         android:textColorHint="#676661"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTxtbox1" />
+        app:layout_constraintTop_toBottomOf="@+id/logo1" />
 
-    <TextView
-        android:id="@+id/emailTxtbox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginBottom="316dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Email"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/passwordtxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="27dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Password"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/passwordinput"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordinput"
+        android:layout_width="310dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint=" Password"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:paddingRight="10dp"
+        android:textColorHint="#676661"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.70"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailinput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordinputtxt"
+            android:layout_width="286dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat"
+
+            android:hint=" Password"
+            android:inputType="textPassword"
+            android:textColorHint="#676661"
+            android:textSize="18sp"
+
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="508dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/loginBtn"
@@ -74,8 +80,8 @@
         android:layout_height="49dp"
         android:layout_marginTop="29dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
-        android:text="Login"
+        android:fontFamily="@font/montserrat"
+        android:text="LOGIN"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,14 +92,14 @@
         android:id="@+id/forgotPass1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:onClick="Log_To_Forgot"
         android:text="Forgot Password?"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/montserrat"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,48 +107,40 @@
 
     <TextView
         android:id="@+id/back1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="62dp"
+        android:layout_height="43dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="sans-serif"
         android:onClick="Log_To_Main"
         android:text="Back"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/logo1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordinput"
-        android:layout_width="286dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="160dp"
-        android:background="@drawable/edittext"
-        android:ems="10"
-        android:fontFamily="@font/montserrat"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingStart="15dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="62dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="424dp"
+        app:layout_constraintEnd_toStartOf="@+id/emailinput"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo1"
-        app:passwordToggleEnabled="true">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profileiconv2" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordinputtxt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/background_transparent"
-            android:fontFamily="@font/viga"
-            android:hint="Password"
-            android:inputType="textPassword"
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="58dp"
+        android:layout_height="48dp"
 
-            />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="328dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView27"
+        app:srcCompat="@drawable/padlock" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
