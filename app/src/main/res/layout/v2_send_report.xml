@@ -39,21 +39,37 @@
         android:id="@+id/imageView19"
         android:layout_width="79dp"
         android:layout_height="92dp"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logov2" />
+        app:srcCompat="@drawable/logov2_" />
 
     <TextView
+        android:id="@+id/textView62"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Send Report"
+        android:fontFamily="@font/montserratbold"
+        android:text="SEND REPORT"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_User"
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:fontFamily="@font/montserrat"
+        android:text="User"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView62" />
 
     <TextView
         android:id="@+id/frequency_txt2"

@@ -57,8 +57,7 @@
         android:id="@+id/imageView19"
         android:layout_width="79dp"
         android:layout_height="92dp"
-        android:layout_marginStart="64dp"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/logov2_" />
 
@@ -75,38 +74,32 @@
 
     <TextView
         android:id="@+id/dependent_home_page_text"
-        android:layout_width="146dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="78dp"
+        android:layout_height="20dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="User"
+        android:textStyle="italic"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/take_unscheduled_medications" />
+
 
     <TextView
         android:id="@+id/take_unscheduled_medications"
-        android:layout_width="273dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserratbold"
         android:gravity="center"
-        android:text="Take Medication"
+        android:text="TAKE MEDICATION"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/take_medication_choose"

@@ -17,14 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="79dp"
         android:layout_height="91dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logov2_" />
-
 
     <TextView
         android:id="@+id/dependent_home_page_text"

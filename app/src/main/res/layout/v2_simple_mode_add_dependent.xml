@@ -22,20 +22,10 @@
         android:id="@+id/imageView19"
         android:layout_width="79dp"
         android:layout_height="92dp"
-        android:layout_marginStart="64dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logov2" />
 
-    <ImageButton
-        android:id="@+id/imageBack_bloodpressure"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
-        android:backgroundTint="#2e276c"
-        android:onClick="Back"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/backarrow" />
+        app:srcCompat="@drawable/logov2_" />
 
 
     <TextView
@@ -49,21 +39,20 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
-        app:layout_constraintStart_toEndOf="@+id/imageBack_bloodpressure" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/simple_mode_home_page_header"
         android:layout_width="103dp"
         android:layout_height="19dp"
 
-        android:layout_marginEnd="104dp"
         android:fontFamily="@font/montserrat"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView46" />
 
     <TextView

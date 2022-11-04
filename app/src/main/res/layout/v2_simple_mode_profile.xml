@@ -21,19 +21,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="90dp"
+        android:layout_height="93dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2" />
+
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="63dp"
-        android:layout_height="72dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
         android:backgroundTint="#2e276c"
         android:onClick="SProfile_To_Home"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/userInformation"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
-
 
     <TextView
         android:id="@+id/userInformation"
@@ -41,12 +45,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/montserratbold"
-        android:text="User Information"
+        android:text="PROFILE"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -54,14 +57,13 @@
         android:layout_width="85dp"
         android:layout_height="15dp"
 
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="120dp"
         android:fontFamily="@font/montserratbold"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userInformation" />
 
     <EditText

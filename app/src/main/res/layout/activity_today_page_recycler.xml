@@ -42,18 +42,14 @@
         android:id="@+id/firstnameview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="160dp"
         android:fontFamily="@font/montserrat"
         android:text="name"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -108,83 +104,89 @@
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Home_page"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/Home_page" />
 
     <TextView
         android:id="@+id/textViewToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat"
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintStart_toEndOf="@+id/textViewHome"
         app:layout_constraintTop_toBottomOf="@+id/Today_page" />
 
     <TextView
         android:id="@+id/textViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat"
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/guideline7"
+        app:layout_constraintStart_toEndOf="@+id/textViewToday"
         app:layout_constraintTop_toBottomOf="@+id/History_page" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat"
         android:text="Profile"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewChat"
+        app:layout_constraintTop_toBottomOf="@+id/Profile_page" />
+
+    <TextView
+        android:id="@+id/textViewChat"
+        android:layout_width="54dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/guideline8"
+        android:text="Chat"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
         app:layout_constraintTop_toBottomOf="@+id/Profile_page" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Home_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+
         android:clickable="true"
         android:focusable="true"
         android:onClick="Today_To_Home"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHome"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline51"
+        app:layout_constraintTop_toTopOf="@+id/guideline51"
         app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Today_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewToday"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintStart_toEndOf="@+id/Home_page"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
         app:srcCompat="@drawable/todayiconv2" />
 
@@ -192,29 +194,40 @@
         android:id="@+id/History_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Today_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewToday"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/guideline7"
+        app:layout_constraintStart_toEndOf="@+id/Today_page"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
         app:srcCompat="@drawable/historyiconv2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chat_dep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:clickable="true"
+        android:onClick="Home_To_Chat"
+
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/History_page"
+        app:layout_constraintTop_toTopOf="@+id/guideline51"
+        app:srcCompat="@drawable/chaticonv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Profile_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Today_To_User"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/guideline8"
+        app:layout_constraintStart_toEndOf="@+id/chat_dep"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
         app:srcCompat="@drawable/profileiconv2" />
 
@@ -249,27 +262,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.60" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline51"

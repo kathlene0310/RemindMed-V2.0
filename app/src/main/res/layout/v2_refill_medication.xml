@@ -57,8 +57,7 @@
         android:id="@+id/imageView19"
         android:layout_width="79dp"
         android:layout_height="92dp"
-        android:layout_marginStart="64dp"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/logov2_" />
 
@@ -75,38 +74,33 @@
 
     <TextView
         android:id="@+id/dependent_home_page_text"
-        android:layout_width="146dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="98dp"
+        android:layout_height="21dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="User"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/take_unscheduled_medications" />
+
 
     <TextView
         android:id="@+id/take_unscheduled_medications"
         android:layout_width="273dp"
         android:layout_height="46dp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserratbold"
         android:gravity="center"
-        android:text="Refill Medication"
+        android:text="REFILL MEDICATION"
         android:textColor="#FFFFFF"
-        android:textSize="25sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintVertical_bias="0.269" />
 
     <Spinner
         android:id="@+id/refill_medication_choose"
