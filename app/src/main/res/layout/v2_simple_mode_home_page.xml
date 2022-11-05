@@ -96,13 +96,14 @@
         android:id="@+id/textview_view_medication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="View Medications"
+
+        android:fontFamily="@font/montserrat"
+        android:text="VIEW MEDICATIONS"
         android:textColor="#000000"
         android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs3"
+        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs3"
         app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs3" />
 
 
@@ -110,41 +111,43 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
+
         android:layout_marginTop="28dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Add Medications"
+
+        android:fontFamily="@font/montserrat"
+        android:text="ADD MEDICATIONS"
         android:textColor="#000000"
         android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs"
+        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs"
         app:layout_constraintTop_toTopOf="@+id/guideline21" />
 
     <TextView
         android:id="@+id/textview_add_dependent"
         android:layout_width="127dp"
         android:layout_height="47dp"
-        android:layout_marginStart="72dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Add Dependent"
+        android:fontFamily="@font/montserrat"
+        android:text="ADD DEPENDENT"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs4"
+        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs4"
         app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs4" />
 
     <TextView
         android:id="@+id/textview_edit_dependent"
         android:layout_width="136dp"
         android:layout_height="54dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Edit Dependent"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat"
+        android:text="EDIT DEPENDENT"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs11"
+        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs11"
         app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs11" />
 
     <Spinner

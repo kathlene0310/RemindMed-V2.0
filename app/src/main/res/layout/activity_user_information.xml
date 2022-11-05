@@ -36,15 +36,23 @@
         android:id="@+id/userInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/montserratbold"
         android:text="PROFILE"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        android:fontFamily="@font/montserratbold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <EditText
         android:id="@+id/editTextbirth"
@@ -199,9 +207,9 @@
         android:layout_height="49dp"
         android:layout_marginTop="19dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
 
-        android:text="Logout"
+        android:text="LOGOUT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -218,7 +226,7 @@
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
 
-        android:text="Delete Account"
+        android:text="DELETE ACCOUNT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -234,8 +242,8 @@
         android:layout_height="49dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/montserratbold"
-        android:text="Save"
+        android:fontFamily="@font/montserrat"
+        android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"

@@ -8,11 +8,13 @@
 
     <TextView
         android:id="@+id/FAQ2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
         android:onClick="Guest_To_FAQ"
         android:text="FAQ"
-        android:fontFamily="@font/montserrat"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogout"
@@ -36,30 +38,52 @@
 
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="0dp"
-        android:layout_height="68dp"
+        android:layout_width="57dp"
+        android:layout_height="91dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
         android:onClick="Guest_To_Home"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/guideline97"
-        app:layout_constraintStart_toStartOf="@+id/guideline94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
 
     <TextView
         android:id="@+id/userInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guest Account"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="PROFILE"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        android:fontFamily="@font/montserratbold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dependent_home_page_text"
+        android:layout_width="108dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="User"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInformation" />
+
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:srcCompat="@drawable/logov2_" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -68,7 +92,7 @@
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
 
-        android:text="Logout"
+        android:text="LOGOUT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"

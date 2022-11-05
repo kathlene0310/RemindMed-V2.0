@@ -23,7 +23,7 @@
     <ImageButton
         android:id="@+id/imageBack"
         android:layout_width="64dp"
-        android:layout_height="68dp"
+        android:layout_height="91dp"
         android:backgroundTint="#2e276c"
         android:onClick="edbs_To_home"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,15 +36,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Blood sugar"
         android:fontFamily="@font/montserratbold"
+        android:text="BLOOD SUGAR"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toEndOf="@+id/imageBack" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <Button
         android:id="@+id/startButtonbs"
@@ -168,7 +176,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserratbold"
-        android:text="Save Changes"
+        android:text="SAVE CHANGES"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -185,7 +193,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserratbold"
-        android:text="Delete"
+        android:text="DELETE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
@@ -203,7 +211,7 @@
         android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserratbold"
         android:onClick="edbs_To_home"
-        android:text="Cancel"
+        android:text="CANCEL"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"

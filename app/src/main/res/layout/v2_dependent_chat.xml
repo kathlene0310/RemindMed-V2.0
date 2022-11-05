@@ -65,7 +65,7 @@
         android:id="@+id/chatLogo"
         android:layout_width="79dp"
         android:layout_height="91dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logov2_" />
 

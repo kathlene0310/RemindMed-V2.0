@@ -21,8 +21,8 @@
 
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="40dp"
-        android:layout_height="68dp"
+        android:layout_width="50dp"
+        android:layout_height="66dp"
         android:backgroundTint="#2e276c"
         android:onClick="GuestFAQ_Faq"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -33,18 +33,27 @@
 
     <TextView
         android:id="@+id/FAQ"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="160dp"
+        android:layout_height="79dp"
         android:gravity="center"
+        android:fontFamily="@font/montserrat"
         android:text="FAQ"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/guideline75"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
-        app:layout_constraintStart_toEndOf="@+id/imageBack"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.403" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline74"

@@ -222,9 +222,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="63dp"
+        android:layout_height="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
+
+
     <TextView
         android:id="@+id/simple_mode_home_page_header"
-        android:layout_width="103dp"
+        android:layout_width="89dp"
         android:layout_height="19dp"
 
         android:fontFamily="@font/montserrat"

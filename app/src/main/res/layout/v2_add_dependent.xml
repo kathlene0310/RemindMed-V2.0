@@ -12,8 +12,8 @@
         android:layout_height="49dp"
         android:layout_marginTop="121dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/montserratbold"
-        android:text="Save"
+        android:fontFamily="@font/montserrat"
+        android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
@@ -38,19 +38,20 @@
         android:id="@+id/imageView19"
         android:layout_width="79dp"
         android:layout_height="92dp"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logov2" />
+        app:srcCompat="@drawable/logov2_" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Add Dependent"
+        android:fontFamily="@font/montserratbold"
+        android:text="ADD DEPENDENT"
         android:textColor="#FFFFFF"
-        android:textSize="32sp"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,7 +127,7 @@
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="laterbs_To_lhm"
-        android:text="Cancel"
+        android:text="CANCEL"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
         android:textStyle="bold"

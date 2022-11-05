@@ -41,6 +41,7 @@
         android:layout_width="287dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/montserrat"
         android:background="@drawable/edittext"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
@@ -59,8 +60,8 @@
         android:layout_height="49dp"
         android:layout_marginTop="29dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/viga"
-        android:text="Submit"
+        android:fontFamily="@font/montserrat"
+        android:text="SUBMIT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFF"
         android:textSize="22sp"
@@ -69,19 +70,17 @@
         app:layout_constraintTop_toBottomOf="@+id/coursesspinner" />
 
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
-        android:text="Back"
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:onClick="Create_To_Main"
-        android:textColor="#000000"
-        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/logo1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow_blue" />
+
+
+
 
 
 

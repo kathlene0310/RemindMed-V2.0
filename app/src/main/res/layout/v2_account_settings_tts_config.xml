@@ -21,10 +21,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="27dp"
-        android:layout_height="38dp"
+        android:layout_width="57dp"
+        android:layout_height="91dp"
         android:backgroundTint="#2e276c"
         android:onClick="Back"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,14 +37,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="ACCOUNT SETTINGS"
+        android:fontFamily="@font/montserratbold"
+        android:text="PROFILE"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        android:fontFamily="@font/montserratbold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent" />
+
+    
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
 
     <Spinner
@@ -139,12 +149,11 @@
         android:layout_marginTop="456dp"
         android:background="@drawable/edit_round2"
         android:enabled="false"
-        android:fontFamily="@font/montserratbold"
-        android:text="Test"
+        android:fontFamily="@font/montserrat"
+        android:text="TEST"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -155,9 +164,9 @@
         android:layout_height="49dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:onClick="Back"
-        android:text="Cancel"
+        android:text="CANCEL"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -172,9 +181,9 @@
         android:layout_height="49dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:onClick="Back"
-        android:text="Reset"
+        android:text="RESET"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
 
@@ -191,12 +200,11 @@
         android:layout_height="49dp"
         android:layout_marginTop="580dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/montserratbold"
-        android:text="Save"
+        android:fontFamily="@font/montserrat"
+        android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -9,15 +9,13 @@
 
     <ImageView
         android:id="@+id/logo2"
-        android:layout_width="398dp"
-        android:layout_height="357dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="347dp"
+        android:layout_height="295dp"
+        android:layout_marginTop="65dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/remindmed_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/resetPassword"
+        app:srcCompat="@drawable/lock" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -34,66 +32,64 @@
         android:id="@+id/resetPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:text="Reset Password"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/montserrat"
+        android:text="RESET PASSWORD"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/newPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Enter New Password"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo2" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <EditText
         android:id="@+id/newPassword_txtbox"
-        android:layout_width="364dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edittext3"
+        android:layout_width="337dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="26dp"
+
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Enter New Password"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newPass" />
+        app:layout_constraintTop_toBottomOf="@+id/logo2" />
 
-    <TextView
-        android:id="@+id/confirmPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
-        android:text="Confirm Password"
-        android:textColor="#000000"
-        android:textSize="20sp"
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newPassword_txtbox" />
+        app:layout_constraintTop_toTopOf="@+id/newPassword_txtbox"
+        app:srcCompat="@drawable/passwordiconv2" />
 
     <EditText
         android:id="@+id/confirmPass_txtbox"
-        android:layout_width="364dp"
+        android:layout_width="338dp"
         android:layout_height="52dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext3"
+        android:layout_marginTop="8dp"
+
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPass" />
+        app:layout_constraintTop_toBottomOf="@+id/newPassword_txtbox" />
 
     <Button
         android:id="@+id/resetbtn"
@@ -103,9 +99,9 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="92dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/viga"
-        android:text="Submit"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="@font/montserrat"
+        android:text="SUBMIT"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

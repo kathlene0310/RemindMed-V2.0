@@ -15,8 +15,8 @@
         android:text="CREATE ACCOUNT"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="24sp"
-        android:fontFamily="@font/montserratbold"
+        android:textSize="28sp"
+        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:textColor="#FFFF"
-        android:text="Submit"
+        android:text="SUBMIT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,19 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confimpassword" />
 
-    <TextView
-        android:id="@+id/backTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="3dp"
-        android:fontFamily="@font/montserratbold"
-        android:onClick="Create_To_Main"
-        android:text="Back"
-        android:textColor="#0C3778"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <ImageView
@@ -280,6 +268,16 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/confimpassword" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:onClick="Create_To_Main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow_blue" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

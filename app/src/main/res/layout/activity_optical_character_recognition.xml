@@ -39,41 +39,35 @@
 
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="344dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="57dp"
+        android:layout_height="91dp"
         android:backgroundTint="#2e276c"
         android:onClick="ocr_To_med"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Optical Character "
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserratbold"
+        android:text="OPTICAL CHARACTER RECOGNITION "
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:fontFamily="@font/montserratbold"
-        android:textSize="31sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recognition"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="31sp"
-        android:fontFamily="@font/montserratbold"
-        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <ImageView
         android:id="@+id/medImageView"
@@ -107,12 +101,12 @@
 
     <Button
         android:id="@+id/captureButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="98dp"
+        android:layout_height="45dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="#2e276c"
-        android:text="Scan"
         android:fontFamily="@font/montserrat"
+        android:text="SCAN"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ttsButtonScan"
@@ -123,12 +117,12 @@
 
     <Button
         android:id="@+id/ttsButtonScan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="97dp"
+        android:layout_height="48dp"
         android:background="@drawable/edit_round"
         android:backgroundTint="#2e276c"
-        android:text="Speak"
         android:fontFamily="@font/montserrat"
+        android:text="SPEAK"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,11 +133,12 @@
 
     <Button
         android:id="@+id/buttonTxttoEditTxt"
-        android:layout_width="245dp"
-        android:layout_height="52dp"
+        android:layout_width="243dp"
+        android:layout_height="56dp"
         android:background="@drawable/edit_round"
-        android:text="Paste to Medicine Name"
         android:fontFamily="@font/montserrat"
+        android:text="PASTE TO
+        MEDICINE NAME"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
