@@ -56,7 +56,7 @@ public class history_for_measurements extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_for_measurements);
-        firstname = findViewById(R.id.firstnameview);
+        //firstname = findViewById(R.id.firstnameview);
         rootAuthen = FirebaseAuth.getInstance();
         userId = rootAuthen.getCurrentUser().getUid();
         clear = findViewById(R.id.clearAll_measurements);
@@ -69,7 +69,7 @@ public class history_for_measurements extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
                     Log.w(TAG, "listen:error", error);
-                    firstname.setText(" ");
+                    //firstname.setText(" ");
                     return;
                 }
 
@@ -77,11 +77,11 @@ public class history_for_measurements extends AppCompatActivity {
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                         Base64.Decoder decoder = Base64.getDecoder();
                         byte [] bytes =decoder.decode(value.getString("firstname"));
-                        firstname.setText(new String(bytes));
+                        //firstname.setText(new String(bytes));
                     }
                 }catch (Exception e)
                 {
-                    firstname.setText(" ");
+                    //firstname.setText(" ");
                 }
 
             }
@@ -120,15 +120,15 @@ public class history_for_measurements extends AppCompatActivity {
                                 {
                                     db.document("users/" + currentFirebaseUser.getUid()).collection("New Health Measurements")
                                             .document(i).collection(i).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                            for (QueryDocumentSnapshot snapshot: task.getResult())
-                                            {
-                                                db.document("users/" + currentFirebaseUser.getUid()).collection("New Health Measurements")
-                                                        .document(i).collection(i).document(snapshot.getId()).delete();
-                                            }
-                                        }
-                                    });
+                                                @Override
+                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                    for (QueryDocumentSnapshot snapshot: task.getResult())
+                                                    {
+                                                        db.document("users/" + currentFirebaseUser.getUid()).collection("New Health Measurements")
+                                                                .document(i).collection(i).document(snapshot.getId()).delete();
+                                                    }
+                                                }
+                                            });
                                 }
                                 myAdapter.notifyDataSetChanged();
                                 Intent intent = new Intent(history_for_measurements.this, history_for_measurements.class);

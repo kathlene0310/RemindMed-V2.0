@@ -142,7 +142,7 @@ public class d_chat extends AppCompatActivity {
 
     }
     public void Chat_To_Home(View view) {
-        Intent intent = new Intent(d_chat.this, home_page.class);
+        Intent intent = new Intent(d_chat.this, home.class);
         startActivity(intent);
     }
 
@@ -158,6 +158,11 @@ public class d_chat extends AppCompatActivity {
 
     public void Chat_To_Chat(View view) {
         Intent intent = new Intent(d_chat.this, d_chat.class);
+        startActivity(intent);
+    }
+
+    public void Chat_To_Profile(View view) {
+        Intent intent = new Intent(d_chat.this, account.class);
         startActivity(intent);
     }
 

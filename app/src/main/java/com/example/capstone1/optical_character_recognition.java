@@ -3,6 +3,7 @@ package com.example.capstone1;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ import com.google.mlkit.vision.text.TextRecognizerOptions;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
@@ -199,9 +201,14 @@ public class optical_character_recognition extends AppCompatActivity {
                     ImageView imageView = findViewById(R.id.medImageView);
                     imageView.setImageURI(resultUri);
                     BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
-                    Bitmap bitmap = drawable.getBitmap();
+                    Bitmap bitmap_orig = drawable.getBitmap();
+
+                    Bitmap bitmap = enhanceImageDPI(bitmap_orig, 300);
+
+
                     //create image object to be read by visionmlkit
                     InputImage image = InputImage.fromBitmap(bitmap, rotationDegree);
+
                     //instance of text recognizer
                     TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
                     //task that processes the image
@@ -234,5 +241,23 @@ public class optical_character_recognition extends AppCompatActivity {
         Intent intent = new Intent(optical_character_recognition.this, new_medications.class);
         startActivity(intent);
     }
+    
 
+    public Bitmap enhanceImageDPI(Bitmap image, int dpi) {
+        ByteArrayOutputStream imageByteArray = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, imageByteArray);
+        byte[] imageData = imageByteArray.toByteArray();
+        setDpi(imageData, 300);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
+        return bitmap;
     }
+    public void setDpi(byte[] imageData, int dpi) {
+        imageData[13] = 1;
+        imageData[14] = (byte) (dpi >> 8);
+        imageData[15] = (byte) (dpi & 0xff);
+        imageData[16] = (byte) (dpi >> 8);
+        imageData[17] = (byte) (dpi & 0xff);
+    }
+
+
+}
