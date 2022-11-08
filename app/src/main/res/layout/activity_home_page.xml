@@ -149,39 +149,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <Button
         android:id="@+id/add_measurements_btn"
         android:layout_width="309dp"
         android:layout_height="100dp"
+
+        android:layout_marginTop="28dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
         android:onClick="Home_To_Health"
         android:text="Add Measurements"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintTop_toBottomOf="@+id/add_medications_btn" />
 
     <Button
         android:id="@+id/add_dependent"
-        android:layout_width="309dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
         android:onClick="Home_To_AddDepedendent"
         android:text="Add Dependent"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintTop_toBottomOf="@+id/add_measurements_btn" />
+
+    <Button
+        android:id="@+id/edit_dependent"
+        android:layout_width="150dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/edit_round2"
+        android:fontFamily="@font/montserrat"
+        android:onClick="Home_To_AddDepedendent"
+        android:text="Edit Dependent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_measurements_btn" />
 
     <View
         android:id="@+id/view5"
@@ -299,9 +315,9 @@
         android:layout_height="0dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/guideline44"
+        app:layout_constraintEnd_toEndOf="@id/guideline53"
         app:layout_constraintStart_toStartOf="@+id/guideline54"
         app:layout_constraintTop_toTopOf="@+id/guideline39"
-        app:layout_constraintEnd_toEndOf="@id/guideline53"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -327,21 +343,21 @@
 
     <Button
         android:id="@+id/changeLayout"
-        android:layout_width="168dp"
-        android:layout_height="55dp"
+        android:layout_width="311dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
-        android:text="Edit/Delete"
+        android:text="Edit Medications/Measurements"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
-        android:textSize="22sp"
 
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHome"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/add_dependent" />
 
     <Button
         android:id="@+id/changeLayout2"

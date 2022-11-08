@@ -114,7 +114,7 @@ public class create_account extends AppCompatActivity {
         //height = findViewById(R.id.editTextheight);
         //weight = findViewById(R.id.editTextweight);
         //buttonSave = findViewById(R.id.btnSave);
-        termsandconditions = findViewById(R.id.TandD);
+
 
         result = findViewById(R.id.textViewresult);
         resultem = findViewById(R.id.textViewresultem);

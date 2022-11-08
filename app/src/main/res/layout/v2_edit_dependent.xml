@@ -7,6 +7,33 @@
     android:background="@drawable/background_gradient"
     tools:context=".v2.chat">
 
+    <Button
+        android:id="@+id/changeLayout3"
+        android:layout_width="189dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/edit_round2"
+        android:fontFamily="@font/montserrat"
+
+        android:text="REMOVE DEPENDENT"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userLIst" />
+
+    <ListView
+        android:id="@+id/userLIst"
+        android:layout_width="356dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline53"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/guideline54"
+        app:layout_constraintTop_toBottomOf="@+id/textDependent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_chat2"
         android:layout_width="55dp"
@@ -106,17 +133,30 @@
         android:id="@+id/chatWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/montserratbold"
-        android:text="CHAT"
+        android:text="EDIT DEPENDENT"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dependent_dependent_text"
+        android:layout_width="100dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="User"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatWelcome" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/chat2"
@@ -133,14 +173,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@drawable/chaticonv2" />
+        app:srcCompat="@drawable/viewusers" />
 
     <TextView
-        android:id="@+id/chatChat2"
+        android:id="@+id/textDependent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="Chat"
+        android:text="Dependent"
         android:textColor="#2e276c"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -293,30 +333,5 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="704dp" />
 
-
-    <TextView
-        android:id="@+id/textView40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NAME"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="414dp"
-        android:layout_height="59dp"
-        android:backgroundTint="#2e276c"
-        android:text="NAME"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

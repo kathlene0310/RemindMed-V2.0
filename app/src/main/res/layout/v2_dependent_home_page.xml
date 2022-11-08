@@ -63,14 +63,14 @@
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:srcCompat="@drawable/profileiconv2"
-
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.315"
+        app:srcCompat="@drawable/profileiconv2" />
 
     <TextView
         android:id="@+id/textView602"
@@ -80,12 +80,10 @@
         android:text="Manage Profile"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintTop_toBottomOf="@+id/manage_profile_button" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/chat_button"
@@ -95,14 +93,30 @@
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:srcCompat="@drawable/chaticonv2"
-
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.515" />
+        app:layout_constraintVertical_bias="0.515"
+        app:srcCompat="@drawable/chaticonv2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chat_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#FFFFFF"
+
+        app:fabSize="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView44"
+        app:srcCompat="@drawable/medpills" />
 
     <TextView
         android:id="@+id/textView45"
@@ -113,12 +127,10 @@
         android:textAlignment="center"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintTop_toBottomOf="@+id/chat_button" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -146,12 +158,23 @@
         android:text="View User List"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintTop_toBottomOf="@+id/view_user_list_button" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/montserrat"
+        android:text="Edit User's Medication"
+        android:textColor="#2e276c"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/chat_button2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_history"

@@ -49,16 +49,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="704dp" />
 
-        <ImageButton
-            android:id="@+id/imageBack_bloodpressure"
-            android:layout_width="64dp"
-            android:layout_height="68dp"
-            android:backgroundTint="#2e276c"
-            android:onClick="laterbs_To_lhm"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/backarrow" />
-
 
         <ImageView
             android:id="@+id/imageView22"
@@ -247,13 +237,13 @@
 
     <ImageView
         android:id="@+id/imageView26"
-        android:layout_width="65dp"
-        android:layout_height="74dp"
+        android:layout_width="59dp"
+        android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow"
-        tools:layout_editor_absoluteY="7dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,25 +30,22 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
-        android:textColor="#FFFF"
         android:text="SUBMIT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFF"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confimpassword" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/confimpassword"
+        app:layout_constraintVertical_bias="0.578" />
 
     <ImageView
         android:id="@+id/firstnameicon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="256dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
 
@@ -61,7 +58,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
 
@@ -69,12 +66,13 @@
         app:layout_constraintTop_toBottomOf="@+id/firstnameicon"
         app:srcCompat="@drawable/emailicon" />
 
+
     <ImageView
         android:id="@+id/passwordicon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
 
@@ -84,71 +82,71 @@
 
     <EditText
         android:id="@+id/first_nameBox"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_width="319dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
 
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="First Name"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:paddingRight="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/last_nameBox"
         app:layout_constraintDimensionRatio="7:1"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="@id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/create_account" />
 
     <EditText
         android:id="@+id/last_nameBox"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="319dp"
+        android:layout_height="49dp"
 
+        android:layout_marginTop="8dp"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Last Name"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        android:fontFamily="@font/montserrat"
 
-        app:layout_constraintBottom_toTopOf="@+id/emailBox"
+        android:paddingRight="10dp"
         app:layout_constraintDimensionRatio="7:1"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="@id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/first_nameBox" />
 
+
     <EditText
         android:id="@+id/emailBox"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/montserrat"
+        android:layout_width="322dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
 
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:paddingRight="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/passwordBox"
         app:layout_constraintDimensionRatio="7:1"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/last_nameBox" />
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordBox"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:paddingStart="10dp"
         android:paddingTop="2dp"
         android:paddingRight="10dp"
         android:paddingBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/confimpassword"
         app:layout_constraintDimensionRatio="7:1"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
         app:layout_constraintHorizontal_bias="0.0"
@@ -158,12 +156,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordBoxtxt"
-            android:layout_width="match_parent"
+            android:layout_width="322dp"
             android:layout_height="40dp"
-            android:background="@drawable/background_transparent"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:fontFamily="@font/montserrat"/>
+
+            android:fontFamily="@font/montserrat"
+            android:hint=" Password"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -173,11 +171,11 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingRight="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSign"
         app:layout_constraintDimensionRatio="7:1"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
         app:layout_constraintHorizontal_bias="0.0"
@@ -187,15 +185,14 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confimpasswordtxt"
-            android:layout_width="match_parent"
+            android:layout_width="319dp"
             android:layout_height="40dp"
-            android:background="@drawable/background_transparent"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:fontFamily="@font/montserrat"/>
+
+            android:fontFamily="@font/montserrat"
+            android:hint=" Confirm Password"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <ImageView
         android:id="@+id/imageView5"
@@ -259,25 +256,42 @@
         app:layout_constraintTop_toBottomOf="@+id/confimpassword"
         tools:ignore="DuplicateIds" />
 
-    <CheckBox
-        android:id="@+id/TandD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/btnSign"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toBottomOf="@+id/confimpassword" />
-
     <ImageView
         android:id="@+id/imageView32"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="55dp"
+        android:layout_height="56dp"
         android:onClick="Create_To_Main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow_blue" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="213dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat"
+        android:text="By clicking Submit, you agree to our                                   "
+        android:textAlignment="center"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confimpassword" />
+
+    <TextView
+        android:id="@+id/textView63"
+        android:layout_width="126dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Health Privacy Code"
+        android:textAlignment="center"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confimpassword" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
