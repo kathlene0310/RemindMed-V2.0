@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_gradient"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="0dp">
 
         <androidx.constraintlayout.widget.Guideline
@@ -49,77 +50,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="704dp" />
 
-
-        <ImageView
-            android:id="@+id/imageView22"
-            android:layout_width="101dp"
-            android:layout_height="107dp"
-            android:layout_marginBottom="428dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:srcCompat="@drawable/add_medication"
-            tools:layout_editor_absoluteX="76dp" />
-
-        <TextView
-            android:id="@+id/textView51"
-            android:layout_width="116dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="64dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Add Medication"
-            android:textAlignment="center"
-            android:textColor="#2e266d"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView22"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView53"
-            android:layout_width="127dp"
-            android:layout_height="52dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Refill Medication"
-            android:textAlignment="center"
-            android:textColor="#2e266d"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.796"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView23"
-            tools:ignore="MissingConstraints" />
-
-        <ImageView
-            android:id="@+id/imageView23"
-            android:layout_width="100dp"
-            android:layout_height="105dp"
-            android:layout_marginEnd="68dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/refill_medication"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="196dp" />
-
-        <ImageView
-            android:id="@+id/imageView24"
-            android:layout_width="104dp"
-            android:layout_height="105dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/take_medication"
-            tools:layout_editor_absoluteY="392dp" />
-
-        <TextView
-            android:id="@+id/textView55"
-            android:layout_width="121dp"
-            android:layout_height="52dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Take Medication"
-            android:textAlignment="center"
-            android:textColor="#2e266d"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView24"
-            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/home_chat3"
@@ -172,6 +102,36 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline107"
             app:layout_constraintStart_toStartOf="@+id/guideline106"
             app:layout_constraintTop_toTopOf="@+id/guideline111" />
+
+        <Button
+            android:id="@+id/btnLogout2"
+            android:layout_width="175dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/edit_roundmain"
+            android:fontFamily="@font/montserrat"
+            android:text="MEASUREMENTS"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#2e276c"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline110"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/btnLogout3"
+            android:layout_width="175dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/edit_roundmain"
+            android:fontFamily="@font/montserrat"
+            android:text="ADD"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#2e276c"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline110"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
