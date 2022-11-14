@@ -33,6 +33,7 @@ import com.example.capstone1.alarmreceiver;
 import com.example.capstone1.medication_info;
 import com.example.capstone1.optical_character_recognition;
 import com.example.capstone1.optical_character_recognition_one;
+import com.example.capstone1.v2.Notification;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -668,6 +669,27 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
                         @Override
                         public void onSuccess(Void avoid) {
                             alarmManager.setExact(AlarmManager.RTC_WAKEUP, myAlarmDate.getTimeInMillis(), pendingIntent);
+
+
+
+                            Date c = Calendar.getInstance().getTime();
+                            System.out.println("Current time => " + c);
+                            SimpleDateFormat df = new SimpleDateFormat("MMM/dd/yyyy", Locale.getDefault());
+                            SimpleDateFormat df2 = new SimpleDateFormat("hh:mm:ss aa", Locale.getDefault());
+                            String formattedDate = df.format(c);
+                            String formattedTime = df2.format(c);
+
+
+                            Notification notify = new Notification(currentFirebaseUser.getUid(), userId, "Edited", title, formattedDate, formattedTime, dosage, strEnd, frequencychoide, frequencyName, hour,strDate, medicationTypeName);
+                            notify.setMessage(notify.buildMessage());
+
+
+                            DatabaseReference notifKeyRef=RootRef.child("Notifications").child(userId).push();
+                            final String notifyPushID=notifKeyRef.getKey();
+                            //RootRef.child("Notifications").child(userId).child(notifyPushID).setValue("");
+                            RootRef.child("Notifications").child(userId).child(notifyPushID).setValue(notify);
+
+
                             Toast.makeText(editDeleteMedicationsDependent.this, "Measurement Alarm Changed", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(editDeleteMedicationsDependent.this, home.class));
                             finish();
