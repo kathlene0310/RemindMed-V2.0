@@ -169,7 +169,7 @@
         android:layout_height="wrap_content"
 
         android:fontFamily="@font/montserrat"
-        android:text="Edit User's Medication"
+        android:text="Add/Edit User's Medication"
         android:textColor="#2e276c"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"

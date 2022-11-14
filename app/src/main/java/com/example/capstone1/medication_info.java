@@ -8,17 +8,19 @@ import java.sql.Time;
 import java.util.Date;
 
 public class medication_info implements Serializable {
+
+
     String Medication, InventoryMeds, Dosage, Time, FrequencyName, MedicineTypeName, NotifyChoice;
     Date StartDate, EndDate;
     int MedicineType, Frequency, PillStatic, Hour, Minute, AlarmID;
-    @Exclude  private String id;
+    @Exclude  private String id, userId;
     public medication_info() {}
 
 
 
     public medication_info(String Medication, String InventoryMeds, Date StartDate,
                            String Time, Date EndDate, String MedicineTypeMame,
-                           String FrequencyName, int Frequency, int Hour, int Minute, int AlarmID, String Dosage, String NotifyChoice )
+                           String FrequencyName, int Frequency, int Hour, int Minute, int AlarmID, String Dosage, String NotifyChoice, String userId)
     {
         this.Medication = Medication;
         this.InventoryMeds = InventoryMeds;
@@ -32,12 +34,19 @@ public class medication_info implements Serializable {
         this.Minute = Minute;
         this.AlarmID = AlarmID;
         this.Dosage =Dosage;
-        this. NotifyChoice = NotifyChoice;
-
+        this.NotifyChoice = NotifyChoice;
+        this.userId = userId;
 
         this.id = id;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
     public String getNotifyChoice() {
         return NotifyChoice;
     }

@@ -241,7 +241,7 @@ public class optical_character_recognition extends AppCompatActivity {
         Intent intent = new Intent(optical_character_recognition.this, new_medications.class);
         startActivity(intent);
     }
-    
+
 
     public Bitmap enhanceImageDPI(Bitmap image, int dpi) {
         ByteArrayOutputStream imageByteArray = new ByteArrayOutputStream();

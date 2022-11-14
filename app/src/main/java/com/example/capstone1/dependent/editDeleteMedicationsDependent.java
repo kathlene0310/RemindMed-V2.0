@@ -1,4 +1,4 @@
-package com.example.capstone1;
+package com.example.capstone1.dependent;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -27,6 +27,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.capstone1.R;
+import com.example.capstone1.TimePickerFragment;
+import com.example.capstone1.alarmreceiver;
+import com.example.capstone1.medication_info;
+import com.example.capstone1.optical_character_recognition;
+import com.example.capstone1.optical_character_recognition_one;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -47,11 +53,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-public class edit_delete_medications extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
+public class editDeleteMedicationsDependent extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
     EditText  dosageBoxET;
+    String userId;
     static EditText medName, medInventory;
     static final SimpleDateFormat format = new SimpleDateFormat("M/d/yyyy");
-    String userId, title, amount, time,  strDate, strEnd, frequencyDB, medTypeDB, dosage, chkstart, chkend, notify;
+    String title, amount, time,  strDate, strEnd, frequencyDB, medTypeDB, dosage, chkstart, chkend, notify;
     Date startdate, enddate;
     final int start = 1;
     final int end = 2;
@@ -66,12 +73,12 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
     int hour, minuteDB, typechoice, frequencychoide, choice, alarmIDdb, alarmID, alarmYear, alarmMonth, alarmDay, hourchange, minchange;
     Spinner mySpinnerfrequency, mySpinnertype;
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-    private medication_info  medication_info;
+    public com.example.capstone1.medication_info medication_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_delete_medications);
+        setContentView(R.layout.v2_dependent_activity_edit_delete_medications);
         medication_info = (medication_info) getIntent().getSerializableExtra("medication_info");
         db = FirebaseFirestore.getInstance();
         delete = findViewById(R.id.deleteBtn);
@@ -92,12 +99,21 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         getData();
         getHourandMin();
 
-       userId = currentFirebaseUser.getUid();
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                userId= null;
+            } else {
+                userId= extras.getString("USER_CHOSEN");
+            }
+        } else {
+            userId= (String) savedInstanceState.getSerializable("USER_CHOSEN");
+        }
 
         helpdosage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder aBuilder = new AlertDialog.Builder(edit_delete_medications.this);
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(editDeleteMedicationsDependent.this);
                 aBuilder.setCancelable(true);
                 aBuilder.setTitle("Intake");
                 aBuilder.setMessage("Enter the amount you will intake.\n\n" +
@@ -111,7 +127,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         helptype.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder aBuilder = new AlertDialog.Builder(edit_delete_medications.this);
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(editDeleteMedicationsDependent.this);
                 aBuilder.setCancelable(true);
                 aBuilder.setTitle("Type/Unit");
                 aBuilder.setMessage("The type/unit box is to choose if the medication you are taking will be solid or liquid.\n\n" +
@@ -126,7 +142,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         helpinvetory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder aBuilder = new AlertDialog.Builder(edit_delete_medications.this);
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(editDeleteMedicationsDependent.this);
                 aBuilder.setCancelable(true);
                 aBuilder.setTitle("Inventory");
                 aBuilder.setMessage("You input the amount of medication inventory you currently have\n\n" +
@@ -141,16 +157,16 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
 
 
         //added spinner
-         mySpinnertype = (Spinner) findViewById(R.id.type_spinner_two);
-         mySpinnerfrequency = (Spinner) findViewById(R.id.frequency_spinner_two);
+        mySpinnertype = (Spinner) findViewById(R.id.type_spinner_two);
+        mySpinnerfrequency = (Spinner) findViewById(R.id.frequency_spinner_two);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(edit_delete_medications.this,
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(editDeleteMedicationsDependent.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.type));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinnertype.setAdapter(myAdapter);
 
 
-        ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(edit_delete_medications.this,
+        ArrayAdapter<String> myAdapter2 = new ArrayAdapter<String>(editDeleteMedicationsDependent.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.frequency));
         myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinnerfrequency.setAdapter(myAdapter2);
@@ -223,7 +239,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         ocrMedName2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(edit_delete_medications.this, optical_character_recognition.class);
+                Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition.class);
                 intent.putExtra("ocrchoice", 2 );
                 startActivity(intent);
 
@@ -234,7 +250,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         ocrCount2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(edit_delete_medications.this, optical_character_recognition_one.class);
+                Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition_one.class);
                 intent.putExtra("ocrchoice", 2 );
                 startActivity(intent);
 
@@ -272,7 +288,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(edit_delete_medications.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(editDeleteMedicationsDependent.this);
                 builder.setTitle("Are you sure about deleting this reminder");
                 builder.setMessage("Deleting reminders are permanent");
 
@@ -311,12 +327,12 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         Log.d("K", "helo" +" " +alarmYear +" " + alarmMonth +" " + alarmDay +" " + hourchange+" " + minchange);
     }
     public void edtMedication_To_OCR(View view) {
-        Intent intent = new Intent(edit_delete_medications.this, optical_character_recognition.class);
+        Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition.class);
         startActivity(intent);
     }
 
     public void editMedication_To_OCRcount(View view) {
-        Intent intent = new Intent(edit_delete_medications.this, optical_character_recognition_one.class);
+        Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition_one.class);
         startActivity(intent);
     }
 
@@ -418,14 +434,14 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         PendingIntent pendingDB = PendingIntent.getBroadcast(this, alarmIDdb, intent, 0);
         alarmManager.cancel(pendingDB);
 
-        db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications").document(medication_info.getId()).delete()
+        db.collection("users").document(userId).collection("New Medications").document(medication_info.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())
                         {
-                            Toast.makeText(edit_delete_medications.this, "Deleted Alarm", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(edit_delete_medications.this, home_page.class));
+                            Toast.makeText(editDeleteMedicationsDependent.this, "Deleted Alarm", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(editDeleteMedicationsDependent.this, home.class));
                             finish();
 
                         }
@@ -506,7 +522,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         }
     }
     public void edmed_To_home(View view) {
-        Intent intent = new Intent(edit_delete_medications.this, home_page.class);
+        Intent intent = new Intent(editDeleteMedicationsDependent.this, home.class);
         startActivity(intent);
     }
 
@@ -586,7 +602,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, alarmIDdb, intent, 0);
 
         if (myAlarmDate.getTimeInMillis() < System.currentTimeMillis()) {
-            Toast.makeText(edit_delete_medications.this, "Set the time and date to the future", Toast.LENGTH_LONG).show();
+            Toast.makeText(editDeleteMedicationsDependent.this, "Set the time and date to the future", Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -639,19 +655,19 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
 
             medication_info m = new medication_info(title, amount, startdate, time, enddate,
                     medicationTypeName, frequencyName, frequencychoide, dynHour, dynMin, alarmIDdb, dosage, notify, userId);
-            db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications")
+            db.collection("users").document(userId).collection("New Medications")
                     .document(medication_info.getId()).update("Medication", m.getMedication(),
-                    "InventoryMeds", m.getInventoryMeds(), "StartDate", m.getStartDate(),
-                    "Time", m.getTime(), "EndDate", m.getEndDate(), "FrequencyName", m.getFrequencyName(), "Frequency", m.getFrequency(),
-                    "MedicineTypeName", m.getMedicineTypeName(), "Hour", m.getHour(), "Minute", m.getMinute(), "AlarmID", m.getAlarmID(), "Dosage", m.getDosage(), "NotifyChoice", m.getNotifyChoice() ).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void avoid) {
-                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, myAlarmDate.getTimeInMillis(), pendingIntent);
-                    Toast.makeText(edit_delete_medications.this, "Measurement Alarm Changed", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(edit_delete_medications.this, home_page.class));
-                    finish();
-                }
-            });
+                            "InventoryMeds", m.getInventoryMeds(), "StartDate", m.getStartDate(),
+                            "Time", m.getTime(), "EndDate", m.getEndDate(), "FrequencyName", m.getFrequencyName(), "Frequency", m.getFrequency(),
+                            "MedicineTypeName", m.getMedicineTypeName(), "Hour", m.getHour(), "Minute", m.getMinute(), "AlarmID", m.getAlarmID(), "Dosage", m.getDosage(), "NotifyChoice", m.getNotifyChoice() ).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void avoid) {
+                            alarmManager.setExact(AlarmManager.RTC_WAKEUP, myAlarmDate.getTimeInMillis(), pendingIntent);
+                            Toast.makeText(editDeleteMedicationsDependent.this, "Measurement Alarm Changed", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(editDeleteMedicationsDependent.this, home.class));
+                            finish();
+                        }
+                    });
 
         }
     }

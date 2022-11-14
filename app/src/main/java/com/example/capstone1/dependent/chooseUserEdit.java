@@ -7,15 +7,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.R;
+import com.example.capstone1.v2.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.firestore.DocumentReference;
@@ -28,31 +30,40 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.util.ArrayList;
 import java.util.Base64;
 
-import com.example.capstone1.dependent.User;
-public class user_list extends AppCompatActivity {
+public class chooseUserEdit extends AppCompatActivity {
 
-    ArrayList<User> users = new ArrayList<User>();
+    FloatingActionButton manage, view, home, chat;
+    Button submit;
+    Spinner spinner;
+    String userChosenId = "";
+    ArrayList<String> options;
+    ArrayList<String> users;
+    String userId;
     FirebaseAuth rootAuthen;
     FirebaseFirestore fstore;
-    String userId;
-    ListView lvUsers;
-    UserAdapter userAdapter;
+    String [] finalArray;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.v2_dependent_view_user_list);
+        setContentView(R.layout.v2_dependent_choose_user_for_editmedication);
 
-        lvUsers = findViewById(R.id.userLIst);
-        try {
-            rootAuthen = FirebaseAuth.getInstance();
-            fstore = FirebaseFirestore.getInstance();
-            userId = rootAuthen.getCurrentUser().getUid();
-        }
-        catch(Exception e) {
-            Log.d("ERROR", "ERROR" + e);
-            Toast.makeText(getApplicationContext(), "Session is invalid, please login", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(getApplicationContext(), main_page.class));
-        }
+
+        Firebase firebase  = new Firebase(getApplicationContext());
+
+        fstore = firebase.getFstore();
+        userId = firebase.getUserId();
+        rootAuthen = firebase.getRootAuthen();
+
+        options = new ArrayList<String>();
+        users = new ArrayList<String>();
+
+        submit = findViewById(R.id.loginBtn);
+        spinner = findViewById(R.id.choose_user_spinner);
+
+
+
 
         DocumentReference df = fstore.collection("users").document(userId);
 
@@ -63,8 +74,6 @@ public class user_list extends AppCompatActivity {
                 {
                     ArrayList<String> userIds = (ArrayList<String>) value.get("users");
                     Log.d("ARRAY", "DATA" + userIds);
-
-
 
 
                     for (String user : userIds) {
@@ -92,23 +101,21 @@ public class user_list extends AppCompatActivity {
 
                                         User x = new User(u, f, l);
                                         Log.d("X", "X VAL" + x);
-                                        users.add(x);
+                                        options.add(f + " " + l);
+                                        users.add(u);
+                                        loadDataSpinner();
                                     }
                                 }
 
-                                userAdapter = new UserAdapter(getApplicationContext(), users);
 
-                                lvUsers.setAdapter(userAdapter);
 
-                                lvUsers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                    @Override
-                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                                    }
-                                });
                             }
                         });
                     }
+
+
+
 
 
                 }
@@ -121,24 +128,62 @@ public class user_list extends AppCompatActivity {
         });
 
 
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                try{
+                if(userChosenId.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Please choose a user", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else {
+                    Intent i = new Intent(chooseUserEdit.this, manageMedications.class);
 
-        //ArrayAdapter<User> adapter = new ArrayAdapter<>(
-                //this, android.R.layout.simple_list_item_1,  users);
-
-
+                    i.putExtra("USER_CHOSEN", userChosenId);
+                    startActivity(i);
+                } }
+                catch(Exception e) {
+                    Log.d("EXCEPTION", "ERROR " + e);
+                    Toast.makeText(getApplicationContext(), "Please choose a user first", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
 
 
     }
 
-    public void UserList_To_Account(View view) {
-        Intent intent = new Intent(this, account.class);
-        startActivity(intent);
+
+    public void Choose_To_Home (View view) {
+        Intent i = new Intent(chooseUserEdit.this, home.class);
+        startActivity(i);
     }
 
-    public void UserList_To_Home(View view) {
-        Intent intent = new Intent(this, home.class);
-        startActivity(intent);
+    public void loadDataSpinner() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String value = parent.getItemAtPosition(position).toString();
+                Log.d("USERS", value);
+                userChosenId = users.get(position);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                userChosenId = "";
+            }
+        });
+
     }
+
+
+
 }

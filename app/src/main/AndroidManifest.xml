@@ -21,6 +21,12 @@
             android:name=".Guest_FAQ"
             android:exported="true"/>
         <activity
+            android:name=".dependent.manageMedications"
+            android:exported="true"/>
+        <activity
+            android:name=".dependent.editDeleteMedicationsDependent"
+            android:exported="true"/>
+        <activity
             android:name=".choose_role"
             android:exported="true"/>
         <activity
@@ -85,6 +91,12 @@
             android:exported="true" />
         <activity
             android:name=".medication_edit_delete_card"
+            android:exported="true" />
+        <activity
+            android:name=".dependent.chooseUserEdit"
+            android:exported="true" />
+        <activity
+            android:name=".dependent.newMedications"
             android:exported="true" />
         <activity
             android:name=".cardview_today_measurement"

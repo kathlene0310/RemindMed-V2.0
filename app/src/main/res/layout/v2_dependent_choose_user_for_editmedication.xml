@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/background_gradient"
-    tools:context=".login_page">
+    tools:context=".dependent.chooseUserEdit">
 
 
     <ImageView
@@ -81,7 +81,7 @@
         android:id="@+id/imageView32"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:onClick="Create_To_Main"
+        android:onClick="Choose_To_Home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow_blue" />

@@ -60,7 +60,7 @@ public class intake_confirmation extends AppCompatActivity {
     Date myDate;
     int alarmYear, alarmMonth, alarmDay,alarmHour,alarmMin, id ,freq, alarmID;
     Calendar myAlarmDate = Calendar.getInstance();
-    static final SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
+    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
     TextToSpeech textToSpeech;
     Button confirm, skip;
     FloatingActionButton tts;
@@ -276,7 +276,7 @@ public class intake_confirmation extends AppCompatActivity {
 
         amount = Integer.toString(inv);
         medication_info m = new medication_info(title, amount, getDateFromString(date), time, getDateFromString(enddate), medtype,
-                frequency, freq,alarmHour, alarmMin, alarmID, dosage, notify);
+                frequency, freq,alarmHour, alarmMin, alarmID, dosage, notify, userId);
 
         db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications")
                 .document(medication_info.getId()).update("InventoryMeds", m.getInventoryMeds())

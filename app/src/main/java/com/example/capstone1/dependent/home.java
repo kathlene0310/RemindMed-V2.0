@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class home extends AppCompatActivity {
 
-    FloatingActionButton manage, view, home, chat;
+    FloatingActionButton manage, view, home, chat, medications;
 
 
     @Override
@@ -33,7 +33,7 @@ public class home extends AppCompatActivity {
         view = findViewById(R.id.view_user_list_button);
         home = findViewById(R.id.home_history);
         chat = findViewById(R.id.chat_button);
-
+        medications = findViewById(R.id.chat_button2);
 
         manage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +56,14 @@ public class home extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), d_chat.class));
             }
         });
+
+        medications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), chooseUserEdit.class));
+            }
+        });
+
 
 
 
