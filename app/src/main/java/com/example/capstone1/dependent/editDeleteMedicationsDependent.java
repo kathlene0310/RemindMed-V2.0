@@ -40,6 +40,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -74,6 +76,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
     Spinner mySpinnerfrequency, mySpinnertype;
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     public com.example.capstone1.medication_info medication_info;
+    DatabaseReference RootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +101,8 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
         initDatePicker();
         getData();
         getHourandMin();
+
+        RootRef= FirebaseDatabase.getInstance().getReference();
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();

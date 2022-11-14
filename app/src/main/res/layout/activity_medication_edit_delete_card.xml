@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/edit_medication_name"
+                android:id="@+id/edit_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
@@ -47,10 +47,10 @@
                 android:text="time"
                 android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_medication_name" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_number" />
 
             <Button
-                android:id="@+id/edit_medication_button"
+                android:id="@+id/btnGotit"
                 android:layout_width="75dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="47dp"
@@ -61,7 +61,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/edit_medication_name"
+                app:layout_constraintStart_toEndOf="@+id/edit_number"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

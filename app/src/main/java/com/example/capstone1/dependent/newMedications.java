@@ -36,6 +36,7 @@ import com.example.capstone1.alarmreceiver;
 import com.example.capstone1.new_medications;
 import com.example.capstone1.optical_character_recognition;
 import com.example.capstone1.optical_character_recognition_one;
+import com.example.capstone1.v2.Notification;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -46,6 +47,8 @@ import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -87,7 +90,7 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
     private static final String TAG = "new_medications";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-
+    DatabaseReference RootRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +115,7 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
 
         timeButtonmedtst = findViewById(R.id.timeButtonmed);
         //userId = rootAuthen.getCurrentUser().getUid();
-
+        RootRef= FirebaseDatabase.getInstance().getReference();
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -391,6 +394,28 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
                                     public void onSuccess(DocumentReference documentReference) {
                                         Toast.makeText(newMedications.this, "New Medication added", Toast.LENGTH_SHORT).show();
 
+                                        String Medication = medication.getText().toString().trim();
+
+                                        Date c = Calendar.getInstance().getTime();
+                                        System.out.println("Current time => " + c);
+                                        SimpleDateFormat df = new SimpleDateFormat("MMM/dd/yyyy", Locale.getDefault());
+                                        SimpleDateFormat df2 = new SimpleDateFormat("hh:mm:ss aa", Locale.getDefault());
+                                        String formattedDate = df.format(c);
+                                        String formattedTime = df2.format(c);
+                                        String Dosage = dosage.getText().toString();
+                                        String frequencyName = spinnerfrequencymedication.getSelectedItem().toString();
+                                        String medicationTypeName = spinnertypeunit.getSelectedItem().toString();
+                                        String StartDate = dateButton.getText().toString().trim();
+                                        String EndDate = endDateButton.getText().toString().trim();
+
+                                        Notification notify = new Notification(rootAuthen.getCurrentUser().getUid(), userId, "Added", Medication, formattedDate, formattedTime, Dosage, EndDate, frequencychoide, frequencyName, alarmHour,StartDate, medicationTypeName);
+                                        notify.setMessage(notify.buildMessage());
+
+
+                                        DatabaseReference notifKeyRef=RootRef.child("Notifications").child(userId).push();
+                                        final String notifyPushID=notifKeyRef.getKey();
+                                        //RootRef.child("Notifications").child(userId).child(notifyPushID).setValue("");
+                                        RootRef.child("Notifications").child(userId).child(notifyPushID).setValue(notify);
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {

@@ -4,6 +4,7 @@ import static com.example.capstone1.intake_confirmation.dateFormat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,13 +19,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.capstone1.simple.add_dependent;
+import com.example.capstone1.v2.Notification;
 import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.simple.shome_page;
+import com.example.capstone1.v2.ViewDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,9 +43,12 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import com.example.capstone1.v2.chat;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 public class home_page extends AppCompatActivity {
     FirebaseFirestore fstore = FirebaseFirestore.getInstance();
@@ -59,6 +70,9 @@ public class home_page extends AppCompatActivity {
     int recyclerlayout = 1;
     long accounttype;
     int newLayout = 0;
+    List<Notification> notificationList;
+    ArrayList<String> ids;
+    private DatabaseReference RootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +109,10 @@ public class home_page extends AppCompatActivity {
         progressDialog.setMessage("Fetching Data...");
         // progressDialog.show();
         firstname = findViewById(R.id.firstnameview);
+        RootRef= FirebaseDatabase.getInstance().getReference();
 
+        notificationList = new ArrayList<Notification>();
+        ids = new ArrayList<String>();
         try {
             rootAuthen = FirebaseAuth.getInstance();
             userId = rootAuthen.getCurrentUser().getUid();
@@ -154,6 +171,52 @@ public class home_page extends AppCompatActivity {
         EventChangeListener();
         measureEventChangeListener();
         recyclerviewMeasurement.setAdapter(measurementAdapter);
+
+
+
+        com.google.firebase.database.Query userRef = RootRef.child("Notifications").child(rootAuthen.getCurrentUser().getUid());
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Log.d("SNAPSHOT", "TEST" + dataSnapshot.getValue());
+                    notificationList.clear();
+                    ids.clear();
+
+                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                        Notification notify = ds.getValue(Notification.class);
+                        if(notify.getRead() == false) {
+                            notificationList.add(notify);
+                            ids.add(ds.getKey());
+                        }
+                    }
+
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+
+
+
+                    if(notificationList.size() > 0) {
+                        ViewDialog alert = new ViewDialog();
+                        alert.showDialog(home_page.this,String.valueOf(notificationList.size()), notificationList.get(notificationList.size()-1).getMessage(),userId, ids, notificationList);
+                    }
+
+                    Log.d("COUNT AFTER", "C" + notificationList.size());
+
+
+                }
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
 
         changeLayout.setOnClickListener(new View.OnClickListener() {
