@@ -59,6 +59,15 @@ public class SharedPref {
         this.myEdit.commit();
     }
 
+    public void setSnooze(String snoozeValue) {
+        this.myEdit.putString("snooze", snoozeValue);
+        this.myEdit.commit();
+    }
+
+    public String getSnooze() {
+        return this.sharedPreferences.getString("snooze", "15");
+    }
+
     public String getVoice() {
         return this.sharedPreferences.getString("voice", "en");
     }

@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.capstone1.v2.SharedPref;
+
 import java.util.Calendar;
 import java.util.Timer;
 
@@ -18,17 +20,29 @@ public class alarm_notification_measurements extends AppCompatActivity {
     Button stopAlarm, snooze;
     Calendar c = Calendar.getInstance();;
     Calendar myAlarmDate = Calendar.getInstance();
+    SharedPref sf;
+    String snoozeValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_notification_measurements);
         stopAlarm = findViewById(R.id.stop_button_measurements);
         snooze = findViewById(R.id.snooze_button_measurements);
+
+        try {
+            sf = new SharedPref(getApplicationContext());
+            snoozeValue = sf.getSnooze();
+        }
+        catch(Exception e) {
+
+        }
+
+        snooze.setText("Snooze! (+" + snoozeValue + " mins)");
         snooze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 snoozeAlarm();
-                Toast.makeText(alarm_notification_measurements.this, "Alarm snoozed for 15 minutes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(alarm_notification_measurements.this, "Alarm snoozed for " +  snoozeValue + " minutes", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -57,7 +71,7 @@ public class alarm_notification_measurements extends AppCompatActivity {
     private void snoozeAlarm()
     {
         c.setTimeInMillis(System.currentTimeMillis());
-        c.add(Calendar.MINUTE, 15);
+        c.add(Calendar.MINUTE, Integer.parseInt(snoozeValue));
         Intent intent = new Intent(this, alarmreceivermeasurement.class);
         Intent intentpage = new Intent(this, today_page_recycler.class );
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);

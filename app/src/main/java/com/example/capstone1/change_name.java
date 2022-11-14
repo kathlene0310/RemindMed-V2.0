@@ -1,10 +1,10 @@
 package com.example.capstone1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.v2.tts;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -25,7 +26,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,9 +35,11 @@ public class change_name extends AppCompatActivity {
     FirebaseFirestore fstore;
     FirebaseUser user;
     Button savebtn;
-    EditText editfirstname, editlastname, editemail, mem;
+    EditText editfirstname, editlastname, editemail, mem, editSnooze;
     public static final String TAG = "TAG";
     String userId;
+    SharedPref sf;
+    int snooze;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +55,24 @@ public class change_name extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
         user = rootAuthen.getCurrentUser();
 
+        sf = new SharedPref(getApplicationContext());
 
+        editSnooze = findViewById(R.id.editSnoozes2);
         editfirstname = findViewById(R.id.editfirstname);
         editlastname = findViewById(R.id.editlastname);
         editemail = findViewById(R.id.editemail);
+
         savebtn = findViewById(R.id.buttonsave);
+
+
+        try {
+           snooze = Integer.parseInt(sf.getSnooze());
+        }
+        catch(Exception e) {
+
+        }
+
+        editSnooze.setText(String.valueOf(snooze));
 
 
         userId = rootAuthen.getCurrentUser().getUid();
@@ -65,12 +80,15 @@ public class change_name extends AppCompatActivity {
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(editfirstname.getText().toString().isEmpty() || editlastname.getText().toString().isEmpty() || editemail.getText().toString().isEmpty())
+                if(editfirstname.getText().toString().isEmpty() || editlastname.getText().toString().isEmpty() || editemail.getText().toString().isEmpty() ||  editSnooze.getText().toString().isEmpty())
                 {
                     Toast.makeText(change_name.this, "Fields are empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 String email = editemail.getText().toString();
+                String snooze = editSnooze.getText().toString();
+
+                sf.setSnooze(snooze);
                 user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -83,6 +101,7 @@ public class change_name extends AppCompatActivity {
                             edited.put("email",email);
                             edited.put("firstname", encodedName);
                             edited.put("lastname",encodedLastName);
+
 
                             docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
