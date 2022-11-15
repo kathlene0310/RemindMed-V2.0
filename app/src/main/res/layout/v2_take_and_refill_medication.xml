@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManageMedications">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+
+        <View
+            android:id="@+id/view18"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginBottom="100dp"
+            android:background="#2e276c"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textChatHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Home"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline115"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textChatHome3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="104dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Today"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline115"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textChatHome4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="History"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline115"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textChatHome5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="268dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Chat"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline115"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textChatHome6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="340dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Profile"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline115"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="106dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="232dp"
+            android:layout_marginEnd="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/refill_medication"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="114dp"
+            android:layout_height="52dp"
+
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Refill Medication"
+            android:textAlignment="center"
+            android:textColor="#2e266d"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView23"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="113dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="232dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/take_medication" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="114dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="64dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Take Medication"
+            android:textAlignment="center"
+            android:textColor="#2e266d"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView24"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chat_chat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:onClick="Chat_To_Chat"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/home_chat5"
+            app:layout_constraintTop_toTopOf="@+id/guideline114"
+            app:srcCompat="@drawable/chaticonv2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_chat4"
+            android:layout_width="55dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="Chat_To_Home"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline114"
+            app:srcCompat="@drawable/homeiconv2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/today_chat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="Chat_To_Today"
+            app:backgroundTint="#FFFFFF"
+            app:fabSize="normal"
+            app:layout_constraintStart_toEndOf="@+id/home_chat4"
+            app:layout_constraintTop_toTopOf="@+id/guideline114"
+            app:srcCompat="@drawable/todayiconv2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_chat5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="Chat_To_History"
+            app:backgroundTint="#FFFFFF"
+            app:fabSize="normal"
+            app:layout_constraintStart_toEndOf="@+id/today_chat2"
+            app:layout_constraintTop_toTopOf="@+id/guideline114"
+            app:srcCompat="@drawable/historyiconv2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/profile_chat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="Chat_To_Profile"
+            app:backgroundTint="#FFFFFF"
+            app:fabSize="normal"
+            app:layout_constraintStart_toEndOf="@+id/chat_chat2"
+            app:layout_constraintTop_toTopOf="@+id/guideline114"
+            app:srcCompat="@drawable/profileiconv2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline114"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline115"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.96" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="#2e276c"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="75dp"
+        android:layout_height="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="284dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="678dp"
+        android:fontFamily="@font/montserrat"
+        android:text="MANAGE MEDICATIONS"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/montserrat"
+        android:text="User"
+        android:textColor="#ffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="62dp"
+        android:layout_height="93dp"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

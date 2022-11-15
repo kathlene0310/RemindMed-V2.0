@@ -9,6 +9,6 @@ public class ManageMedications extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_medications);
+        setContentView(R.layout.v2_take_and_refill_medication);
     }
 }
