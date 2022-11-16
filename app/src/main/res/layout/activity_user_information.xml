@@ -293,7 +293,7 @@
         android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="User_To_Account"
+        android:onClick="User_To_Send"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
         app:layout_constraintEnd_toEndOf="parent"

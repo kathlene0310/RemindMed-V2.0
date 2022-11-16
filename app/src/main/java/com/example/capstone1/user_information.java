@@ -24,6 +24,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.v2.SharedPref;
+import com.example.capstone1.v2.send_report;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -296,6 +297,13 @@ public class user_information extends AppCompatActivity {
         Intent intent = new Intent(user_information.this, home_page.class);
         startActivity(intent);
     }
+
+    public void User_To_Send(View view) {
+        Intent intent = new Intent(user_information.this, send_report.class);
+        startActivity(intent);
+    }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

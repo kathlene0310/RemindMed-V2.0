@@ -26,6 +26,18 @@
             app:srcCompat="@drawable/refill_medication"
             tools:ignore="MissingConstraints" />
 
+        <ImageView
+            android:id="@+id/imageView22"
+            android:layout_width="106dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="232dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.259"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/add_medication"
+            tools:ignore="MissingConstraints" />
+
         <TextView
             android:id="@+id/textView53"
             android:layout_width="114dp"
@@ -41,22 +53,41 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView23"
             tools:ignore="MissingConstraints" />
 
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="121dp"
+            android:layout_height="52dp"
+
+            android:fontFamily="@font/montserrat"
+            android:text="Add Medication"
+            android:textAlignment="center"
+            android:textColor="#2e266d"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.244"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.487"
+            tools:ignore="MissingConstraints" />
+
         <ImageView
             android:id="@+id/imageView24"
             android:layout_width="113dp"
             android:layout_height="99dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="232dp"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="436dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/take_medication" />
 
         <TextView
-            android:id="@+id/textView55"
+            android:id="@+id/textView51"
             android:layout_width="114dp"
             android:layout_height="56dp"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="148dp"
 
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat"
             android:text="Take Medication"
             android:textAlignment="center"

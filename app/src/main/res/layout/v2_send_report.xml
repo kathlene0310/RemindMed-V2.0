@@ -13,7 +13,7 @@
         android:layout_marginTop="84dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
-        android:text="SEND REPORT"
+        android:text="Send Report"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
@@ -76,13 +76,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
         android:fontFamily="@font/montserrat"
-        android:text="Enter Email of Dependent"
+        android:text="Email of Dependent"
         android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:fontFamily="@font/montserrat"
+        android:text="None found"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSendReport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/frequency_set_later_bs"
@@ -91,6 +107,7 @@
         android:layout_marginTop="9dp"
         android:background="@drawable/edittext3"
         android:backgroundTint="#2e276c"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

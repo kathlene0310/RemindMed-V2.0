@@ -30,6 +30,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 
+import com.example.capstone1.v2.user_manage_medications;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -388,7 +389,7 @@ public class new_medications extends AppCompatActivity implements TimePickerDial
 
 
     public void Medication_To_Home(View view) {
-        Intent intent = new Intent(new_medications.this, home_page.class);
+        Intent intent = new Intent(new_medications.this, user_manage_medications.class);
         startActivity(intent);
     }
 

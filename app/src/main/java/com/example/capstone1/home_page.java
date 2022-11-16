@@ -23,6 +23,7 @@ import com.example.capstone1.v2.Notification;
 import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.simple.shome_page;
 import com.example.capstone1.v2.ViewDialog;
+import com.example.capstone1.v2.user_manage_medications;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -299,7 +300,7 @@ public class home_page extends AppCompatActivity {
     }
 
     public void Home_To_Medication(View view) {
-        Intent intent = new Intent(this, new_medications.class);
+        Intent intent = new Intent(this, user_manage_medications.class);
         startActivity(intent);
     }
 

@@ -7,8 +7,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -44,7 +47,9 @@ public class add_dependent extends AppCompatActivity {
     FirebaseFirestore fstore;
     FirebaseUser firebaseUser;
     String userId;
-
+    String [] options = {"Yes", "No"};
+    Spinner spinner;
+    Boolean autoReport;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,37 @@ public class add_dependent extends AppCompatActivity {
         dEmail = findViewById(R.id.dependentEmail);
         submit = findViewById(R.id.save_bs_later);
         cancel = findViewById(R.id.cancel_bs_later);
+        spinner = findViewById(R.id.spinner);
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String value = parent.getItemAtPosition(position).toString();
+
+                Log.d("D", value);
+                if(value.equals("Yes")) {
+                  autoReport = true;
+                }
+                else if(value.equals("No")) {
+                  autoReport = false;
+                } else{
+                   autoReport = true;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                autoReport = true;
+            }
+        });
+
 
         try {
             rootAuthen = FirebaseAuth.getInstance();
@@ -110,6 +146,7 @@ public class add_dependent extends AppCompatActivity {
 
                                                                     Map<String, Object> user = new HashMap<>();
                                                                     user.put("dependent",  document.getId());
+                                                                    user.put("sendReport", autoReport);
                                                                     fstore.collection("users").document(userId).set(user, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                         @Override
                                                                         public void onComplete(@NonNull Task<Void> task) {

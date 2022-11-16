@@ -61,26 +61,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Send Report every:"
+        android:text="Send Report every Monday:"
         android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
-
-    <TextView
-        android:id="@+id/frequency_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="21dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Week"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <TextView
         android:id="@+id/frequency_txt2"
