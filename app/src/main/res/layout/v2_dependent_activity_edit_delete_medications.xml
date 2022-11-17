@@ -303,7 +303,7 @@
         android:height="50dp"
         android:fontFamily="@font/montserrat"
         android:background="@drawable/edittext3"
-        android:drawableStart="@drawable/ic_calendar"
+        android:drawableStart="@drawable/bg_calendar"
         android:onClick="openDatePicker"
         android:paddingLeft="10dp"
         android:text="Start"

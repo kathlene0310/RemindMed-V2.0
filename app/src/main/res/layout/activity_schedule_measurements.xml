@@ -25,7 +25,7 @@
         android:layout_height="146dp"
         android:layout_marginTop="110dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/open_sans_bold"
+        android:fontFamily="@font/montserrat"
         android:text="Set now"
         android:onClick="set_now"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -40,7 +40,7 @@
         android:layout_height="146dp"
         android:layout_marginTop="73dp"
         android:background="@drawable/edit_round2"
-        android:fontFamily="@font/open_sans_bold"
+        android:fontFamily="@font/montserrat"
         android:text="Set later"
         android:onClick="set_later"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="2dp"
         android:layout_marginBottom="100dp"
-        android:background="#E73927"
+        android:background="#2e276c"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/hoome" />
+        app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Today_page_button"
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toEndOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/today" />
+        app:srcCompat="@drawable/todayiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/History_page_button"
@@ -129,7 +129,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toEndOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/ic_history"
+        app:srcCompat="@drawable/historyiconv2"
         tools:ignore="OnClick" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -145,7 +145,7 @@
         app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profileiconv2" />
 
     <TextView
         android:id="@+id/textViewHome"

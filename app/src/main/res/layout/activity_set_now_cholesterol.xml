@@ -14,7 +14,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserratbold"
         android:text="Save"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
@@ -29,7 +29,7 @@
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:background="@drawable/editttextcancel"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserratbold"
         android:text="Cancel"
         android:onClick="nowchol_To_hm1"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Value"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="mg/DL"
-            android:fontFamily="@font/viga"
+            android:fontFamily="@font/montserratbold"
 
             android:checked="true"/>
 
@@ -114,7 +114,7 @@
             android:id="@+id/radioFarenheit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/viga"
+            android:fontFamily="@font/montserratbold"
 
             android:text="mmol/L" />
 

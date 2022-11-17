@@ -32,7 +32,7 @@
                 android:layout_marginStart="328dp"
                 android:layout_marginTop="36dp"
                 android:text="time"
-                android:textColor="#000000"
+                android:textColor="#FFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="36dp"
                 android:text="Measurement name"
-                android:textColor="#000000"
+                android:textColor="#FFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

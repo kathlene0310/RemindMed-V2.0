@@ -60,7 +60,7 @@
             <TextView
                 android:layout_width="146dp"
                 android:layout_column="1"
-                android:fontFamily="@font/viga"
+                android:fontFamily="@font/montserratbold"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Hours of Sleep"
@@ -71,7 +71,7 @@
                 android:layout_width="111dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:fontFamily="@font/viga"
+                android:fontFamily="@font/montserratbold"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Date"
@@ -81,7 +81,7 @@
             <TextView
                 android:layout_width="105dp"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/viga"
+                android:fontFamily="@font/montserratbold"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Time"
@@ -99,7 +99,7 @@
         android:layout_height="49dp"
         android:background="@drawable/edit_round2"
 
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserratbold"
         android:text="Save as PDF"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
