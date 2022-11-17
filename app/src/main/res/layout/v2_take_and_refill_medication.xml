@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ManageMedications">
+    tools:context=".v2.user_manage_medications">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -165,6 +165,7 @@
         android:id="@+id/imageView26"
         android:layout_width="62dp"
         android:layout_height="93dp"
+        android:onClick="Manage_To_Home"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow"

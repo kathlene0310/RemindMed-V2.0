@@ -101,7 +101,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <Spinner
         android:id="@+id/take_medication_choose"
         android:layout_width="214dp"
         android:layout_height="44dp"
@@ -147,7 +147,7 @@
         app:layout_constraintStart_toEndOf="@+id/guideline80"
         app:layout_constraintTop_toBottomOf="@+id/DosageBox" />
 
-    <Spinner
+    <TextView
         android:id="@+id/type_spinner_one"
         android:layout_width="0dp"
         android:layout_height="48dp"

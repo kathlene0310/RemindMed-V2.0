@@ -112,6 +112,7 @@ public class user_manage_medications extends AppCompatActivity {
 
 
     }
+
     public void Manage_To_Home(View view) {
         Intent intent = new Intent(user_manage_medications.this, home_page.class);
         startActivity(intent);

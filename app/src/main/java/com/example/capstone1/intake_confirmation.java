@@ -55,6 +55,7 @@ import java.util.Random;
 public class intake_confirmation extends AppCompatActivity {
     Float speed, pitch;
     String voice;
+
     TextView medName, medAmount, dateTakentxt;
     String title, amount, time, date, enddate, dosage, userId, text, notify;
     Date myDate;
@@ -87,10 +88,13 @@ public class intake_confirmation extends AppCompatActivity {
         userId = rootAuthen.getCurrentUser().getUid();
         tts = findViewById(R.id.ttsButton);
 
-        String voice = sf.getVoice();
-        Float speed = sf.getSpeed();
-        Float pitch = sf.getPitch();
+        sf = new SharedPref(getApplicationContext());
 
+        voice = sf.getVoice();
+        speed = sf.getSpeed();
+        pitch = sf.getPitch();
+
+        getData();
         setData();
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
@@ -441,23 +445,27 @@ public class intake_confirmation extends AppCompatActivity {
     private void speak() {
 
 
-        if(!voice.isEmpty()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                for (Voice tmpVoice : textToSpeech.getVoices()) {
-                    if (tmpVoice.getName().equals(voice)) {
-                        textToSpeech.setVoice(tmpVoice);
-                        break;
+        if(voice != null) {
+            if (!voice.isEmpty()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    for (Voice tmpVoice : textToSpeech.getVoices()) {
+                        if (tmpVoice.getName().equals(voice)) {
+                            textToSpeech.setVoice(tmpVoice);
+                            break;
+                        }
                     }
                 }
+
             }
 
+            textToSpeech.setPitch(pitch);
+            textToSpeech.setSpeechRate(speed);
+            textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+
         }
-
-        textToSpeech.setPitch(pitch);
-        textToSpeech.setSpeechRate(speed);
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-
-
+        else {
+            Toast.makeText(intake_confirmation.this, "Input is blank", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void intake_To_Today(View view) {
