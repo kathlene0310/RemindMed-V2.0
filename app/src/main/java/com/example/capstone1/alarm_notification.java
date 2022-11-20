@@ -36,7 +36,7 @@ public class alarm_notification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_notification);
         stopAlarm = findViewById(R.id.stop_button);
-        snooze = findViewById(R.id.snooze_button);
+        //snooze = findViewById(R.id.snooze_button);
         try {
         sf = new SharedPref(getApplicationContext());
             snoozeValue = sf.getSnooze();
@@ -44,7 +44,7 @@ public class alarm_notification extends AppCompatActivity {
         catch(Exception e) {
 
         }
-        snooze.setText("Snooze! (+" + snoozeValue + " mins)");
+        /**snooze.setText("Snooze! (+" + snoozeValue + " mins)");
         snooze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +52,7 @@ public class alarm_notification extends AppCompatActivity {
                 Toast.makeText(alarm_notification.this, "Alarm snoozed for " +  snoozeValue + " minutes", Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });**/
         stopAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +74,7 @@ public class alarm_notification extends AppCompatActivity {
         ringtone.stop();
         startActivity(intentpage);
     }
-
+/**
     private void snoozeAlarm()
     {
         c.setTimeInMillis(System.currentTimeMillis());
@@ -89,7 +89,7 @@ public class alarm_notification extends AppCompatActivity {
         timer.cancel();
         ringtone.stop();
         startActivity(intentpage);
-    }
+    }**/
 
 
 

@@ -7,6 +7,17 @@
     android:background="@drawable/background_gradient"
     tools:context=".health_measurements">
 
+    <TextView
+        android:id="@+id/textViewHistory2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="History"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewToday"
+        app:layout_constraintTop_toBottomOf="@+id/History_page_button" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="421dp"
@@ -22,12 +33,12 @@
         android:id="@+id/bloodPressure_button"
         android:layout_width="41dp"
         android:layout_height="41dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Bloodpressure"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/cholesterol_button"
         app:layout_constraintDimensionRatio="5:5"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -37,13 +48,13 @@
         android:id="@+id/cholesterol_button"
         android:layout_width="41dp"
         android:layout_height="41dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Cholesterol"
         app:backgroundTint="#FFFFFF"
-        app:fabSize="mini"
 
-        app:layout_constraintBottom_toTopOf="@+id/bloodSugar_button"
+        app:fabSize="mini"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/bloodPressure_button"
         app:srcCompat="@drawable/backarrowreverse" />
@@ -52,64 +63,86 @@
         android:id="@+id/bloodSugar_button"
         android:layout_width="41dp"
         android:layout_height="41dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Sugar"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/cholesterol_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintTop_toBottomOf="@+id/temperature_button"
+        app:layout_constraintTop_toBottomOf="@+id/cholesterol_button"
         app:srcCompat="@drawable/backarrowreverse" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/temperature_button"
         android:layout_width="41dp"
         android:layout_height="41dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Temperature"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/pulseRate_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/bloodSugar_button"
         app:srcCompat="@drawable/backarrowreverse" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/heartrate_button"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="Health_To_HeartRate"
+        app:backgroundTint="#FFFFFF"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toBottomOf="@+id/temperature_button"
+        app:srcCompat="@drawable/backarrowreverse" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/pulseRate_button"
         android:layout_width="41dp"
         android:layout_height="41dp"
+
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Pulserate"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/sleep_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintTop_toBottomOf="@+id/temperature_button"
+        app:layout_constraintTop_toBottomOf="@+id/heartrate_button"
         app:srcCompat="@drawable/backarrowreverse" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/sleep_button"
         android:layout_width="41dp"
         android:layout_height="41dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Sleep"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/view4"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toBottomOf="@+id/pulseRate_button"
-        app:layout_constraintVertical_bias="0.356"
         app:srcCompat="@drawable/backarrowreverse" />
 
     <ImageButton
         android:id="@+id/healthMeasurement_back"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
+        android:layout_width="61dp"
+        android:layout_height="84dp"
         android:layout_marginTop="4dp"
         android:backgroundTint="#2e276c"
         android:onClick="Health_To_Home"
@@ -119,30 +152,30 @@
 
     <TextView
         android:id="@+id/healthMeasurements"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="301dp"
+        android:layout_height="74dp"
         android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="Health Measurements"
+        android:fontFamily="@font/montserratbold"
+        android:text="HEALTH MEASUREMENTS"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline6" />
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/blood_pressure_txt"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:text="Blood Pressure"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toTopOf="@+id/cholesterol_levels_txt"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="@id/guideline30"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline29"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -150,28 +183,26 @@
         android:id="@+id/hours_of_sleep"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:text="Hours of Sleep"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/view4"
         app:layout_constraintDimensionRatio="5:1"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toEndOf="@id/guideline30"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/guideline29"
-        app:layout_constraintTop_toBottomOf="@+id/pulse_rate_txt"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintTop_toBottomOf="@+id/pulse_rate_txt" />
 
     <TextView
         android:id="@+id/blood_sugar_txt"
-
+        android:layout_marginTop="8dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fontFamily="@font/montserrat"
         android:text="Blood Sugar Level"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toTopOf="@+id/body_temperature_txt"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="@id/guideline30"
         app:layout_constraintHorizontal_bias="0.5"
@@ -182,11 +213,11 @@
         android:id="@+id/pulse_rate_txt"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:text="Pulse Rate"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toTopOf="@+id/hours_of_sleep"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="@id/guideline30"
         app:layout_constraintHorizontal_bias="0.5"
@@ -197,11 +228,26 @@
         android:id="@+id/body_temperature_txt"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Heart Rate"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline30"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline29"
+        app:layout_constraintTop_toBottomOf="@+id/body_temperature_txt2" />
+
+    <TextView
+        android:id="@+id/body_temperature_txt2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:text="Body Temperature"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintBottom_toTopOf="@+id/pulse_rate_txt"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="@id/guideline30"
         app:layout_constraintHorizontal_bias="0.5"
@@ -213,14 +259,14 @@
 
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:text="Cholesterol Levels"
         android:textColor="#000000"
-        android:fontFamily="@font/montserrat"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/blood_sugar_txt"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="@id/guideline30"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline29"
         app:layout_constraintTop_toBottomOf="@+id/blood_pressure_txt" />
 
@@ -240,62 +286,70 @@
         android:id="@+id/Home_page_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Home"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHome"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline51"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Today_page_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_Today"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewToday"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
-        app:layout_constraintTop_toBottomOf="@+id/guideline51"
+        app:layout_constraintStart_toEndOf="@+id/Home_page_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/todayiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/History_page_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHistory"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/guideline51"
+        app:layout_constraintStart_toEndOf="@+id/Today_page_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/historyiconv2"
         tools:ignore="OnClick" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chat_dep2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="Home_To_Chat"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/History_page_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
+        app:srcCompat="@drawable/chaticonv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Profile_page_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Health_To_User"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toEndOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/guideline51"
+        app:layout_constraintStart_toEndOf="@+id/chat_dep2"
+        app:layout_constraintTop_toTopOf="@+id/guideline33"
         app:srcCompat="@drawable/profileiconv2" />
 
     <TextView
@@ -305,11 +359,8 @@
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Home_page_button"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintStart_toStartOf="@+id/guideline29"
+        app:layout_constraintTop_toBottomOf="@+id/Home_page_button" />
 
     <TextView
         android:id="@+id/textViewToday"
@@ -318,43 +369,37 @@
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/Today_page_button" />
 
     <TextView
-        android:id="@+id/textViewHistory"
+        android:id="@+id/textChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="History"
+        android:layout_marginStart="120dp"
+        android:text="Chat"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toEndOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/History_page_button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/textViewToday"
+        app:layout_constraintTop_toBottomOf="@+id/History_page_button" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/Profile_page_button"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/Profile_page_button" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="278dp"
         android:layout_height="180dp"
-        android:layout_marginStart="56dp"
         android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/clipboard" />
@@ -387,7 +432,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toStartOf="@+id/Home_page_button"
-        app:layout_constraintGuide_percent=".88"
+        app:layout_constraintGuide_percent="0.88235295"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 

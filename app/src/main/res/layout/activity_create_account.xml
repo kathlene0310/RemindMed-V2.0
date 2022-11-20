@@ -40,16 +40,16 @@
         app:layout_constraintTop_toBottomOf="@+id/confimpassword"
         app:layout_constraintVertical_bias="0.578" />
 
+
     <ImageView
         android:id="@+id/firstnameicon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="264dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
 
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nameiconv2" />
 
@@ -57,26 +57,23 @@
         android:id="@+id/emialicon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="88dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
 
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/firstnameicon"
         app:srcCompat="@drawable/emailicon" />
-
 
     <ImageView
         android:id="@+id/passwordicon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="52dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
 
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toBottomOf="@+id/emialicon"
         app:srcCompat="@drawable/passwordiconv2" />
 
@@ -280,14 +277,14 @@
 
     <TextView
         android:id="@+id/textView63"
-        android:layout_width="126dp"
-        android:layout_height="16dp"
+        android:layout_width="128dp"
+        android:layout_height="15dp"
         android:layout_marginTop="44dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserratbold"
         android:text="Health Privacy Code"
         android:textAlignment="center"
         android:textSize="12dp"
-        android:textStyle="bold"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"

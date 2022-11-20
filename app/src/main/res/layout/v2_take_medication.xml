@@ -63,8 +63,8 @@
 
     <ImageButton
         android:id="@+id/imageBack_bloodpressure"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
+        android:layout_width="67dp"
+        android:layout_height="91dp"
         android:backgroundTint="#2e276c"
         android:onClick="Back"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +91,7 @@
         android:id="@+id/take_unscheduled_medications"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/montserratbold"
         android:gravity="center"
         android:text="TAKE MEDICATION"
@@ -166,7 +166,7 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
-        android:text="Take Medication"
+        android:text="TAKE MEDICATION"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"

@@ -55,13 +55,12 @@
         android:id="@+id/chat_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:onClick="Chat_To_Chat"
+        android:layout_marginStart="16dp"
         android:clickable="true"
+        android:onClick="Chat_To_Chat"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
-        app:layout_constraintEnd_toEndOf="@+id/profile_chat"
-        app:layout_constraintEnd_toStartOf="@+id/profile_chat"
+        app:layout_constraintStart_toEndOf="@+id/home_chat"
         app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/chaticonv2" />
 

@@ -6,57 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_gradient">
 
-    <Button
-        android:id="@+id/buttonsave2"
-        android:layout_width="171dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserrat"
-        android:text="Save Changes"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline112"
-        app:layout_constraintTop_toBottomOf="@+id/editemail2" />
-
-    <Button
-        android:id="@+id/buttonchangepass"
-        android:layout_width="176dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserrat"
-        android:onClick="Change_To_Reset"
-        android:text="Change Password"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline113"
-        app:layout_constraintTop_toBottomOf="@+id/editemail3" />
-
-    <View
-        android:id="@+id/view16"
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
-        android:layout_marginTop="28dp"
-        android:background="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
-
-    <View
-        android:id="@+id/view17"
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
-        android:layout_marginTop="42dp"
-        android:background="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsave2" />
-
     <TextView
         android:id="@+id/account_settingView2"
         android:layout_width="wrap_content"
@@ -69,62 +18,18 @@
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/emailview" />
 
+
     <TextView
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="@font/montserrat"
         android:text="Email"
         android:textColor="#2e276c"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@+id/guideline112"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-
-    <TextView
-        android:id="@+id/textEmail2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Change Name"
-        android:textColor="#2e276c"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view16" />
-
-    <EditText
-        android:id="@+id/editemail2"
-        android:layout_width="170dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:fontFamily="@font/montserrat"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline112"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail2" />
-
-    <EditText
-        android:id="@+id/editemail3"
-        android:layout_width="170dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:fontFamily="@font/montserrat"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline113"
-        app:layout_constraintStart_toEndOf="@+id/editemail2"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -147,25 +52,10 @@
 
 
     <Button
-        android:id="@+id/btnDeleteAccount"
-        android:layout_width="247dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_roundmain"
-        android:fontFamily="@font/montserrat"
-        android:text="DELETE ACCOUNT"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#2e276c"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogout" />
-
-    <Button
         android:id="@+id/btnLogout"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="440dp"
         android:background="@drawable/edit_roundmain"
         android:fontFamily="@font/montserrat"
         android:text="LOGOUT"
@@ -175,6 +65,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDeleteAccount"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_round"
+        android:fontFamily="@font/montserrat"
+        android:text="DELETE ACCOUNT"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogout" />
 
     <TextView
         android:id="@+id/dependent_home_page_text"

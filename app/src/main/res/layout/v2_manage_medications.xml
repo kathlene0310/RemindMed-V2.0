@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Target User:"
+        android:text="TARGET USER:"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,20 +95,21 @@
 
     <Button
         android:id="@+id/add_medications_btn"
-        android:layout_width="309dp"
-        android:layout_height="100dp"
+        android:layout_width="308dp"
+        android:layout_height="123dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
         android:onClick="Home_To_Medication"
-        android:text="Add Medications"
+        android:text="ADD MEDICATIONS"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <View
         android:id="@+id/view5"
@@ -126,7 +127,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="3dp"
         android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
@@ -138,7 +138,7 @@
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+
         android:layout_marginEnd="136dp"
         android:fontFamily="@font/montserrat"
         android:text="Profile"
@@ -214,17 +214,18 @@
     <Button
         android:id="@+id/changeLayout"
         android:layout_width="311dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
 
-        android:text="Edit Medications"
+        android:text="EDIT MEDICATIONS"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_medications_btn" />
 

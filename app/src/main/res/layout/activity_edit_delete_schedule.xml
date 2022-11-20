@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         app:backgroundTint="#FFFFFF"
+        android:onClick="Home_To_Chat"
         app:srcCompat="@drawable/chaticonv2"
         tools:layout_editor_absoluteX="258dp"
         tools:layout_editor_absoluteY="638dp" />
@@ -96,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserratbold"
         android:text="DELETE SCHEDULE"
         android:textColor="#FFFFFF"
         android:textSize="28sp"

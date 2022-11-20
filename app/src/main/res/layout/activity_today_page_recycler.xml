@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Welcome!"
+        android:text="WELCOME!"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
 
@@ -53,14 +53,10 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="135dp"
-        android:layout_height="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_width="109dp"
+        android:layout_height="93dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003"
         app:srcCompat="@drawable/pills" />
 
     <CalendarView
@@ -272,18 +268,17 @@
 
     <Button
         android:id="@+id/switchToday"
-        android:layout_width="79dp"
-        android:layout_height="33dp"
+        android:layout_width="91dp"
+        android:layout_height="31dp"
         android:background="@drawable/edit_round"
-        android:text="Change"
+        android:fontFamily="@font/montserrat"
+        android:text="CHANGE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="15sp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintEnd_toStartOf="@+id/guideline35"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textViewSched"
-        app:layout_constraintTop_toTopOf="@+id/guideline36"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintTop_toTopOf="@+id/guideline36" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/todayMeasurement"
@@ -301,13 +296,9 @@
         android:id="@+id/imageView25"
         android:layout_width="97dp"
         android:layout_height="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logov2" />
+        app:srcCompat="@drawable/logov2_" />
     />
 
 

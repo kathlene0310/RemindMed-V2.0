@@ -24,6 +24,7 @@
         android:layout_width="107dp"
         android:layout_height="47dp"
         android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
         android:text="Set BP"
         app:layout_constraintBottom_toTopOf="@+id/guideline21"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +35,8 @@
 
     <ImageButton
         android:id="@+id/imageBack_bloodpressure"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
+        android:layout_width="61dp"
+        android:layout_height="93dp"
         android:backgroundTint="#2e276c"
         android:onClick="Bloodpressure_To_Health"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,18 +44,26 @@
         app:srcCompat="@drawable/backarrow" />
 
 
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="New Measurements"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
         android:fontFamily="@font/montserratbold"
+        android:textSize="24sp"
+        android:text="NEW MEASUREMENTS"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toEndOf="@+id/imageBack_bloodpressure" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -99,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Duration"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -124,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Time"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -138,7 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Frequency"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -187,7 +196,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
-        android:text="Save"
+        android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -205,7 +214,7 @@
         android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="Bloodpressure_To_Health"
-        android:text="Cancel"
+        android:text="CANCEL"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"

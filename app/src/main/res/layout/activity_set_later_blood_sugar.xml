@@ -17,6 +17,7 @@
         android:layout_marginBottom="27dp"
         android:width="125dp"
         android:height="50dp"
+        android:fontFamily="@font/montserrat"
         android:background="@drawable/edittext3"
         android:onClick="popTimePicker"
         android:text="Set Time"
@@ -58,8 +59,8 @@
 
     <ImageButton
         android:id="@+id/imageBack_bloodpressure"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
+        android:layout_width="67dp"
+        android:layout_height="87dp"
         android:backgroundTint="#2e276c"
         android:onClick="laterbs_To_lhm"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,17 +68,27 @@
         app:srcCompat="@drawable/backarrow" />
 
 
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Blood sugar"
+        android:fontFamily="@font/montserratbold"
+        android:text="BLOOD SUGAR"
         android:textColor="#FFFFFF"
-        android:textSize="32sp"
+        android:textSize="27sp"
+
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toEndOf="@+id/imageBack_bloodpressure" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -163,8 +174,8 @@
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/montserratbold"
-        android:text="Save"
+        android:fontFamily="@font/montserrat"
+        android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -178,8 +189,8 @@
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:background="@drawable/editttextcancel"
-        android:fontFamily="@font/montserratbold"
-        android:text="Cancel"
+        android:fontFamily="@font/montserrat"
+        android:text="CANCEL"
         android:onClick="laterbs_To_lhm"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"

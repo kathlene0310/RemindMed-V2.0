@@ -39,6 +39,7 @@
             android:id="@+id/input_messages"
             android:layout_height="wrap_content"
             android:hint="Type a message"
+            android:fontFamily="@font/montserrat"
             android:layout_width="match_parent"
             android:layout_toRightOf="@id/send_files_btn"
             android:layout_toLeftOf="@id/send_message_btn"

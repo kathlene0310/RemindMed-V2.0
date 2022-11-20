@@ -22,15 +22,12 @@
         android:id="@+id/editSnoozes2"
         android:layout_width="127dp"
         android:layout_height="42dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="minutes"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.792"
-        app:layout_constraintStart_toEndOf="@+id/textView59"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.319" />
+        app:layout_constraintEnd_toEndOf="@+id/vibration_spinner3"
+        app:layout_constraintTop_toBottomOf="@+id/alarmsound_spinner3" />
 
     <Spinner
         android:id="@+id/alarmsound_spinner3"
@@ -108,10 +105,11 @@
         android:text="ACCOUNT SETTINGS"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        tools:layout_editor_absoluteY="32dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dependent_home_page_text"
@@ -156,6 +154,7 @@
         android:id="@+id/textView57"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
         android:fontFamily="@font/montserrat"
         android:text="Text-to-Speech"
         android:textColor="#2e276c"
@@ -163,7 +162,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView59" />
 
     <TextView
         android:id="@+id/textView58"
@@ -182,7 +181,7 @@
         android:id="@+id/textView59"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="46dp"
         android:fontFamily="@font/montserrat"
         android:text="Snooze Time"
         android:textColor="#2e276c"
@@ -190,27 +189,27 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView58" />
 
     <Button
         android:id="@+id/buttonsave"
         android:layout_width="171dp"
         android:layout_height="55dp"
+        android:layout_marginTop="27dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="Save Changes"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline10" />
+        app:layout_constraintTop_toBottomOf="@+id/editfirstname" />
 
     <Button
         android:id="@+id/buttonchangepass"
         android:layout_width="176dp"
         android:layout_height="56dp"
+        android:layout_marginTop="27dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="Change_To_Reset"
@@ -221,12 +220,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline10" />
+        app:layout_constraintTop_toBottomOf="@+id/editlastname" />
 
     <Button
         android:id="@+id/buttonchangepass2"
         android:layout_width="153dp"
         android:layout_height="41dp"
+        android:layout_marginTop="31dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="Change_To_TTS"
@@ -235,9 +235,7 @@
         android:textColor="#FFFFFF"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+        app:layout_constraintTop_toBottomOf="@+id/editSnoozes2" />
 
     <TextView
         android:id="@+id/textView"
@@ -287,23 +285,21 @@
         android:id="@+id/editemail"
         android:layout_width="170dp"
         android:layout_height="45dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="47dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="First Name"
         android:inputType="textPersonName"
         android:paddingStart="10dp"
         android:paddingRight="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
         android:id="@+id/editlastname"
         android:layout_width="170dp"
         android:layout_height="45dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="47dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Last Name"
@@ -311,15 +307,13 @@
         android:paddingStart="10dp"
         android:paddingRight="10dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
         android:id="@+id/cancelBtn"
         android:layout_width="217dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginTop="23dp"
         android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="Change_To_User"
@@ -327,12 +321,9 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/guideline30"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.885" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonchangepass" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline30"

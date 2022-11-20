@@ -13,7 +13,7 @@
         android:layout_marginTop="84dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
-        android:text="Send Report"
+        android:text="SEND REPORT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"

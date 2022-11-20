@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".pdf_hours_of_sleep">
+    tools:context=".pdf_pulserate">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,10 +21,10 @@
 
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="54dp"
+        android:layout_width="51dp"
         android:layout_height="90dp"
         android:backgroundTint="#2e276c"
-        android:onClick="pdfsleep_To_hhm"
+        android:onClick="pdfpulse_To_hhm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/backarrow" />
@@ -64,33 +64,31 @@
         <TableRow>
 
             <TextView
-                android:layout_width="146dp"
+                android:layout_width="166dp"
                 android:layout_column="1"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="25dp"
-                android:text="Hours of Sleep"
+                android:text="Heart Rate"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_width="111dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_column="1"
-                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Date"
+                android:fontFamily="@font/montserrat"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_width="105dp"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/montserrat"
+                android:layout_width="wrap_content"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Time"
+                android:fontFamily="@font/montserrat"
                 android:textColor="#000000"
                 android:textSize="20dp" />
         </TableRow>
@@ -100,12 +98,12 @@
 
 
     <Button
-        android:id="@+id/btnSavePDF_HOS"
+        android:id="@+id/btnSavePDF_PR"
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:background="@drawable/edit_round2"
-
         android:fontFamily="@font/montserrat"
+
         android:text="SAVE as PDF"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
@@ -126,8 +124,5 @@
         app:layout_constraintHeight_percent=".6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayoutHeader" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

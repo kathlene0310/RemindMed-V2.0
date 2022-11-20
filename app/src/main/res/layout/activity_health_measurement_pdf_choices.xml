@@ -9,30 +9,32 @@
 
     <Button
         android:id="@+id/HOS_Pdf"
-        android:layout_width="247dp"
+        android:layout_width="290dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_round"
+        android:layout_marginTop="30dp"
+        android:textColor="#2e276c"
+        android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="pdfchoice_tosleep"
-        android:text="Hours of Sleep"
+        android:text="HOURS OF SLEEP"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PR_Pdf" />
 
     <Button
         android:id="@+id/PR_Pdf"
-        android:layout_width="247dp"
+        android:layout_width="290dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_round"
+        android:layout_marginTop="30dp"
+        android:textColor="#2e276c"
+        android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="pdfchoice_topulse"
-        android:text="Pulse Rate"
+        android:text="PULSE RATE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/HOS_Pdf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,64 +42,85 @@
 
     <Button
         android:id="@+id/Temp_Pdf"
-        android:layout_width="247dp"
+        android:layout_width="290dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_round"
+        android:layout_marginTop="30dp"
+        android:textColor="#2e276c"
+        android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="pdfchoice_toyemp"
-        android:text="Body Temperature"
+        android:text="HEART RATE"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/PR_Pdf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp_Pdf" />
+
+    <Button
+        android:id="@+id/temp_Pdf"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#2e276c"
+        android:background="@drawable/editttextcancel"
+        android:fontFamily="@font/montserrat"
+        android:onClick="pdfchoice_toyemp"
+        android:text="BODY TEMPERATURE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BS_Pdf" />
 
     <Button
         android:id="@+id/BS_Pdf"
-        android:layout_width="247dp"
+        android:layout_width="290dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_round"
+        android:layout_marginTop="30dp"
+        android:textColor="#2e276c"
+        android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="pdfchoice_tobs"
-        android:text="Blood Sugar Level"
+        android:text="BLOOD SUGAR LEVEL"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/Temp_Pdf"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Cholesterols_Pdf" />
 
     <Button
         android:id="@+id/Cholesterols_Pdf"
-        android:layout_width="247dp"
+        android:layout_width="290dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_round"
+        android:layout_marginTop="30dp"
+        android:textColor="#2e276c"
+        android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="pdfchoice_tocho"
-        android:text="Cholesterol Levels"
+        android:text="CHOLESTEROL LEVELS"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/BS_Pdf"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BP_Pdf" />
 
     <Button
         android:id="@+id/BP_Pdf"
-        android:layout_width="247dp"
+        android:layout_width="290dp"
         android:layout_height="49dp"
-        android:background="@drawable/edit_round"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:onClick="pdfchoice_tobp"
-        android:text="Blood Pressure"
+        android:text="BLOOD PRESSURE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:textColor="#2e276c"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/Cholesterols_Pdf"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -115,17 +138,23 @@
 
     <ImageButton
         android:id="@+id/healthMeasurement_backPdf"
-        android:layout_width="40dp"
-        android:layout_height="68dp"
+        android:layout_width="54dp"
+        android:layout_height="90dp"
         android:layout_marginStart="4dp"
         android:backgroundTint="#2e276c"
         android:fontFamily="@font/montserratbold"
         android:onClick="pdfchoice_hm"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004"
         app:srcCompat="@drawable/backarrow" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
 
     <TextView
         android:id="@+id/health_measurementstxt"
@@ -133,14 +162,13 @@
         android:layout_height="81dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Health
-        Measurements"
+        android:text="HEALTH MEASUREMENTS"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/healthMeasurement_backPdf" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

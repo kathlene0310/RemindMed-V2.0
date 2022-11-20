@@ -22,26 +22,35 @@
 
     <ImageButton
         android:id="@+id/imageBack_pulserate"
-        android:onClick="Pulserate_To_Health"
-        android:layout_width="64dp"
-        android:layout_height="68dp"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
         android:backgroundTint="#2e276c"
+        android:onClick="Pulserate_To_Health"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
 
 
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logov2_" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="New Measurements"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
+        android:fontFamily="@font/montserratbold"
+        android:text="NEW MEASUREMENTS"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toEndOf="@+id/imageBack_pulserate" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -84,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Duration"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -96,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Pulse Rate"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -109,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Time"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -123,7 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:text="Frequency"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -151,6 +160,7 @@
         android:width="125dp"
         android:height="50dp"
         android:background="@drawable/edittext3"
+        android:fontFamily="@font/montserrat"
         android:onClick="popTimePicker"
         android:text="Set Time"
         android:textSize="18sp"
@@ -182,8 +192,8 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_round"
-        android:fontFamily="@font/viga"
-        android:text="Save"
+        android:fontFamily="@font/montserrat"
+        android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -199,9 +209,9 @@
         android:layout_height="49dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/editttextcancel"
-        android:fontFamily="@font/viga"
+        android:fontFamily="@font/montserrat"
         android:onClick="Pulserate_To_Health"
-        android:text="Cancel"
+        android:text="CANCEL"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="22sp"

@@ -40,10 +40,8 @@
         android:id="@+id/imageBack"
         android:layout_width="57dp"
         android:layout_height="91dp"
-        android:layout_marginBottom="8dp"
         android:backgroundTint="#2e276c"
         android:onClick="Guest_To_Home"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
@@ -96,7 +94,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
