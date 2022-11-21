@@ -55,11 +55,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+    <Button
+        android:id="@+id/snooze_button"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:background="@drawable/edit_round"
+        android:fontFamily="@font/montserrat"
+        android:text="SNOOZE! (+15 mins)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/stop_button"
+        app:layout_constraintEnd_toStartOf="@+id/guideline29"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/guideline28"
+        app:layout_constraintTop_toBottomOf="@+id/guideline7" />
 
     <Button
         android:id="@+id/stop_button"
-        android:layout_width="249dp"
-        android:layout_height="78dp"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
         android:text="STOP"
@@ -67,9 +84,11 @@
         android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline29"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+        app:layout_constraintTop_toBottomOf="@+id/snooze_button" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline28"
