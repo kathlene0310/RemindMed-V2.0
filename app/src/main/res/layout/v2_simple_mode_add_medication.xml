@@ -7,6 +7,44 @@
     android:background="@drawable/background_gradient">
 
     <Button
+        android:id="@+id/startButton_date4"
+        android:layout_width="159dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="56dp"
+        android:width="125dp"
+        android:height="50dp"
+        android:background="@drawable/edittext3"
+        android:drawableStart="@drawable/ic_calendar"
+        android:paddingLeft="10dp"
+        android:text="Start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/endButton_one4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
+
+    <Button
+        android:id="@+id/endButton_one4"
+        android:layout_width="146dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:width="125dp"
+        android:height="50dp"
+        android:background="@drawable/edittext3"
+        android:drawableStart="@drawable/ic_calendar"
+        android:paddingLeft="10dp"
+        android:text="End"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
+
+    <Button
         android:id="@+id/resetbtn2"
         android:layout_width="230dp"
         android:layout_height="40dp"
@@ -20,10 +58,10 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintVertical_bias="0.852" />
 
     <View
         android:id="@+id/view3"
@@ -110,16 +148,16 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="45dp"
         android:fontFamily="@font/montserrat"
-        android:text="Choose from existing or enter new medicine"
+        android:text="Enter a new medicine"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <Spinner
+    <EditText
         android:id="@+id/frequency_set_later_bs"
-        android:layout_width="311dp"
-        android:layout_height="34dp"
+        android:layout_width="324dp"
+        android:layout_height="44dp"
         android:background="@drawable/edittext3"
         android:backgroundTint="#2e276c"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -268,7 +306,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
 
-    <Spinner
+    <EditText
         android:id="@+id/frequency_set_later_bs2"
         android:layout_width="159dp"
         android:layout_height="41dp"
@@ -279,12 +317,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
-    <Spinner
+    <Button
         android:id="@+id/frequency_set_later_bs5"
         android:layout_width="103dp"
         android:layout_height="50dp"
         android:background="@drawable/edittext3"
         android:backgroundTint="#2e276c"
+        android:text="Set Time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.129"
@@ -292,7 +331,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.663" />
 
-    <Spinner
+    <EditText
         android:id="@+id/frequency_set_later_bs6"
         android:layout_width="103dp"
         android:layout_height="50dp"
