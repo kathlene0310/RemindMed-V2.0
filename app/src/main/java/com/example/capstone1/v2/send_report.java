@@ -73,6 +73,8 @@ public class send_report extends AppCompatActivity {
         spinner = findViewById(R.id.frequency_set_later_bs);
         txtEmail = findViewById(R.id.txtEmail);
 
+        sendReport.setEnabled(false);
+
 
         sendReport.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,8 +155,17 @@ public class send_report extends AppCompatActivity {
                         if (document.exists()) {
                             try {
                                 Log.d("TESTTEST", document.getData().get("email").toString());
-                                txtEmail.setText(document.getData().get("email").toString());
-                                spinner.setPrompt(document.getData().get("email").toString());
+
+
+                                if(document.get("dependent") != null) {
+                                    String dependentId = document.get("dependent").toString();
+                                    if(!dependentId.isEmpty()) {
+                                        getDependentEmail(dependentId);
+                                    }
+                                }
+
+
+
                             } catch (Exception e) {
                                 Log.d("E", "e" + e);
                             }
@@ -188,6 +199,31 @@ public class send_report extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void getDependentEmail(String dependentId) {
+        DocumentReference df = fstore.collection("users").document(dependentId);
+        df.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w(TAG, "Listen failed.", e);
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    Log.d(TAG, "Current data: " + snapshot.getData());
+
+                    if(snapshot.get("email") != null) {
+                        txtEmail.setText(snapshot.get("email").toString());
+                        sendReport.setEnabled(true);
+                        //spinner.setPrompt(snapshot.get("email").toString());
+                    }
+                } else {
+                    Log.d(TAG, "Current data: null");
+                }
+            }
+        });
+    }
     public void Send_To_Today(View view) {
         Intent intent = new Intent(send_report.this, today.class);
         startActivity(intent);

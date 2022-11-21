@@ -48,6 +48,7 @@ public class d_chat extends AppCompatActivity {
     ListView lvUsers;
     UserAdapter userAdapter;
     FloatingActionButton profileBtn;
+    TextView emptyState;
     long accounttype ;
 
 
@@ -60,6 +61,7 @@ public class d_chat extends AppCompatActivity {
         rootAuthen = FirebaseAuth.getInstance();
         userId = rootAuthen.getCurrentUser().getUid();
         lvUsers = findViewById(R.id.userLIst);
+        emptyState = findViewById(R.id.emptyState);
 
 
 
@@ -73,6 +75,9 @@ public class d_chat extends AppCompatActivity {
                     ArrayList<String> userIds = (ArrayList<String>) value.get("users");
                     Log.d("ARRAY", "DATA" + userIds);
 
+                    if(userIds.size() > 0) {
+                        emptyState.setVisibility(View.INVISIBLE);
+                    }
 
 
 

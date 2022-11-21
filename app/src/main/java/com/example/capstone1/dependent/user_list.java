@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,11 +38,14 @@ public class user_list extends AppCompatActivity {
     String userId;
     ListView lvUsers;
     UserAdapter userAdapter;
+    TextView emptyState;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.v2_dependent_view_user_list);
 
+
+        emptyState = findViewById(R.id.emptyState2);
         lvUsers = findViewById(R.id.userLIst);
         try {
             rootAuthen = FirebaseAuth.getInstance();
@@ -64,7 +68,9 @@ public class user_list extends AppCompatActivity {
                     ArrayList<String> userIds = (ArrayList<String>) value.get("users");
                     Log.d("ARRAY", "DATA" + userIds);
 
-
+                    if(userIds.size() > 0) {
+                        emptyState.setVisibility(View.INVISIBLE);
+                    }
 
 
                     for (String user : userIds) {

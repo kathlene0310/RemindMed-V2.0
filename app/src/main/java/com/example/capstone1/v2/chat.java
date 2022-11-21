@@ -98,62 +98,66 @@ public class chat extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 try
                 {
-                    String dependentId = (String) value.get("dependent");
-                    Log.d("depedent", "DATA" + dependentId);
-                    if(dependentId != null || !dependentId.isEmpty()) {
-                        DocumentReference df = fstore.collection("users").document(dependentId);
+                    if(value.get("dependent") != null) {
+                        String dependentId = (String) value.get("dependent");
+                        Log.d("depedent", "DATA" + dependentId);
+                        if (dependentId != null || !dependentId.isEmpty()) {
+                            DocumentReference df = fstore.collection("users").document(dependentId);
 
-                        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                DocumentSnapshot doc = task.getResult();
-                                if (doc.exists()) {
-                                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                                        Base64.Decoder decoder = Base64.getDecoder();
-                                        byte[] bytesFN = decoder.decode(doc.get("firstname").toString());
-                                        byte[] bytesLN = decoder.decode(doc.get("lastname").toString());
+                            df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    DocumentSnapshot doc = task.getResult();
+                                    if (doc.exists()) {
+                                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                                            Base64.Decoder decoder = Base64.getDecoder();
+                                            byte[] bytesFN = decoder.decode(doc.get("firstname").toString());
+                                            byte[] bytesLN = decoder.decode(doc.get("lastname").toString());
 
-                                        String u = doc.get("uid").toString();
-                                        String f = new String(bytesFN);
-                                        String l = new String(bytesLN);
-
-
-                                        chatRedirect.setText(f + " " + l);
-                                        Log.d("F", "firsstname" + f);
-                                        Log.d("F", "lname" + l);
-                                        if (f.isEmpty() || l.isEmpty()) {
-                                            return;
-                                        }
-
-                                        User x = new User(u, f, l);
-                                        Log.d("X", "X VAL" + x);
-
-                                    }
+                                            String u = doc.get("uid").toString();
+                                            String f = new String(bytesFN);
+                                            String l = new String(bytesLN);
 
 
-                                    String name = doc.get("name").toString();
-                                    if(!name.isEmpty() && !dependentId.isEmpty()) {
-                                        final String[] image = {"default_image"};
-                                        chatRedirect.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                Intent chatIntent = new Intent(getApplicationContext(), ChatActivity.class);
-                                                chatIntent.putExtra("visit_user_id", dependentId);
-                                                chatIntent.putExtra("visit_user_name", name);
-                                                chatIntent.putExtra("visit_image", image[0]);
-                                                startActivity(chatIntent);
+                                            chatRedirect.setText(f + " " + l);
+                                            Log.d("F", "firsstname" + f);
+                                            Log.d("F", "lname" + l);
+                                            if (f.isEmpty() || l.isEmpty()) {
+                                                return;
                                             }
 
-                                        });
+                                            User x = new User(u, f, l);
+                                            Log.d("X", "X VAL" + x);
+
+                                        }
+
+
+                                        String name = doc.get("name").toString();
+                                        if (!name.isEmpty() && !dependentId.isEmpty()) {
+                                            final String[] image = {"default_image"};
+                                            chatRedirect.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    Intent chatIntent = new Intent(getApplicationContext(), ChatActivity.class);
+                                                    chatIntent.putExtra("visit_user_id", dependentId);
+                                                    chatIntent.putExtra("visit_user_name", name);
+                                                    chatIntent.putExtra("visit_image", image[0]);
+                                                    startActivity(chatIntent);
+                                                }
+
+                                            });
+                                        }
                                     }
+
+
                                 }
+                            });
 
-
-                            }
-                        });
-
-                    }
-                    else {
+                        } else {
+                            chatRedirect.setText("No Dependent Found");
+                            chatRedirect.setEnabled(false);
+                        }
+                    } else {
                         chatRedirect.setText("No Dependent Found");
                         chatRedirect.setEnabled(false);
                     }
@@ -162,6 +166,7 @@ public class chat extends AppCompatActivity {
 
                 }
                 catch(Exception e) {
+                    e.printStackTrace();
                     Log.d("ERROR", "ERROR" + e);
                     Toast.makeText(getApplicationContext(), "Unexpected Error, occured please login again", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getApplicationContext(), main_page.class));

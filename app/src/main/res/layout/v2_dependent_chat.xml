@@ -7,6 +7,19 @@
     android:background="@drawable/background_gradient"
     tools:context=".v2.chat">
 
+    <TextView
+        android:id="@+id/emptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No users found"
+        android:textColor="#2e276c"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ListView
         android:id="@+id/userLIst"
         android:layout_width="409dp"

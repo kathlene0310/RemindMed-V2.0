@@ -6,6 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_gradient">
 
+    <TextView
+        android:id="@+id/emptyState2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No users found"
+        android:textColor="#2e276c"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="421dp"

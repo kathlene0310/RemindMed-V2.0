@@ -1,5 +1,7 @@
 package com.example.capstone1.simple;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +38,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -151,9 +154,7 @@ public class add_dependent extends AppCompatActivity {
                                                                         @Override
                                                                         public void onComplete(@NonNull Task<Void> task) {
                                                                             if (task.isSuccessful()) {
-                                                                                DocumentReference dependentRef = fstore.collection("users").document(dependentId);
-                                                                                dependentRef.update("users", FieldValue.arrayUnion(userId));
-                                                                                Toast.makeText(getApplicationContext(), "Dependent added", Toast.LENGTH_SHORT).show();
+                                                                                addWithUserLengthChecker(dependentId);
                                                                             }
                                                                         }
                                                                     });
@@ -197,9 +198,7 @@ public class add_dependent extends AppCompatActivity {
                                                                                             @Override
                                                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                                                 if (task.isSuccessful()) {
-                                                                                                    DocumentReference dependentRef = fstore.collection("users").document(dependentId);
-                                                                                                    dependentRef.update("users", FieldValue.arrayUnion(userId));
-                                                                                                    Toast.makeText(getApplicationContext(),"Dependent Replaced", Toast.LENGTH_LONG).show();
+                                                                                                    addWithUserLengthChecker(dependentId);
                                                                                                 }
                                                                                             }
                                                                                         });
@@ -252,6 +251,71 @@ public class add_dependent extends AppCompatActivity {
 
 
 
+    public void addWithUserLengthChecker(String dependentId) {
+        if(dependentId != null) {
+            DocumentReference dfDependent = fstore.collection("users").document(dependentId);
+            dfDependent.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot value = task.getResult();
+                        if (value.exists()) {
+                            Log.d(TAG, "DocumentSnapshot data: " + value.getData());
+
+                            if(value.get("users") != null) {
+                                ArrayList<String> userIds = (ArrayList<String>) value.get("users");
+                                Log.d("USERIDS", "userids: " + userIds.toString());
+                                Log.d("SIZE", "size: " + userIds.size());
+                                if(userIds.size() > 3) {
+                                    Toast.makeText(getApplicationContext(), "Target dependent has already 3 users", Toast.LENGTH_LONG).show();
+                                }
+                                else {
+                                    DocumentReference dependentRef = fstore.collection("users").document(dependentId);
+                                    dependentRef.update("users", FieldValue.arrayUnion(userId));
+                                    Toast.makeText(getApplicationContext(),"Dependent Replaced", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        } else {
+                            Log.d(TAG, "No such document");
+                        }
+                    } else {
+                        Log.d(TAG, "get failed with ", task.getException());
+                    }
+                }
+            });
+
+            /*
+            dfDependent.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (error != null) {
+                        Log.w(TAG, "Listen failed.", error);
+                        return;
+                    }
+
+                    if (value != null && value.exists()) {
+                        Log.d(TAG, "Current data: " + value.getData());
+                        if(value.get("users") != null) {
+                            ArrayList<String> userIds = (ArrayList<String>) value.get("users");
+                            Log.d("USERIDS", "userids: " + userIds.toString());
+                            Log.d("SIZE", "size: " + userIds.size());
+                            if(userIds.size() > 3) {
+                                Toast.makeText(getApplicationContext(), "Target dependent has already 3 users", Toast.LENGTH_LONG).show();
+                            }
+                            else {
+                                DocumentReference dependentRef = fstore.collection("users").document(dependentId);
+                                dependentRef.update("users", FieldValue.arrayUnion(userId));
+                                Toast.makeText(getApplicationContext(),"Dependent Replaced", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    } else {
+                        Log.d(TAG, "Current data: null");
+                    }
+                }
+            });
+            */
+        }
+    }
 
     public void Back(View view) {
         finish();

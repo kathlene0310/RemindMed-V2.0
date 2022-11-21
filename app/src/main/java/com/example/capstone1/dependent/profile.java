@@ -59,6 +59,7 @@ public class profile extends AppCompatActivity {
         editPassword = findViewById(R.id.editTextTextPersonName3);
         editConfirmPassword = findViewById(R.id.editTextTextPersonName4);
 
+
         try {
             rootAuthen = FirebaseAuth.getInstance();
             fstore = FirebaseFirestore.getInstance();

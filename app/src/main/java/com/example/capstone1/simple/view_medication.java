@@ -32,4 +32,6 @@ public class view_medication extends AppCompatActivity {
         Intent intent = new Intent(this, profile.class);
         startActivity(intent);
     }
+
+
 }

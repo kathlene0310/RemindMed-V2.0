@@ -31,6 +31,19 @@
         app:layout_constraintStart_toStartOf="@+id/guideline112"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <TextView
+        android:id="@+id/dEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/montserrat"
+        android:text="test@gmail.com"
+        android:textColor="#2e276c"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline112"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="421dp"

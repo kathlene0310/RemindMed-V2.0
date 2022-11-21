@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".v2.chat">
+    tools:context=".v2.edit_dependent">
 
     <Button
         android:id="@+id/changeLayout3"
         android:layout_width="189dp"
         android:layout_height="56dp"
-        android:layout_marginTop="44dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
 
@@ -20,19 +19,10 @@
 
         android:textColor="#000000"
         android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userLIst" />
-
-    <ListView
-        android:id="@+id/userLIst"
-        android:layout_width="356dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline53"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/guideline54"
-        app:layout_constraintTop_toBottomOf="@+id/textDependent" />
+        app:layout_constraintTop_toBottomOf="@+id/dFirstname2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_chat2"
@@ -41,7 +31,7 @@
         android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="Chat_To_Home"
+        android:onClick="Edit_To_Home"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +44,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="Chat_To_Today"
+        android:onClick="Edit_To_Today"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
@@ -70,7 +60,7 @@
         android:layout_marginStart="27dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="Chat_To_History"
+        android:onClick="Edit_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
@@ -78,12 +68,26 @@
         app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/historyiconv2" />
 
+    <TextView
+        android:id="@+id/dFirstname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="None found"
+        android:textColor="#2e276c"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/chat_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:onClick="Chat_To_Chat"
+        android:onClick="Edit_To_Chat"
         android:clickable="true"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline108"
@@ -96,7 +100,7 @@
         android:id="@+id/profile_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Chat_To_Profile"
+        android:onClick="Edit_To_Profile"
         android:layout_marginStart="28dp"
         android:clickable="true"
         android:focusable="true"
