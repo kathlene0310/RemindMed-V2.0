@@ -1,4 +1,4 @@
-package com.example.capstone1;
+package com.example.capstone1.v2;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -23,7 +23,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.capstone1.v2.SharedPref;
+import com.example.capstone1.R;
+import com.example.capstone1.edit_delete_medications;
+import com.example.capstone1.new_medications;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -41,10 +43,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
-public class optical_character_recognition extends AppCompatActivity {
+public class optical_character_recognition_refill_med extends AppCompatActivity {
     Float speed, pitch;
     String voice;
-    SharedPref sf;
     Button captureImage, saveText, speakButton;
     ImageView viewImage;
     Uri imageUri;
@@ -55,18 +56,19 @@ public class optical_character_recognition extends AppCompatActivity {
     int REQUEST_IMAGE_CAPTURE = 1;
     int REQUEST_IMAGE_COUNT = 3;
     TextView displayText;
-
+    SharedPref sf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_optical_character_recognition);
 
+
+        sf = new SharedPref(getApplicationContext());
         captureImage = (Button) findViewById(R.id.captureButton);
         saveText = (Button) findViewById(R.id.buttonTxttoEditTxt);
         tts = findViewById(R.id.ttsButtonSxan);
         speakButton = findViewById(R.id.ttsButtonScan);
-        sf = new SharedPref(getApplicationContext());
 
         voice = sf.getVoice();
         speed = sf.getSpeed();
@@ -168,7 +170,7 @@ public class optical_character_recognition extends AppCompatActivity {
                         finish();
                     }catch (Exception e)
                     {
-                        Toast.makeText(optical_character_recognition.this, "Scan your medicine name", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(optical_character_recognition_refill_med.this, "Scan your medicine name", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -179,7 +181,7 @@ public class optical_character_recognition extends AppCompatActivity {
                         finish();
                     }catch (Exception e)
                     {
-                        Toast.makeText(optical_character_recognition.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(optical_character_recognition_refill_med.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -259,13 +261,13 @@ public class optical_character_recognition extends AppCompatActivity {
             }
         }
 
-        textToSpeech.setPitch(pitch);
-        textToSpeech.setSpeechRate(speed);
+            textToSpeech.setPitch(pitch);
+            textToSpeech.setSpeechRate(speed);
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
 
     }
     public void ocr_To_med(View view) {
-        Intent intent = new Intent(optical_character_recognition.this, new_medications.class);
+        Intent intent = new Intent(optical_character_recognition_refill_med.this, new_medications.class);
         startActivity(intent);
     }
 

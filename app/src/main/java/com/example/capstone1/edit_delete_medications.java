@@ -49,7 +49,8 @@ import java.util.Random;
 
 public class edit_delete_medications extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
     EditText  dosageBoxET;
-    static EditText medName, medInventory;
+    static EditText medName;
+    public static EditText medInventory;
     static final SimpleDateFormat format = new SimpleDateFormat("M/d/yyyy");
     String userId, title, amount, time,  strDate, strEnd, frequencyDB, medTypeDB, dosage, chkstart, chkend, notify;
     Date startdate, enddate;

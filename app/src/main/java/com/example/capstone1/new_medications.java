@@ -75,8 +75,8 @@ public class new_medications extends AppCompatActivity implements TimePickerDial
     FloatingActionButton ocrMedName1, ocrCount1;
     int alarmYear, alarmMonth, alarmDay,alarmHour,alarmMin, choice, typechoice, frequencychoide, alarmID;
     String dateToday = String.valueOf(android.text.format.DateFormat.format("M/dd/yyyy", new java.util.Date()));
-    static EditText medication;
-    static EditText inventory;
+    public static EditText medication;
+    public static EditText inventory;
     private static final String TAG = "new_medications";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;

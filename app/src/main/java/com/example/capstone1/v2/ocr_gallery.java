@@ -1,7 +1,10 @@
-package com.example.capstone1;
+package com.example.capstone1.v2;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,8 +25,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
-import com.example.capstone1.v2.SharedPref;
+import com.example.capstone1.R;
+import com.example.capstone1.edit_delete_medications;
+import com.example.capstone1.new_medications;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -41,10 +47,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
-public class optical_character_recognition extends AppCompatActivity {
+public class ocr_gallery extends AppCompatActivity {
     Float speed, pitch;
     String voice;
-    SharedPref sf;
     Button captureImage, saveText, speakButton;
     ImageView viewImage;
     Uri imageUri;
@@ -55,22 +60,29 @@ public class optical_character_recognition extends AppCompatActivity {
     int REQUEST_IMAGE_CAPTURE = 1;
     int REQUEST_IMAGE_COUNT = 3;
     TextView displayText;
-
-
+    SharedPref sf;
+    String storagePermission[];
+    private static final int STORAGE_REQUEST = 200;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_optical_character_recognition);
+        setContentView(R.layout.v2_gallery_optical_character_recognition_take_med);
 
+
+
+        sf = new SharedPref(getApplicationContext());
         captureImage = (Button) findViewById(R.id.captureButton);
         saveText = (Button) findViewById(R.id.buttonTxttoEditTxt);
         tts = findViewById(R.id.ttsButtonSxan);
         speakButton = findViewById(R.id.ttsButtonScan);
-        sf = new SharedPref(getApplicationContext());
 
         voice = sf.getVoice();
         speed = sf.getSpeed();
         pitch = sf.getPitch();
+
+        storagePermission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -138,6 +150,7 @@ public class optical_character_recognition extends AppCompatActivity {
         captureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 String fileName = "photo";
                 File storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
                 try {
@@ -152,23 +165,32 @@ public class optical_character_recognition extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                 */
+
+                if (!checkStoragePermission()) {
+                    requestStoragePermission();
+                } else {
+                    pickFromGallery();
+                }
             }
         });
+
 
         saveText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String numberOnly = displayText.getText().toString().replaceAll("[^0-9]", "");
+                //String numberOnly = displayText.getText().toString().replaceAll("[^0-9]", "");
                 ocrChoice = getIntent().getIntExtra("ocrchoice", 0);
                 if (ocrChoice == 1)
                 {
                     try {
-                        new_medications.medication.setText(displayText.getText().toString());
-                        new_medications.inventory.setText(numberOnly);
+                        take_medication.medication.setText(displayText.getText().toString());
+                        //new_medications.inventory.setText(numberOnly);
                         finish();
                     }catch (Exception e)
                     {
-                        Toast.makeText(optical_character_recognition.this, "Scan your medicine name", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ocr_gallery.this, "Scan your medicine name", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -179,7 +201,7 @@ public class optical_character_recognition extends AppCompatActivity {
                         finish();
                     }catch (Exception e)
                     {
-                        Toast.makeText(optical_character_recognition.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ocr_gallery.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -189,6 +211,19 @@ public class optical_character_recognition extends AppCompatActivity {
 
 
     }
+
+    private Boolean checkStoragePermission() {
+        boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+        return result;
+    }
+
+    // Requesting  gallery permission
+    private void requestStoragePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(storagePermission, STORAGE_REQUEST);
+        }
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -259,13 +294,13 @@ public class optical_character_recognition extends AppCompatActivity {
             }
         }
 
-        textToSpeech.setPitch(pitch);
-        textToSpeech.setSpeechRate(speed);
+            textToSpeech.setPitch(pitch);
+            textToSpeech.setSpeechRate(speed);
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
 
     }
-    public void ocr_To_med(View view) {
-        Intent intent = new Intent(optical_character_recognition.this, new_medications.class);
+    public void ocr_To_med3(View view) {
+        Intent intent = new Intent(ocr_gallery.this, new_medications.class);
         startActivity(intent);
     }
 
@@ -284,6 +319,29 @@ public class optical_character_recognition extends AppCompatActivity {
         imageData[15] = (byte) (dpi & 0xff);
         imageData[16] = (byte) (dpi >> 8);
         imageData[17] = (byte) (dpi & 0xff);
+    }
+
+    private void pickFromGallery() {
+        CropImage.activity().start(ocr_gallery.this);
+    }
+    // Requesting camera and gallery
+    // permission if not given
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case STORAGE_REQUEST: {
+                if (grantResults.length > 0) {
+                    boolean writeStorageaccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    if (writeStorageaccepted) {
+                        pickFromGallery();
+                    } else {
+                        Toast.makeText(this, "Please Enable Storage Permissions", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+            break;
+        }
     }
 
 

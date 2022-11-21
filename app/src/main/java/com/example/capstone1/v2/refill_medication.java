@@ -2,6 +2,7 @@ package com.example.capstone1.v2;
 
 import static com.example.capstone1.home_page.TAG;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,7 @@ import com.example.capstone1.health_measurements;
 import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.medication_info;
+import com.example.capstone1.new_medications;
 import com.example.capstone1.optical_character_recognition;
 import com.example.capstone1.optical_character_recognition_one;
 import com.example.capstone1.today;
@@ -63,8 +65,8 @@ public class refill_medication extends AppCompatActivity {
     ArrayList<medication_info> medicationList;
     ArrayList<String> options;
     String tMedicationId;
-
-
+    FloatingActionButton ocrMedName1;
+    ImageView helpdosage, helptype, helpinventory;
     int pos;
 
     Button chatRedirect;
@@ -84,9 +86,39 @@ public class refill_medication extends AppCompatActivity {
             type = findViewById(R.id.type_spinner_one);
             take = findViewById(R.id.btnrefillmedication);
 
+            helpdosage = findViewById(R.id.dosageHelp);
+            helptype = findViewById(R.id.typehelp);
 
             //clear s
 
+
+            helpdosage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder aBuilder = new AlertDialog.Builder(refill_medication.this);
+                    aBuilder.setCancelable(true);
+                    aBuilder.setTitle("Intake");
+                    aBuilder.setMessage("Enter the amount you will intake.\n\n" +
+                            "For solids: Enter the amount of pills, capsule or, tablets you will take\n\n" +
+                            "For liquids: Enter amount you will take in ml or press the tablespoon which will be equal to 15ml\n\n"+
+                            "This will subtract from you inventory total every time you intake your medication");
+                    aBuilder.show();
+
+                }
+            });
+            helptype.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder aBuilder = new AlertDialog.Builder(refill_medication.this);
+                    aBuilder.setCancelable(true);
+                    aBuilder.setTitle("Type/Unit");
+                    aBuilder.setMessage("The type/unit box is to choose if the medication you are taking will be solid or liquid.\n\n" +
+                            "If it is a solid medication you will have three choices:\nPill\nCapsule\nTablet\n\n"+
+                            "If it is a liquid medication you will have two choices:\nTablespoon\nML ");
+                    aBuilder.show();
+
+                }
+            });
 
             fstore.collection("users").document(userId).collection("New Medications").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
@@ -170,7 +202,7 @@ public class refill_medication extends AppCompatActivity {
     }
 
     public void Medication_To_OCR(View view) {
-        Intent intent = new Intent(refill_medication.this, optical_character_recognition.class);
+        Intent intent = new Intent(refill_medication.this, optical_character_recognition_refill_med.class);
         startActivity(intent);
     }
 

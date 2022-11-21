@@ -119,7 +119,7 @@ public class home_page extends AppCompatActivity {
             rootAuthen = FirebaseAuth.getInstance();
             userId = rootAuthen.getCurrentUser().getUid();
         } catch (Exception e) {
-            Log.d("TAG", "EXCEPTION" + e);  
+            Log.d("TAG", "EXCEPTION" + e);
             Toast.makeText(getApplicationContext(), "Unexpected Error occurred, please login again", Toast.LENGTH_LONG).show();
             userId = "";
         }
