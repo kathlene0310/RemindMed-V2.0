@@ -48,7 +48,7 @@ public class history_page extends AppCompatActivity {
     RecyclerView recyclerView1;
 
     FirebaseFirestore fstore = FirebaseFirestore.getInstance();
-    TextView firstname, clear;
+    TextView firstname, clear, pdf;
     FirebaseAuth rootAuthen;
     String userId;
     long accounttype ;
@@ -68,6 +68,7 @@ public class history_page extends AppCompatActivity {
         userId = rootAuthen.getCurrentUser().getUid();
         clear = findViewById(R.id.clearAll_medications);
         profileBtn = findViewById(R.id.profile_history_two);
+        pdf = findViewById(R.id.textView54);
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
         /*documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -105,6 +106,14 @@ public class history_page extends AppCompatActivity {
 
         recyclerView1.setAdapter(myAdapter);
         EventChangeListener();
+
+
+        pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(history_page.this, pdf_medication.class));
+            }
+        });
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

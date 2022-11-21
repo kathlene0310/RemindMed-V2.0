@@ -6,8 +6,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,110 +43,137 @@ public class change_name extends AppCompatActivity {
     String userId;
     SharedPref sf;
     int snooze;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_name);
-
-        Intent data = getIntent();
-        String firstname = data.getStringExtra("firstname");
-        String lastname = data.getStringExtra("lastname");
-        String email = data.getStringExtra("email");
-
-        rootAuthen = FirebaseAuth.getInstance();
-        fstore = FirebaseFirestore.getInstance();
-        user = rootAuthen.getCurrentUser();
-
-        sf = new SharedPref(getApplicationContext());
-
-        editSnooze = findViewById(R.id.editSnoozes2);
-        editfirstname = findViewById(R.id.editfirstname);
-        editlastname = findViewById(R.id.editlastname);
-        editemail = findViewById(R.id.editemail);
-
-        savebtn = findViewById(R.id.buttonsave);
-
-
         try {
-           snooze = Integer.parseInt(sf.getSnooze());
-        }
-        catch(Exception e) {
+            Intent data = getIntent();
+            String firstname = data.getStringExtra("firstname");
+            String lastname = data.getStringExtra("lastname");
+            String email = data.getStringExtra("email");
 
-        }
+            rootAuthen = FirebaseAuth.getInstance();
+            fstore = FirebaseFirestore.getInstance();
+            user = rootAuthen.getCurrentUser();
 
-        editSnooze.setText(String.valueOf(snooze));
+            sf = new SharedPref(getApplicationContext());
+
+            editSnooze = findViewById(R.id.editSnoozes2);
+            editfirstname = findViewById(R.id.editfirstname);
+            editlastname = findViewById(R.id.editlastname);
+            editemail = findViewById(R.id.editemail);
+            spinner = findViewById(R.id.alarmsound_spinner3);
+            savebtn = findViewById(R.id.buttonsave);
 
 
-        userId = rootAuthen.getCurrentUser().getUid();
+            try {
+                snooze = Integer.parseInt(sf.getSnooze());
+            } catch (Exception e) {
 
-        savebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(editfirstname.getText().toString().isEmpty() || editlastname.getText().toString().isEmpty() || editemail.getText().toString().isEmpty() ||  editSnooze.getText().toString().isEmpty())
-                {
-                    Toast.makeText(change_name.this, "Fields are empty", Toast.LENGTH_SHORT).show();
-                    return;
+            }
+
+            editSnooze.setText(String.valueOf(snooze));
+
+
+            userId = rootAuthen.getCurrentUser().getUid();
+            sf = new SharedPref(getApplicationContext());
+
+
+            ArrayAdapter<String> adapterUnit = new ArrayAdapter<String>(change_name.this,
+                    android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.alarm_sounds));
+
+            adapterUnit.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapterUnit);
+
+            spinner.setSelection(adapterUnit.getPosition("Clock"));
+
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
                 }
-                String email = editemail.getText().toString();
-                String snooze = editSnooze.getText().toString();
 
-                sf.setSnooze(snooze);
-                user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        DocumentReference docRef = fstore.collection("users").document(user.getUid());
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            Base64.Encoder encoder = Base64.getEncoder();
-                            String encodedName = encoder.encodeToString(editfirstname.getText().toString().getBytes());
-                            String encodedLastName = encoder.encodeToString(editlastname.getText().toString().getBytes());
-                            Map<String,Object> edited = new HashMap<>();
-                            edited.put("email",email);
-                            edited.put("firstname", encodedName);
-                            edited.put("lastname",encodedLastName);
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            savebtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (editfirstname.getText().toString().isEmpty() || editlastname.getText().toString().isEmpty() || editemail.getText().toString().isEmpty() || editSnooze.getText().toString().isEmpty()) {
+                        Toast.makeText(change_name.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    String alarm_sound = spinner.getSelectedItem().toString();
+                    String email = editemail.getText().toString();
+                    String snooze = editSnooze.getText().toString();
+
+                    sf.setAlarmSound(alarm_sound);
+                    sf.setSnooze(snooze);
+                    user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            DocumentReference docRef = fstore.collection("users").document(user.getUid());
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                Base64.Encoder encoder = Base64.getEncoder();
+                                String encodedName = encoder.encodeToString(editfirstname.getText().toString().getBytes());
+                                String encodedLastName = encoder.encodeToString(editlastname.getText().toString().getBytes());
+                                Map<String, Object> edited = new HashMap<>();
+                                edited.put("email", email);
+                                edited.put("firstname", encodedName);
+                                edited.put("lastname", encodedLastName);
 
 
-                            docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Toast.makeText(change_name.this, "Updated", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),home_page.class));
-                                    finish();
-                                }
-                            });
+                                docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(change_name.this, "Updated", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), home_page.class));
+                                        finish();
+                                    }
+                                });
+                            }
                         }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(change_name.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        });
-
-
-
-        Log.d(TAG, "onCreate: " + firstname + " " + lastname);
-
-        DocumentReference documentReference = fstore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    Base64.Decoder decoder = Base64.getDecoder();
-                    byte [] bytesFN =decoder.decode(value.getString("firstname"));
-                    byte [] bytesLN =decoder.decode(value.getString("lastname"));
-
-                    editemail.setText(value.getString("email"));
-                    editfirstname.setText(new String(bytesFN));
-                    editlastname.setText(new String(bytesLN));
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(change_name.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
+            });
 
 
+            Log.d(TAG, "onCreate: " + firstname + " " + lastname);
 
-            }
-        });
+            DocumentReference documentReference = fstore.collection("users").document(userId);
+            documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        Base64.Decoder decoder = Base64.getDecoder();
+                        byte[] bytesFN = decoder.decode(value.getString("firstname"));
+                        byte[] bytesLN = decoder.decode(value.getString("lastname"));
+
+                        editemail.setText(value.getString("email"));
+                        editfirstname.setText(new String(bytesFN));
+                        editlastname.setText(new String(bytesLN));
+                    }
+
+
+                }
+            });
+        } catch(Exception e)  {
+            e.printStackTrace();
+        }
 
     }
     public void Change_To_User (View view){

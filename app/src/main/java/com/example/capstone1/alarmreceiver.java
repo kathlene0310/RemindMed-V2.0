@@ -4,6 +4,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -16,17 +17,67 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.capstone1.v2.SharedPref;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class alarmreceiver extends BroadcastReceiver {
     static Ringtone ringtone;
     static Timer mTimer;
-
+    SharedPref sf;
     @Override
     public void onReceive(Context context, Intent intent) {
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, Settings.System.DEFAULT_NOTIFICATION_URI);
-        mediaPlayer.start();
+        sf = new SharedPref(context);
+
+
+
+
+        try {
+
+
+            String alarm = sf.getAlarmSound();
+
+            if(alarm.equals("Beep")) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.beep);
+                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                //mMediaPlayer.setLooping(true);
+                mMediaPlayer.start();
+
+            } else if(alarm.equals("Bell")) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.bell);
+                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                //mMediaPlayer.setLooping(true);
+                mMediaPlayer.start();
+
+            } else if(alarm.equals("Clock")) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.clock);
+                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                //mMediaPlayer.setLooping(true);
+                mMediaPlayer.start();
+
+            }else if(alarm.equals("Simple")) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.simple);
+                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                //mMediaPlayer.setLooping(true);
+                mMediaPlayer.start();
+
+            }else if(alarm.equals("Wave")) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.wave);
+                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                //mMediaPlayer.setLooping(true);
+                mMediaPlayer.start();
+            } else {
+                MediaPlayer mediaPlayer = MediaPlayer.create(context, Settings.System.DEFAULT_NOTIFICATION_URI);
+                mediaPlayer.start();
+            }
+
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
         Intent i = new Intent(context, alarm_notification.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, i , 0 );
 
@@ -43,14 +94,18 @@ public class alarmreceiver extends BroadcastReceiver {
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
         notificationManagerCompat.notify(123, builder.build());
 
-        ringtone = RingtoneManager.getRingtone(context, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE));
-        ringtone.play();
+
+        //ringtone = RingtoneManager.getRingtone(context, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE));
+        //ringtone.play();
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
+                /*
                 if (!ringtone.isPlaying()) {
                     ringtone.play();
                 }
+
+                 */
             }
         }, 1000*1, 1000*1);
 

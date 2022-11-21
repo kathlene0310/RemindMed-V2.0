@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".pdf_BloodSugar">
+    tools:context=".pdf_medication">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -25,7 +25,7 @@
         android:layout_width="47dp"
         android:layout_height="93dp"
         android:backgroundTint="#2e276c"
-        android:onClick="pdfbs_To_hhm"
+        android:onClick="pdfpulse_To_hhm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/backarrow" />
@@ -82,7 +82,7 @@
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="25dp"
-                android:text="Date"
+                android:text="Date/Qty"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 

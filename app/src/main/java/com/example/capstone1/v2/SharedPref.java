@@ -64,6 +64,14 @@ public class SharedPref {
         this.myEdit.commit();
     }
 
+    public void setAlarmSound(String alarm) {
+        this.myEdit.putString("alarm", alarm);
+        this.myEdit.commit();
+    }
+
+    public String getAlarmSound() {
+        return this.sharedPreferences.getString("alarm", "Default");
+    }
     public String getSnooze() {
         return this.sharedPreferences.getString("snooze", "15");
     }
