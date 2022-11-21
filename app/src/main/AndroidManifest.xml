@@ -30,6 +30,12 @@
             android:name=".v2.refill_medication"
             android:exported="true"/>
         <activity
+            android:name=".v2.edit_dependent"
+            android:exported="true"/>
+        <activity
+            android:name=".instruction_slidefour"
+            android:exported="true"/>
+        <activity
             android:name=".v2.take_medication"
             android:exported="true"/>
         <activity

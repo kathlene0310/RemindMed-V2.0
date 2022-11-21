@@ -16,11 +16,13 @@ import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.user_information;
 import com.example.capstone1.v2.SharedPref;
+import com.example.capstone1.v2.edit_dependent;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class shome_page extends AppCompatActivity {
     Button loginBtn;
     Spinner add, view, add_dependent;
+    Button editDependent;
     SharedPref sf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,7 @@ public class shome_page extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), main_page.class));
         }
 
-
+        editDependent = findViewById(R.id.frequency_set_later_bs11);
         add = findViewById(R.id.frequency_set_later_bs);
         view = findViewById(R.id.frequency_set_later_bs3);
         add_dependent = findViewById(R.id.frequency_set_later_bs4);
@@ -50,6 +52,13 @@ public class shome_page extends AppCompatActivity {
         add_dependent.setOnKeyListener(Spinner_OnKey3);
 
 
+
+        editDependent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(shome_page.this, edit_dependent.class));
+            }
+        });
     }
 
     public void SHome_To_Home(View view) {
@@ -70,6 +79,8 @@ public class shome_page extends AppCompatActivity {
             return true;
         }
     };
+
+
 
     private View.OnKeyListener Spinner_OnKey = new View.OnKeyListener() {
         public boolean onKey(View v, int keyCode, KeyEvent event) {

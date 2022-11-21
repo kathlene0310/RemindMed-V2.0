@@ -185,7 +185,7 @@
         android:layout_marginTop="28dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
-        android:onClick="Home_To_AddDepedendent"
+        android:onClick="Home_To_EditDependent"
         android:text="Edit Dependent"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="23sp"

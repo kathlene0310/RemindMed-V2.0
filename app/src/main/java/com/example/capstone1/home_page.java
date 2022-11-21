@@ -23,6 +23,7 @@ import com.example.capstone1.v2.Notification;
 import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.simple.shome_page;
 import com.example.capstone1.v2.ViewDialog;
+import com.example.capstone1.v2.edit_dependent;
 import com.example.capstone1.v2.user_manage_medications;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -118,11 +119,15 @@ public class home_page extends AppCompatActivity {
             rootAuthen = FirebaseAuth.getInstance();
             userId = rootAuthen.getCurrentUser().getUid();
         } catch (Exception e) {
-            Log.d("TAG", "EXCEPTION" + e);
+            Log.d("TAG", "EXCEPTION" + e);  
             Toast.makeText(getApplicationContext(), "Unexpected Error occurred, please login again", Toast.LENGTH_LONG).show();
             userId = "";
         }
 
+        if(userId == null) {
+            Toast.makeText(getApplicationContext(), "Firebase error, configure your google-services-json", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(home_page.this, login_page.class));
+        }
 
             DocumentReference documentReference = fstore.collection("users").document(userId);
             Log.d("TAG", "UIDuser: " + userId);
@@ -331,6 +336,11 @@ public class home_page extends AppCompatActivity {
 
     public void Home_To_Chat(View view) {
         Intent intent = new Intent(home_page.this, chat.class);
+        startActivity(intent);
+    }
+
+    public void Home_To_EditDependent(View view) {
+        Intent intent = new Intent(home_page.this, edit_dependent.class);
         startActivity(intent);
     }
 
