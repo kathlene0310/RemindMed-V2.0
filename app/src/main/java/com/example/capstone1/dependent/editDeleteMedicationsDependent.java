@@ -660,7 +660,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
 
 
             medication_info m = new medication_info(title, amount, startdate, time, enddate,
-                    medicationTypeName, frequencyName, frequencychoide, dynHour, dynMin, alarmIDdb, dosage, notify, userId);
+                    medicationTypeName, frequencyName, frequencychoide, dynHour, dynMin, alarmIDdb, dosage, notify, userId, "");
             db.collection("users").document(userId).collection("New Medications")
                     .document(medication_info.getId()).update("Medication", m.getMedication(),
                             "InventoryMeds", m.getInventoryMeds(), "StartDate", m.getStartDate(),

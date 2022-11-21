@@ -13,14 +13,20 @@ public class medication_info implements Serializable {
     String Medication, InventoryMeds, Dosage, Time, FrequencyName, MedicineTypeName, NotifyChoice;
     Date StartDate, EndDate;
     int MedicineType, Frequency, PillStatic, Hour, Minute, AlarmID;
+
+
+
+
+    String Expiration;
     @Exclude  private String id, userId;
     public medication_info() {}
 
 
 
+
     public medication_info(String Medication, String InventoryMeds, Date StartDate,
                            String Time, Date EndDate, String MedicineTypeMame,
-                           String FrequencyName, int Frequency, int Hour, int Minute, int AlarmID, String Dosage, String NotifyChoice, String userId)
+                           String FrequencyName, int Frequency, int Hour, int Minute, int AlarmID, String Dosage, String NotifyChoice, String userId, String Expiration)
     {
         this.Medication = Medication;
         this.InventoryMeds = InventoryMeds;
@@ -36,8 +42,8 @@ public class medication_info implements Serializable {
         this.Dosage =Dosage;
         this.NotifyChoice = NotifyChoice;
         this.userId = userId;
-
         this.id = id;
+        this.Expiration = Expiration;
     }
 
     public String getUserId() {
@@ -173,4 +179,12 @@ public class medication_info implements Serializable {
     public void setAlarmID(int alarmID) {
         AlarmID = alarmID;
     }
+    public String getExpiration() {
+        return Expiration;
+    }
+
+    public void setExpiration(String expiration) {
+        Expiration = expiration;
+    }
+
 }

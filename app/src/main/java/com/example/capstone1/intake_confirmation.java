@@ -280,7 +280,7 @@ public class intake_confirmation extends AppCompatActivity {
 
         amount = Integer.toString(inv);
         medication_info m = new medication_info(title, amount, getDateFromString(date), time, getDateFromString(enddate), medtype,
-                frequency, freq,alarmHour, alarmMin, alarmID, dosage, notify, userId);
+                frequency, freq,alarmHour, alarmMin, alarmID, dosage, notify, userId, "");
 
         db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications")
                 .document(medication_info.getId()).update("InventoryMeds", m.getInventoryMeds())

@@ -293,11 +293,8 @@
         android:text="Start"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline81"
-        app:layout_constraintHorizontal_bias="0.313"
-        app:layout_constraintStart_toStartOf="@+id/guideline80"
-        app:layout_constraintTop_toBottomOf="@+id/duration_txt1" />
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="571dp" />
 
     <Button
         android:id="@+id/endButton_one"

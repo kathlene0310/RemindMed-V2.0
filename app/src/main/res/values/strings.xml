@@ -34,6 +34,14 @@
         <item>Weekly</item>
     </string-array>
 
+    <string-array name="alarm_sounds">
+        <item>Beep</item>
+        <item>Bell</item>
+        <item>Clock</item>
+        <item>Simple</item>
+        <item>Wave</item>
+    </string-array>
+
     <string-array name="gender">
         <item>Choose one</item>
         <item>Female</item>
