@@ -154,7 +154,8 @@ public class add_dependent extends AppCompatActivity {
                                                                         @Override
                                                                         public void onComplete(@NonNull Task<Void> task) {
                                                                             if (task.isSuccessful()) {
-                                                                                addWithUserLengthChecker(dependentId);
+                                                                                addWithUserLengthChecker(dependentId, 1);
+                                                                                finish();
                                                                             }
                                                                         }
                                                                     });
@@ -198,7 +199,7 @@ public class add_dependent extends AppCompatActivity {
                                                                                             @Override
                                                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                                                 if (task.isSuccessful()) {
-                                                                                                    addWithUserLengthChecker(dependentId);
+                                                                                                    addWithUserLengthChecker(dependentId, 1);
                                                                                                 }
                                                                                             }
                                                                                         });
@@ -251,7 +252,7 @@ public class add_dependent extends AppCompatActivity {
 
 
 
-    public void addWithUserLengthChecker(String dependentId) {
+    public void addWithUserLengthChecker(String dependentId, int choice) {
         if(dependentId != null) {
             DocumentReference dfDependent = fstore.collection("users").document(dependentId);
             dfDependent.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -272,7 +273,12 @@ public class add_dependent extends AppCompatActivity {
                                 else {
                                     DocumentReference dependentRef = fstore.collection("users").document(dependentId);
                                     dependentRef.update("users", FieldValue.arrayUnion(userId));
-                                    Toast.makeText(getApplicationContext(),"Dependent Replaced", Toast.LENGTH_LONG).show();
+                                    if(choice == 1) {
+                                        Toast.makeText(getApplicationContext(), "Dependent Replaced", Toast.LENGTH_LONG).show();
+                                    }
+                                    else {
+
+                                    }
                                 }
                             }
                         } else {

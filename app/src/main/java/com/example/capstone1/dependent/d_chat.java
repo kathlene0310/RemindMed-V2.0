@@ -72,6 +72,9 @@ public class d_chat extends AppCompatActivity {
             public void onEvent(@com.google.firebase.database.annotations.Nullable DocumentSnapshot value, @com.google.firebase.database.annotations.Nullable FirebaseFirestoreException error) {
                 try
                 {
+                    if(value.get("users") != null) {
+
+
                     ArrayList<String> userIds = (ArrayList<String>) value.get("users");
                     Log.d("ARRAY", "DATA" + userIds);
 
@@ -134,6 +137,7 @@ public class d_chat extends AppCompatActivity {
                     }
 
 
+                }
                 }
                 catch(Exception e) {
                     Log.d("ERROR", "ERROR" + e);

@@ -65,6 +65,8 @@ public class user_list extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 try
                 {
+                    if(value.get("users") != null) {
+
                     ArrayList<String> userIds = (ArrayList<String>) value.get("users");
                     Log.d("ARRAY", "DATA" + userIds);
 
@@ -116,7 +118,7 @@ public class user_list extends AppCompatActivity {
                         });
                     }
 
-
+                    }
                 }
                 catch(Exception e) {
                     Log.d("ERROR", "ERROR" + e);

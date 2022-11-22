@@ -137,6 +137,7 @@ public class edit_dependent extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     Toast.makeText(edit_dependent.this, "Successfully removed dependent", Toast.LENGTH_LONG).show();
+                    finish();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
