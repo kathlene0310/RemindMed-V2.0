@@ -257,7 +257,7 @@
         android:id="@+id/imageView32"
         android:layout_width="55dp"
         android:layout_height="56dp"
-        android:onClick="Create_To_Main"
+        android:onClick="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow_blue" />

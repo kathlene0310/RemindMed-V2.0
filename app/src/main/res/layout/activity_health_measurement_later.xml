@@ -82,7 +82,7 @@
         android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="later_to_Temp"
+        android:onClick="later_to_heart"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"

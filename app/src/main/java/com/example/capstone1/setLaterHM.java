@@ -93,6 +93,12 @@ public class setLaterHM extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void later_to_heart(View view){
+        Intent intent = new Intent(setLaterHM.this, set_later_heart_rate.class);
+        startActivity(intent);
+    }
+
+
     public void later_to_Temp (View view){
         Intent intent = new Intent(setLaterHM.this, set_later_temperature.class);
         startActivity(intent);

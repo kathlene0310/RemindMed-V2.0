@@ -109,7 +109,7 @@ public class send_report extends AppCompatActivity {
 
                         (Response.ErrorListener) error -> {
                             sendReport.setEnabled(true);
-                            Toast.makeText(send_report.this, "Some error occurred! " + error.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(send_report.this, "Check your internet connection, some error occurred! " + error.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
                             Log.e("test", "Error: ${error.localizedMessage}" + error.getLocalizedMessage());
                         }

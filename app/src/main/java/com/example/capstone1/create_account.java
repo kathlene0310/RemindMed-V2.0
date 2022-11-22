@@ -76,7 +76,7 @@ public class create_account extends AppCompatActivity {
     FirebaseAuth rootAuthen;
     FirebaseFirestore fstore;
     String userId;
-    CheckBox termsandconditions;
+    //CheckBox termsandconditions;
     int role = 0;
     DatabaseReference RootRef;
 
@@ -123,7 +123,7 @@ public class create_account extends AppCompatActivity {
         // reference = root.getReference("User");
         rootAuthen = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-        removeRippleEffectFromCheckBox(termsandconditions);
+        //removeRippleEffectFromCheckBox(termsandconditions);
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
@@ -229,9 +229,9 @@ public class create_account extends AppCompatActivity {
         CharSequence cs = TextUtils.expandTemplate(
                 "I agree with RemindMed's: ^1 ", linkText);
 
-        termsandconditions.setText(cs);
+        //termsandconditions.setText(cs);
         // Finally, make links clickable
-        termsandconditions.setMovementMethod(LinkMovementMethod.getInstance());
+       // termsandconditions.setMovementMethod(LinkMovementMethod.getInstance());
 
         if (rootAuthen.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), main_page.class));
@@ -281,12 +281,14 @@ public class create_account extends AppCompatActivity {
                     confirm.setError("Password does not match");
                     return;
                 }
+                /*
                 if(!termsandconditions.isChecked())
                 {
                     Toast.makeText(getApplicationContext(), "Please read and check our terms and conditions", Toast.LENGTH_SHORT).show();
                     return;
 
                 }
+                 */
 
 
 
@@ -413,6 +415,10 @@ public class create_account extends AppCompatActivity {
 
     //encrypt decrypt
 
+
+    public void Back(View view) {
+        finish();
+    }
 
     public void Create_To_Main(View view) {
         Intent intent = new Intent(create_account.this, main_page.class);

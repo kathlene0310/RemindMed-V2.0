@@ -33,6 +33,12 @@
             android:name=".v2.edit_dependent"
             android:exported="true"/>
         <activity
+            android:name=".set_now_heart_rate"
+            android:exported="true"/>
+        <activity
+            android:name=".set_later_heart_rate"
+            android:exported="true"/>
+        <activity
             android:name=".instruction_slidefour"
             android:exported="true"/>
         <activity
