@@ -141,8 +141,8 @@ public class d_chat extends AppCompatActivity {
                 }
                 catch(Exception e) {
                     Log.d("ERROR", "ERROR" + e);
-                    Toast.makeText(getApplicationContext(), "Unexpected Error, occured please login again", Toast.LENGTH_LONG);
-                    startActivity(new Intent(getApplicationContext(), main_page.class));
+                    //Toast.makeText(getApplicationContext(), "Unexpected Error, occured please login again", Toast.LENGTH_LONG);
+                    //startActivity(new Intent(getApplicationContext(), main_page.class));
                 }
             }
         });

@@ -304,7 +304,8 @@ public class user_information extends AppCompatActivity {
     }
 
     public void Back(View view) {
-        finish();
+        Intent intent = new Intent(user_information.this, home_page.class);
+        startActivity(intent);
     }
 
 
