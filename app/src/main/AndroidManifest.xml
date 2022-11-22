@@ -13,7 +13,7 @@
     <application
         android:name=".HomeSession"
         android:allowBackup="true"
-        android:icon="@drawable/logoicon"
+        android:icon="@mipmap/logoicon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone1">
@@ -49,6 +49,9 @@
             android:exported="true"/>
         <activity
             android:name=".v2.optical_character_recognition_take_med"
+            android:exported="true"/>
+        <activity
+            android:name=".edit_delete_heartrate"
             android:exported="true"/>
         <activity
             android:name=".v2.optical_character_recognition_refill_med"

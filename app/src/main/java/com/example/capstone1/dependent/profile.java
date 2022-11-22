@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.HomeSession;
 import com.example.capstone1.R;
+import com.example.capstone1.change_password;
 import com.example.capstone1.home_page;
 import com.example.capstone1.user_information;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -56,8 +57,8 @@ public class profile extends AppCompatActivity {
         saveButton = findViewById(R.id.save_bs_later2);
         editFirstName = findViewById(R.id.editTextTextDependentName);
         editLastName = findViewById(R.id.editTextTextDependentName2);
-        editPassword = findViewById(R.id.editTextTextPersonName3);
-        editConfirmPassword = findViewById(R.id.editTextTextPersonName4);
+        //editPassword = findViewById(R.id.editTextTextPersonName3);
+        //editConfirmPassword = findViewById(R.id.editTextTextPersonName4);
 
 
         try {
@@ -103,8 +104,8 @@ public class profile extends AppCompatActivity {
                 try {
                     String firstname = editFirstName.getText().toString().trim();
                     String lastname = editLastName.getText().toString().trim();
-                    String Password = editPassword.getText().toString().trim();
-                    String Confirm_Password = editConfirmPassword.getText().toString().trim();
+                    //String Password = editPassword.getText().toString().trim();
+                    //String Confirm_Password = editConfirmPassword.getText().toString().trim();
 
                     Map<String, Object> user = new HashMap<>();
                     if(TextUtils.isEmpty(firstname)) {
@@ -116,6 +117,7 @@ public class profile extends AppCompatActivity {
                         return;
                     }
 
+                    /*
                     if(Password.length() > 1) {
                         if (TextUtils.isEmpty(Confirm_Password)) {
                             editConfirmPassword.setError("Confirm Password is required");
@@ -136,6 +138,8 @@ public class profile extends AppCompatActivity {
                         StringBuffer result = computeMD5Hash(Password.toString());
                         user.put("password", result);
                     }
+
+                     */
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         Base64.Encoder encoder = Base64.getEncoder();
@@ -194,6 +198,11 @@ public class profile extends AppCompatActivity {
 
     public void Profile_To_Home(View view) {
         Intent intent = new Intent(this, home.class);
+        startActivity(intent);
+    }
+
+    public void Profile_To_Reset(View view) {
+        Intent intent = new Intent(this, change_password.class);
         startActivity(intent);
     }
 

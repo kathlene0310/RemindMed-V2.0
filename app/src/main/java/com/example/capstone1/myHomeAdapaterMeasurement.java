@@ -138,6 +138,21 @@ public class myHomeAdapaterMeasurement extends RecyclerView.Adapter<myHomeAdapat
                     intent.putExtra("fromToday", 1);
                     context.startActivity(intent);
                 }
+                else if(measurement.HMName.equals("Heartrate"))
+                {
+                    intent = new Intent(context, edit_delete_heartrate.class);
+                    intent.putExtra("Time", measurement.Time);
+                    intent.putExtra("Date", strStart);
+                    intent.putExtra("EndDate", strEnd);
+                    intent.putExtra("Frequency", measurement.Frequency);
+                    intent.putExtra("FrequencyTitle", measurement.FrequencyTitle);
+                    intent.putExtra("measurement_info", measurement);
+                    intent.putExtra("Hour", measurement.Hour);
+                    intent.putExtra("Minute", measurement.Minute);
+                    intent.putExtra("AlarmID", measurement.idCode);
+                    intent.putExtra("fromToday", 1);
+                    context.startActivity(intent);
+                }
             }
         });
 
