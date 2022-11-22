@@ -45,6 +45,9 @@
             android:name=".v2.ocr_gallery"
             android:exported="true"/>
         <activity
+            android:name=".pdf_heartrate"
+            android:exported="true"/>
+        <activity
             android:name=".v2.optical_character_recognition_take_med"
             android:exported="true"/>
         <activity

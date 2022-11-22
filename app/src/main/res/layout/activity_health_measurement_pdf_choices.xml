@@ -48,7 +48,7 @@
         android:textColor="#2e276c"
         android:background="@drawable/editttextcancel"
         android:fontFamily="@font/montserrat"
-        android:onClick="pdfchoice_toyemp"
+        android:onClick="pdfchoice_heart"
         android:text="HEART RATE"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"

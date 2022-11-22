@@ -191,7 +191,7 @@ public class pdf_heartrate extends AppCompatActivity {
             file.mkdirs();
         }
         String targetPdf = folder + "RemindMedHeartRate"  + ".pdf";
-        File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "RemindMedPulse.pdf");
+        File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "RemindMedHeartRate.pdf");
         try {
             document.writeTo(new FileOutputStream(filePath));
             Toast.makeText(this, "Exported PDF to downloads folder", Toast.LENGTH_LONG).show();
