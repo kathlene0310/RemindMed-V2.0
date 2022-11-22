@@ -649,7 +649,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
                 public void onSuccess(Void avoid) {
                     alarmManager.setExact(AlarmManager.RTC_WAKEUP, myAlarmDate.getTimeInMillis(), pendingIntent);
                     Toast.makeText(edit_delete_medications.this, "Measurement Alarm Changed", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(edit_delete_medications.this, home_page.class));
+                    //startActivity(new Intent(edit_delete_medications.this, home_page.class));
                     finish();
                 }
             });

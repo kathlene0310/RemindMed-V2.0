@@ -23,6 +23,7 @@ import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.today;
 import com.example.capstone1.history_page;
+import com.example.capstone1.today_page_recycler;
 import com.example.capstone1.user_information;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -183,7 +184,7 @@ public class chat extends AppCompatActivity {
     }
 
     public void Chat_To_Today(View view) {
-        Intent intent = new Intent(chat.this, today.class);
+        Intent intent = new Intent(chat.this, today_page_recycler.class);
         startActivity(intent);
     }
 

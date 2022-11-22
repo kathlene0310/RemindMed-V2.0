@@ -303,6 +303,9 @@ public class user_information extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void Back(View view) {
+        finish();
+    }
 
 
     @Override

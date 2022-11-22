@@ -18,6 +18,7 @@ import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.capstone1.v2.chat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -212,6 +213,16 @@ public class today_page_recycler extends AppCompatActivity {
     }
     public void Today_To_History(View view){
         Intent intent = new Intent(today_page_recycler.this, history_page.class);
+        startActivity(intent);
+    }
+
+    public void Today_To_Chat(View view){
+        Intent intent = new Intent(today_page_recycler.this, chat.class);
+        startActivity(intent);
+    }
+
+    public void Today_To_Today(View view){
+        Intent intent = new Intent(today_page_recycler.this, today_page_recycler.class);
         startActivity(intent);
     }
 

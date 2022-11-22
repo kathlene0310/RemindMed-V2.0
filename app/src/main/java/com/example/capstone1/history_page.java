@@ -206,6 +206,11 @@ public class history_page extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void History_To_History(View view) {
+        Intent intent = new Intent(history_page.this, history_page.class);
+        startActivity(intent);
+    }
+
     private void EventChangeListener() {
 
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();

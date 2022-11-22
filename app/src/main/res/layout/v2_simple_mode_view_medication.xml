@@ -6,246 +6,44 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
 
-    <Spinner
-        android:id="@+id/frequency_set_later_bs10"
-        android:layout_width="321dp"
-        android:layout_height="88dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline120"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="#FFFFFF"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824"
-        app:srcCompat="@drawable/ic_edit_delete" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
 
-    <TextView
-        android:id="@+id/textView43"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline121"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Medicine Name"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs10" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
 
-    <TextView
-        android:id="@+id/frequency_txt10"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline122"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Monthly"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs10"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs10" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="95dp" />
 
-    <TextView
-        android:id="@+id/frequency_txt11"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline123"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserrat"
-        android:text="8:00 am"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs10" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
 
-    <TextView
-        android:id="@+id/frequency_txt9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Dosage"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs10" />
-
-    <Spinner
-        android:id="@+id/frequency_set_later_bs9"
-        android:layout_width="321dp"
-        android:layout_height="88dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="#FFFFFF"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652"
-        app:srcCompat="@drawable/ic_edit_delete" />
-
-    <TextView
-        android:id="@+id/textView42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Medicine Name"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs9" />
-
-    <TextView
-        android:id="@+id/frequency_txt7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Daily"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs9" />
-
-    <TextView
-        android:id="@+id/frequency_txt8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserrat"
-        android:text="8:00 am"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs9" />
-
-    <TextView
-        android:id="@+id/frequency_txt6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Dosage"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView42" />
-
-    <Spinner
-        android:id="@+id/frequency_set_later_bs8"
-        android:layout_width="321dp"
-        android:layout_height="88dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="#FFFFFF"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        app:srcCompat="@drawable/ic_edit_delete" />
-
-    <TextView
-        android:id="@+id/textView41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Medicine Name"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs8" />
-
-    <TextView
-        android:id="@+id/frequency_txt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Monthly"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs8" />
-
-    <TextView
-        android:id="@+id/frequency_txt5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/montserrat"
-        android:text="8:00am"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs8" />
-
-    <TextView
-        android:id="@+id/frequency_txt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Dosage"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView41" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHome"
+        android:layout_width="383dp"
+        android:layout_height="571dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline121"
+        app:layout_constraintEnd_toStartOf="@+id/guideline123"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintStart_toStartOf="@+id/guideline120"
+        app:layout_constraintTop_toTopOf="@+id/guideline122"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -304,98 +102,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView61" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
-
-    <Spinner
-        android:id="@+id/frequency_set_later_bs"
-        android:layout_width="321dp"
-        android:layout_height="88dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Medicine Name"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs" />
-
-    <TextView
-        android:id="@+id/frequency_txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/montserrat"
-        android:text="8:00am"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs" />
-
-    <TextView
-        android:id="@+id/frequency_txt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Dosage"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/frequency_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Daily"
-        android:textColor="#000000"
-        android:textSize="21sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="#FFFFFF"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274"
-        app:srcCompat="@drawable/ic_edit_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

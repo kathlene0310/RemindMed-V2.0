@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.capstone1.R;
 import com.example.capstone1.home_page;
@@ -24,6 +25,9 @@ public class shome_page extends AppCompatActivity {
     Spinner add, view, add_dependent;
     Button editDependent;
     SharedPref sf;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,11 @@ public class shome_page extends AppCompatActivity {
             Log.d("Except", "EXCEPTION" + e);
             startActivity(new Intent(getApplicationContext(), main_page.class));
         }
+
+
+
+
+
 
         editDependent = findViewById(R.id.frequency_set_later_bs11);
         add = findViewById(R.id.frequency_set_later_bs);

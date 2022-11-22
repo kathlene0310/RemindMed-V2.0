@@ -27,7 +27,7 @@
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#2e276c"
-        android:onClick="User_To_Home"
+        android:onClick="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="@drawable/backarrow" />

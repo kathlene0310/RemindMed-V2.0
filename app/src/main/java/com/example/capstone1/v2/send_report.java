@@ -107,10 +107,9 @@ public class send_report extends AppCompatActivity {
                             }
                         },
 
-
                         (Response.ErrorListener) error -> {
                             sendReport.setEnabled(true);
-                            Toast.makeText(send_report.this, "Some error occurred! Cannot send report", Toast.LENGTH_LONG).show();
+                            Toast.makeText(send_report.this, "Some error occurred! " + error.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
                             Log.e("test", "Error: ${error.localizedMessage}" + error.getLocalizedMessage());
                         }
@@ -128,10 +127,12 @@ public class send_report extends AppCompatActivity {
 
                 }
                 catch(Exception e) {
+                    e.printStackTrace();
                     Log.e("test", "Error:" + e);
                 }
 
 
+                /*
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -139,6 +140,9 @@ public class send_report extends AppCompatActivity {
                         Toast.makeText(send_report.this, "Request timeout, try again later", Toast.LENGTH_LONG).show();
                     }
                 },15000);
+
+
+                 */
             }
 
 

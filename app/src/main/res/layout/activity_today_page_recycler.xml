@@ -179,6 +179,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:clickable="true"
+        android:onClick="Today_To_Today"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
@@ -206,7 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:clickable="true"
-        android:onClick="Home_To_Chat"
+        android:onClick="Today_To_Chat"
 
         app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/History_page"
