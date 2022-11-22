@@ -277,7 +277,7 @@ public class add_dependent extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Dependent Replaced", Toast.LENGTH_LONG).show();
                                     }
                                     else {
-
+                                        Toast.makeText(getApplicationContext(), "Dependent Added", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             }
