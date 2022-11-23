@@ -21,10 +21,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone1.Faq;
 import com.example.capstone1.R;
 import com.example.capstone1.forgot_password;
 import com.example.capstone1.user_information;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,9 +40,11 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class add_dependent extends AppCompatActivity {
@@ -154,7 +158,7 @@ public class add_dependent extends AppCompatActivity {
                                                                         @Override
                                                                         public void onComplete(@NonNull Task<Void> task) {
                                                                             if (task.isSuccessful()) {
-                                                                                addWithUserLengthChecker(dependentId, 1);
+                                                                                addWithUserLengthChecker(dependentId, 2);
                                                                                 finish();
                                                                             }
                                                                         }
@@ -200,6 +204,7 @@ public class add_dependent extends AppCompatActivity {
                                                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                                                 if (task.isSuccessful()) {
                                                                                                     addWithUserLengthChecker(dependentId, 1);
+                                                                                                    finish();
                                                                                                 }
                                                                                             }
                                                                                         });
@@ -263,30 +268,110 @@ public class add_dependent extends AppCompatActivity {
                         if (value.exists()) {
                             Log.d(TAG, "DocumentSnapshot data: " + value.getData());
 
-                            if(value.get("users") != null) {
+
+                            if (value.get("users") == null) {
+
+                                Map<String, Object> update = new HashMap<>();
+                                List<String> array = new ArrayList<String>();
+                                update.put("users", array);
+                                fstore.collection("users").document(dependentId).set(update, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        Log.d("DEBUG", "CREATED USER FIELD");
+
+                                            //ArrayList<String> userIds = (ArrayList<String>) value.get("users");
+
+
+                                                DocumentReference dependentRef = fstore.collection("users").document(dependentId);
+                                                dependentRef.update("users", FieldValue.arrayUnion(userId)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (choice == 1) {
+                                                                    Toast.makeText(getApplicationContext(), "Dependent Replaced", Toast.LENGTH_LONG).show();
+                                                                    //userIds.clear();
+                                                                } else {
+                                                                    Toast.makeText(getApplicationContext(), "Dependent Added", Toast.LENGTH_LONG).show();
+                                                                    //userIds.clear();
+                                                                }
+                                                            }
+                                                        })
+                                                        .addOnFailureListener(new OnFailureListener() {
+                                                            @Override
+                                                            public void onFailure(@NonNull Exception e) {
+                                                                Toast.makeText(getApplicationContext(), "Failed to add dependent", Toast.LENGTH_LONG).show();
+                                                                revertAddedDependent();
+                                                                return;
+                                                            }
+                                                        });
+
+
+
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(getApplicationContext(), "Failed to add dependent", Toast.LENGTH_LONG).show();
+                                        revertAddedDependent();
+                                        return;
+                                    }
+                                });
+
+                            } else {
+
+                            Log.d("USER FIELD", "UFIELD2" + value.get("users"));
+                            if (value.get("users") != null) {
                                 ArrayList<String> userIds = (ArrayList<String>) value.get("users");
                                 Log.d("USERIDS", "userids: " + userIds.toString());
                                 Log.d("SIZE", "size: " + userIds.size());
-                                if(userIds.size() > 3) {
+                                if (userIds.size() > 3) {
                                     Toast.makeText(getApplicationContext(), "Target dependent has already 3 users", Toast.LENGTH_LONG).show();
-                                }
-                                else {
+                                    userIds.clear();
+                                    return;
+                                } else {
                                     DocumentReference dependentRef = fstore.collection("users").document(dependentId);
-                                    dependentRef.update("users", FieldValue.arrayUnion(userId));
-                                    if(choice == 1) {
-                                        Toast.makeText(getApplicationContext(), "Dependent Replaced", Toast.LENGTH_LONG).show();
-                                    }
-                                    else {
-                                        Toast.makeText(getApplicationContext(), "Dependent Added", Toast.LENGTH_LONG).show();
-                                    }
+                                    dependentRef.update("users", FieldValue.arrayUnion(userId)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (choice == 1) {
+                                                        Toast.makeText(getApplicationContext(), "Dependent Replaced", Toast.LENGTH_LONG).show();
+                                                        userIds.clear();
+                                                    } else {
+                                                        Toast.makeText(getApplicationContext(), "Dependent Added", Toast.LENGTH_LONG).show();
+                                                        userIds.clear();
+                                                    }
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(getApplicationContext(), "Failed to add dependent", Toast.LENGTH_LONG).show();
+                                                    revertAddedDependent();
+                                                    return;
+                                                }
+                                            });
+
                                 }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Failed to add dependent", Toast.LENGTH_LONG).show();
+                                revertAddedDependent();
+                                return;
                             }
+
+                        }
                         } else {
                             Log.d(TAG, "No such document");
                         }
                     } else {
                         Log.d(TAG, "get failed with ", task.getException());
                     }
+                }
+
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getApplicationContext(), "Failed to add dependent", Toast.LENGTH_LONG).show();
+                    revertAddedDependent();
+                    return;
                 }
             });
 
@@ -321,6 +406,21 @@ public class add_dependent extends AppCompatActivity {
             });
             */
         }
+    }
+
+    public void revertAddedDependent() {
+        Map<String, Object> update = new HashMap<>();
+        update.put("dependent",  "");
+        fstore.collection("users").document(userId).set(update, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Log.d("DEBUG", "REVERTED");
+            }
+        });
+    }
+
+    public void addUserField(String dependentId) {
+
     }
 
     public void Back(View view) {

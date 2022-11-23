@@ -21,6 +21,9 @@
             android:name=".Guest_FAQ"
             android:exported="true"/>
         <activity
+            android:name=".simple.edit_dependent_simple"
+            android:exported="true"/>
+        <activity
             android:name=".dependent.manageMedications"
             android:exported="true"/>
         <activity

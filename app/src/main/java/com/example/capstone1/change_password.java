@@ -55,6 +55,11 @@ public class change_password extends AppCompatActivity {
                     });
                 }
             }
+
         });
+    }
+
+    public void Back(View v) {
+        finish();
     }
 }

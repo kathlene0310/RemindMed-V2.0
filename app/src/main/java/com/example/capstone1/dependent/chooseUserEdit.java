@@ -72,51 +72,52 @@ public class chooseUserEdit extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 try
                 {
-                    ArrayList<String> userIds = (ArrayList<String>) value.get("users");
-                    Log.d("ARRAY", "DATA" + userIds);
+                    if(value.get("users") != null) {
+                        ArrayList<String> userIds = (ArrayList<String>) value.get("users");
+                        Log.d("ARRAY", "DATA" + userIds);
 
 
-                    for (String user : userIds) {
-                        DocumentReference df = fstore.collection("users").document(user);
+                        for (String user : userIds) {
+                            DocumentReference df = fstore.collection("users").document(user);
 
-                        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                DocumentSnapshot doc = task.getResult();
-                                if (doc.exists()) {
-                                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                                        Base64.Decoder decoder = Base64.getDecoder();
-                                        byte[] bytesFN = decoder.decode(doc.get("firstname").toString());
-                                        byte[] bytesLN = decoder.decode(doc.get("lastname").toString());
-                                        String u  = doc.get("uid").toString();
+                            df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    DocumentSnapshot doc = task.getResult();
+                                    if (doc.exists()) {
+                                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                                            Base64.Decoder decoder = Base64.getDecoder();
+                                            byte[] bytesFN = decoder.decode(doc.get("firstname").toString());
+                                            byte[] bytesLN = decoder.decode(doc.get("lastname").toString());
+                                            String u = doc.get("uid").toString();
 
-                                        String f = new String(bytesFN);
-                                        String l = new String(bytesLN);
+                                            String f = new String(bytesFN);
+                                            String l = new String(bytesLN);
 
-                                        Log.d("F", "firsstname" + f);
-                                        Log.d("F", "lname" + l);
-                                        if (f.isEmpty() || l.isEmpty()) {
-                                            return;
+                                            Log.d("F", "firsstname" + f);
+                                            Log.d("F", "lname" + l);
+                                            if (f.isEmpty() || l.isEmpty()) {
+                                                return;
+                                            }
+
+                                            User x = new User(u, f, l);
+                                            Log.d("X", "X VAL" + x);
+                                            options.add(f + " " + l);
+                                            users.add(u);
+                                            loadDataSpinner();
                                         }
-
-                                        User x = new User(u, f, l);
-                                        Log.d("X", "X VAL" + x);
-                                        options.add(f + " " + l);
-                                        users.add(u);
-                                        loadDataSpinner();
                                     }
+
+
                                 }
+                            });
+                        }
 
 
-
-
-                            }
-                        });
                     }
-
-
-
-
+                    else {
+                        Toast.makeText(getApplicationContext(), "No users found", Toast.LENGTH_LONG).show();
+                    }
 
                 }
                 catch(Exception e) {

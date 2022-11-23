@@ -65,7 +65,7 @@ public class shome_page extends AppCompatActivity {
         editDependent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(shome_page.this, edit_dependent.class));
+                startActivity(new Intent(shome_page.this, edit_dependent_simple.class));
             }
         });
     }

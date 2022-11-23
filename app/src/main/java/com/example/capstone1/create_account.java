@@ -52,8 +52,10 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import javax.crypto.KeyGenerator;
@@ -341,6 +343,10 @@ public class create_account extends AppCompatActivity {
                             user.put("uid", userId);
                             user.put("name", firstname);
                             user.put("status", "TEST");
+                            if(role == 1) {
+                                List<String> array = new ArrayList<String>();
+                                user.put("users", array);
+                            }
 
 
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
