@@ -129,17 +129,32 @@
         app:srcCompat="@drawable/backarrow" />
 
     <TextView
-        android:layout_width="341dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/textView43"
+        android:layout_width="345dp"
+        android:layout_height="66dp"
         android:fontFamily="@font/montserratbold"
         android:text="HEALTH MEASUREMENTS"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/history_userText"
+        android:layout_width="108dp"
+        android:layout_height="21dp"
+
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="User"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -397,9 +412,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="224dp"
-        android:layout_height="144dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="200dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
