@@ -17,7 +17,6 @@
         android:focusable="true"
         android:onClick="Chat_To_Home"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/homeiconv2" />
@@ -32,7 +31,6 @@
         android:onClick="Chat_To_Today"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/todayiconv2" />
@@ -49,7 +47,6 @@
         android:onClick="Chat_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintStart_toEndOf="@+id/today_chat"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/historyiconv2" />
@@ -63,7 +60,6 @@
         android:clickable="true"
         android:onClick="Chat_To_Chat"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintEnd_toEndOf="@+id/profile_chat"
         app:layout_constraintEnd_toStartOf="@+id/profile_chat"
         app:layout_constraintTop_toBottomOf="@+id/view5"
@@ -80,7 +76,6 @@
         android:onClick="Chat_To_Profile"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
