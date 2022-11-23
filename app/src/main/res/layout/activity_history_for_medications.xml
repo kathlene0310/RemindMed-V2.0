@@ -11,26 +11,28 @@
         android:id="@+id/toolbar"
         android:layout_width="421dp"
         android:layout_height="92dp"
-        android:layout_marginBottom="20dp"
         android:background="#2e276c"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
-       android:onClick="HistoryHM_To_PDF"
-        android:fontFamily="@font/montserratbold"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/montserrat"
+        android:onClick="HistoryHM_To_PDF"
         android:text="PDF"
+        android:textStyle="italic"
         android:textColor="#2e276c"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
+
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="79dp"
@@ -42,17 +44,31 @@
 
     <TextView
         android:id="@+id/welcomeName"
-        android:layout_width="283dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="175dp"
+        android:layout_height="38dp"
         android:fontFamily="@font/montserratbold"
-        android:text="HEALTH MEASUREMENTS"
+        android:text="HISTORY"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/history_userText"
+        android:layout_width="108dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="User"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
 
     <View
         android:id="@+id/view2"
@@ -68,8 +84,8 @@
         android:layout_width="3dp"
         android:layout_height="55dp"
         android:background="#2e276c"
-        app:layout_constraintEnd_toStartOf="@+id/measurementsView"
-        app:layout_constraintStart_toEndOf="@+id/medicationsView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:ignore="MissingConstraints" />
 
@@ -78,12 +94,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserratbold"
-        android:text="Medications"
+        android:fontFamily="@font/montserrat"
+        android:text="Medication"
         android:textColor="#000000"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/measurementsView"
-        app:layout_constraintStart_toEndOf="@+id/guideline45"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
@@ -91,12 +107,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Measurements"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/medicationsView"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <View

@@ -14,8 +14,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="31dp"
         android:onClick="HistoryHM_To_PDF"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="PDF"
+        android:textStyle="italic"
         android:textColor="#2e276c"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,6 @@
         android:id="@+id/toolbar"
         android:layout_width="421dp"
         android:layout_height="92dp"
-        android:layout_marginBottom="20dp"
         android:background="#2e276c"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -43,17 +43,32 @@
 
     <TextView
         android:id="@+id/welcomeName"
-        android:layout_width="285dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="170dp"
+        android:layout_height="37dp"
+
         android:fontFamily="@font/montserratbold"
-        android:text="HEALTH MEASUREMENTS"
+        android:text="HISTORY"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/history_userText"
+        android:layout_width="108dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="User"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
 
     <TextView
         android:id="@+id/medicationsView"
@@ -66,21 +81,21 @@
         android:text="Medication"
         android:textColor="#2e276c"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline85"
-        app:layout_constraintStart_toStartOf="@+id/guideline40"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/measurementsView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/montserratbold"
-        android:text="Measurement"
         android:gravity="center"
+        android:text="Measurement"
         android:textColor="#2e276c"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline41"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -98,8 +113,8 @@
         android:layout_width="3dp"
         android:layout_height="55dp"
         android:background="#2e276c"
-        app:layout_constraintEnd_toStartOf="@+id/measurementsView"
-        app:layout_constraintStart_toEndOf="@+id/medicationsView"
+        app:layout_constraintEnd_toEndOf="@+id/measurementsView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:ignore="MissingConstraints" />
 
@@ -110,7 +125,8 @@
         android:layout_marginStart="27dp"
         android:layout_marginTop="8dp"
         android:text="Clear All"
-        android:fontFamily="@font/montserratbold"
+        android:textStyle="italic"
+        android:fontFamily="@font/montserrat"
         android:textColor="#2e276c"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -297,9 +313,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerHistory"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="368dp"
+        android:layout_height="386dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline41"
         app:layout_constraintHorizontal_bias="1.0"

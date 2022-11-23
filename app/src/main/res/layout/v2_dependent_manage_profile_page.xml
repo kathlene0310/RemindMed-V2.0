@@ -8,13 +8,13 @@
 
     <Button
         android:id="@+id/buttonchangepass3"
-        android:layout_width="248dp"
+        android:layout_width="270dp"
         android:layout_height="46dp"
         android:layout_marginTop="27dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="Profile_To_Reset"
-        android:text="Change Password"
+        android:text="CHANGE PASSWORD"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -47,21 +47,20 @@
 
     <Button
         android:id="@+id/save_bs_later2"
-        android:layout_width="247dp"
-        android:layout_height="49dp"
+        android:layout_width="270dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="SAVE CHANGES"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonchangepass3" />
 
     <TextView
         android:id="@+id/dependent_home_page_text"
@@ -82,15 +81,15 @@
         android:id="@+id/dependent_manage_profile_text"
         android:layout_width="284dp"
         android:layout_height="33dp"
-        android:layout_marginTop="12dp"
         android:fontFamily="@font/montserratbold"
         android:gravity="center"
         android:text="MANAGE PROFILE"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
 
     <TextView
@@ -140,6 +139,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.363" />
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_page_button4"
         android:layout_width="wrap_content"
@@ -151,12 +151,11 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44"
+        app:layout_constraintVertical_bias="0.426"
         app:srcCompat="@drawable/profile_dependent" />
-
 
     <EditText
         android:id="@+id/editTextTextDependentName"
@@ -192,53 +191,49 @@
         android:id="@+id/home_history"
         android:layout_width="55dp"
         android:layout_height="61dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Profile_To_Home"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.998"
-        app:srcCompat="@drawable/homeiconv2" />
 
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/homeiconv2" />
 
     <TextView
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.866"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_history" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="Profile_To_Account"
-        android:layout_marginStart="10dp"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="Profile_To_Account"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/profileiconv2"
         tools:ignore="MissingConstraints" />
 
@@ -246,15 +241,14 @@
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:fontFamily="@font/montserrat"
         android:text="Account"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.164"
-        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
