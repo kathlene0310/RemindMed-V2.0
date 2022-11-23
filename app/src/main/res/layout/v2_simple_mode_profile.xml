@@ -115,7 +115,7 @@
         android:layout_height="93dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logov2" />
+        app:srcCompat="@drawable/logov2_" />
 
     <ImageButton
         android:id="@+id/imageBack"
@@ -148,8 +148,7 @@
         android:id="@+id/simple_mode_home_page_header"
         android:layout_width="85dp"
         android:layout_height="15dp"
-
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
@@ -305,12 +304,12 @@
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:layout_marginTop="19dp"
-        android:background="@drawable/edit_round"
+        android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
 
         android:text="LOGOUT"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
+        android:textColor="#2e276c"
         android:textSize="22sp"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -339,13 +338,13 @@
         android:layout_width="247dp"
         android:layout_height="49dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/edit_round2"
+        android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="SAVE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="22sp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightView3" />

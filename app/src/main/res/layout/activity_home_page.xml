@@ -11,12 +11,11 @@
         android:id="@+id/home_history"
         android:layout_width="55dp"
         android:layout_height="61dp"
-        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_Home"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline54"
         app:layout_constraintTop_toTopOf="@+id/guideline1241"
 
         app:srcCompat="@drawable/homeiconv2" />
@@ -39,13 +38,14 @@
         android:id="@+id/home_historybtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+
 
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
+        app:layout_constraintEnd_toStartOf="@+id/chat_dep"
         app:layout_constraintStart_toEndOf="@+id/today_history"
         app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/historyiconv2" />
@@ -54,26 +54,25 @@
         android:id="@+id/chat_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:clickable="true"
         android:onClick="Home_To_Chat"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/home_historybtn"
-        app:layout_constraintTop_toTopOf="@+id/guideline1241"
 
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/profile_history"
+        app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/chaticonv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
 
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintStart_toEndOf="@+id/chat_dep"
+        app:layout_constraintEnd_toStartOf="@+id/guideline53"
         app:layout_constraintTop_toTopOf="@+id/guideline1241"
         app:srcCompat="@drawable/profileiconv2" />
 
@@ -101,33 +100,29 @@
         android:id="@+id/welcomeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+
         android:fontFamily="@font/montserratbold"
         android:text="WELCOME! "
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.301" />
 
     <TextView
         android:id="@+id/firstnameview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
         android:fontFamily="@font/montserrat"
         android:text="name"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
-        app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
 
     <Button
         android:id="@+id/add_medications_btn"
@@ -164,7 +159,7 @@
 
     <Button
         android:id="@+id/add_dependent"
-        android:layout_width="150dp"
+        android:layout_width="138dp"
         android:layout_height="98dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/edit_round2"
@@ -172,7 +167,7 @@
         android:onClick="Home_To_AddDepedendent"
         android:text="Add Dependent"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="23sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,7 +175,7 @@
 
     <Button
         android:id="@+id/edit_dependent"
-        android:layout_width="150dp"
+        android:layout_width="138dp"
         android:layout_height="98dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/edit_round2"
@@ -188,9 +183,9 @@
         android:onClick="Home_To_EditDependent"
         android:text="Edit Dependent"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="23sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_measurements_btn" />
 
@@ -209,25 +204,24 @@
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="3dp"
+
+        android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline54"
         app:layout_constraintTop_toBottomOf="@+id/home_history" />
 
     <TextView
         android:id="@+id/textViewToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="24dp"
+
+        android:fontFamily="@font/montserrat"
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintStart_toEndOf="@+id/textViewHome"
         app:layout_constraintTop_toBottomOf="@+id/today_history" />
 
@@ -235,12 +229,14 @@
         android:id="@+id/textViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="32dp"
+
+        android:layout_marginEnd="31dp"
+        android:fontFamily="@font/montserrat"
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
+        app:layout_constraintEnd_toStartOf="@+id/textViewChat"
         app:layout_constraintStart_toEndOf="@+id/textViewToday"
         app:layout_constraintTop_toBottomOf="@+id/home_historybtn" />
 
@@ -248,29 +244,25 @@
         android:id="@+id/textViewChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="2dp"
+
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/montserrat"
         android:text="Chat"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
+        app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
         app:layout_constraintTop_toBottomOf="@+id/chat_dep" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="2dp"
+
+        android:fontFamily="@font/montserrat"
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toEndOf="@+id/textViewChat"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline53"
         app:layout_constraintTop_toBottomOf="@+id/profile_history" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -278,7 +270,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.20194647" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
@@ -334,7 +326,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_begin="645dp" />
 
     <Button
         android:id="@+id/changeLayout"
@@ -401,7 +393,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".03" />
+        app:layout_constraintGuide_end="399dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline108"

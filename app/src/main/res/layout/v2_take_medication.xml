@@ -12,7 +12,6 @@
         android:id="@+id/ocr_btn"
         android:layout_width="51dp"
         android:layout_height="40dp"
-        android:layout_marginTop="144dp"
         android:layout_marginEnd="96dp"
         android:clickable="true"
         android:focusable="true"
@@ -22,7 +21,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline78"
         app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toEndOf="@+id/medicine_Box"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
         app:srcCompat="@drawable/v2_scan" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,12 +34,13 @@
         android:onClick="Medication_To_OCR"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
+        app:srcCompat="@drawable/v2_upload"
         app:layout_constraintEnd_toStartOf="@+id/guideline78"
         app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toEndOf="@+id/medicine_Box"
         app:layout_constraintTop_toBottomOf="@+id/text"
         app:layout_constraintTop_toTopOf="@+id/guideline1"
-        app:srcCompat="@drawable/v2_upload" />
+        />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

@@ -7,30 +7,11 @@
     android:background="@drawable/background_gradient">
 
     <Button
-        android:id="@+id/startButton_date4"
+        android:id="@+id/endButton_one4"
         android:layout_width="159dp"
         android:layout_height="49dp"
-        android:layout_marginEnd="56dp"
-        android:width="125dp"
-        android:height="50dp"
-        android:background="@drawable/edittext3"
-        android:drawableStart="@drawable/ic_calendar"
-        android:paddingLeft="10dp"
-        android:text="Start"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/endButton_one4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
-
-    <Button
-        android:id="@+id/endButton_one4"
-        android:layout_width="146dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
         android:width="125dp"
         android:height="50dp"
         android:background="@drawable/edittext3"
@@ -39,29 +20,248 @@
         android:text="End"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startButton_date4"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs7" />
+
+    <EditText
+        android:id="@+id/frequency_set_later_bs"
+        android:layout_width="344dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <Spinner
+        android:id="@+id/frequency_set_later_bs7"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        app:layout_constraintStart_toEndOf="@+id/frequency_set_later_bs6"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="140dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Choose unit"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+    <Button
+        android:id="@+id/frequency_set_later_bs5"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/montserrat"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        android:text="Set Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Intake"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
+
+    <Button
+        android:id="@+id/startButton_date4"
+        android:layout_width="159dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="26dp"
+        android:width="125dp"
+        android:height="50dp"
+        android:background="@drawable/edittext3"
+        android:drawableStart="@drawable/ic_calendar"
+        android:paddingLeft="10dp"
+        android:text="Start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs5" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="145dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Enter how many pills or ml to take"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Unit"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="102dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Frequency"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toEndOf="@+id/textView35"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs4" />
+
+    <EditText
+        android:id="@+id/frequency_set_later_bs6"
+        android:layout_width="103dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        app:layout_constraintStart_toEndOf="@+id/frequency_set_later_bs5"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="69dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Time"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs2" />
+
+    <EditText
+        android:id="@+id/frequency_set_later_bs2"
+        android:layout_width="159dp"
+        android:layout_height="41dp"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="96dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Choose how frequency of the alarm"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
+        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Enter a new medicine"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="96dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+
+        android:fontFamily="@font/montserrat"
+        android:text="Set time for the alarm reminder"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <Spinner
+        android:id="@+id/frequency_set_later_bs4"
+        android:layout_width="159dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        app:layout_constraintStart_toEndOf="@+id/frequency_set_later_bs2"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="91dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Inventory"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toEndOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs2" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="96dp"
+        android:layout_height="71dp"
+
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Enter number of supply"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView37"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <Button
         android:id="@+id/resetbtn2"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginEnd="92dp"
+        android:layout_width="245dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
-        android:text="ADD MEDICATION"
 
+        android:text="ADD MEDICATION"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintTop_toBottomOf="@+id/startButton_date4" />
 
     <View
         android:id="@+id/view3"
@@ -78,29 +278,26 @@
         android:id="@+id/textViewHome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:fontFamily="@font/montserrat"
+
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.998" />
+        app:layout_constraintTop_toBottomOf="@+id/home_history_two" />
 
     <TextView
         android:id="@+id/textViewHome3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:fontFamily="@font/montserrat"
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.721"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.998" />
+        app:layout_constraintStart_toEndOf="@+id/textViewHome2"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history_two" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -118,21 +315,20 @@
         android:id="@+id/textView31"
         android:layout_width="238dp"
         android:layout_height="27dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/montserratbold"
         android:text="ADD MEDICATIONS"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/simple_mode_home_page_header"
         android:layout_width="85dp"
         android:layout_height="15dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Simple Mode"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
@@ -140,221 +336,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="45dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Enter a new medicine"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-    <EditText
-        android:id="@+id/frequency_set_later_bs"
-        android:layout_width="324dp"
-        android:layout_height="44dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.236" />
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="96dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="152dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Enter number of supply"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
-
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="69dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Time"
-        android:textColor="#000000"
-        android:textSize="19sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs2" />
-
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="96dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="36dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Set time for the alarm reminder"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34" />
-
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="91dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Inventory"
-        android:textColor="#000000"
-        android:textSize="19sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs2" />
-
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="92dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="29dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Frequency"
-        android:textColor="#000000"
-        android:textSize="19sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs4" />
-
-    <TextView
-        android:id="@+id/textView39"
-        android:layout_width="96dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="2dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Choose how frequency of the alarm"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView36" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="140dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Choose unit"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView49" />
-
-    <Spinner
-        android:id="@+id/frequency_set_later_bs4"
-        android:layout_width="159dp"
-        android:layout_height="41dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="146dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="1dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Enter how many pills or ml to take"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView48" />
-
-    <TextView
-        android:id="@+id/textView48"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Intake"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
-
-    <TextView
-        android:id="@+id/textView49"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="13dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Unit"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
-
-    <EditText
-        android:id="@+id/frequency_set_later_bs2"
-        android:layout_width="159dp"
-        android:layout_height="41dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-    <Button
-        android:id="@+id/frequency_set_later_bs5"
-        android:layout_width="103dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        android:text="Set Time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
-
-    <EditText
-        android:id="@+id/frequency_set_later_bs6"
-        android:layout_width="103dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
-
-    <Spinner
-        android:id="@+id/frequency_set_later_bs7"
-        android:layout_width="103dp"
-        android:layout_height="50dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline21"

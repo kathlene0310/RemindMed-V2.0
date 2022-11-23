@@ -65,17 +65,31 @@
         app:srcCompat="@drawable/backarrow" />
 
     <TextView
+        android:id="@+id/textView42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserratbold"
         android:text="EDIT MEDICATIONS"
         android:textColor="#FFFFFF"
         android:textSize="27sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dependent_home_page_text"
+        android:layout_width="100dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="Dependent"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <ImageView
         android:id="@+id/imageView16"
