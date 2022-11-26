@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class alarm_notification extends AppCompatActivity {
     Calendar myAlarmDate = Calendar.getInstance();
     Timer mTimer;
     Ringtone ringtone = alarmreceiver.ringtone;
+    MediaPlayer media = alarmreceiver.media;
     SharedPref sf;
     String snoozeValue;
 
@@ -68,16 +70,20 @@ public class alarm_notification extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
+        MediaPlayer media = alarmreceiver.media;
         Ringtone ringtone = alarmreceiver.ringtone;
         Timer timer = alarmreceiver.mTimer;
 
-
+        if(media != null && media.isPlaying()) {
+            media.stop();
+        }
         if(timer != null) {
             timer.cancel();
         }
         if(ringtone != null) {
             ringtone.stop();
         }
+        Rumble.stop();
         startActivity(intentpage);
     }
 

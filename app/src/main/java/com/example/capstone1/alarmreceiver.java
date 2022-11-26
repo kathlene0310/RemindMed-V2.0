@@ -25,11 +25,12 @@ import java.util.TimerTask;
 public class alarmreceiver extends BroadcastReceiver {
     static Ringtone ringtone;
     static Timer mTimer;
+    static MediaPlayer media;
     SharedPref sf;
     @Override
     public void onReceive(Context context, Intent intent) {
         sf = new SharedPref(context);
-
+        Rumble.init(context);
 
 
 
@@ -39,37 +40,39 @@ public class alarmreceiver extends BroadcastReceiver {
             String alarm = sf.getAlarmSound();
 
             if(alarm.equals("Beep")) {
-                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.beep);
-                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                //mMediaPlayer.setLooping(true);
-                mMediaPlayer.start();
+                media = MediaPlayer.create(context, R.raw.beep);
+                media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                media.setLooping(true);
+                media.start();
 
             } else if(alarm.equals("Bell")) {
-                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.bell);
-                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                //mMediaPlayer.setLooping(true);
-                mMediaPlayer.start();
+                media = MediaPlayer.create(context, R.raw.bell);
+                media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                media.setLooping(true);
+                media.start();
 
             } else if(alarm.equals("Clock")) {
-                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.clock);
-                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                //mMediaPlayer.setLooping(true);
-                mMediaPlayer.start();
+                media = MediaPlayer.create(context, R.raw.clock);
+                media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                media.setLooping(true);
+                media.start();
 
             }else if(alarm.equals("Simple")) {
-                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.simple);
-                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                //mMediaPlayer.setLooping(true);
-                mMediaPlayer.start();
+                media = MediaPlayer.create(context, R.raw.simple);
+                media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                media.setLooping(true);
+                media.start();
 
             }else if(alarm.equals("Wave")) {
-                MediaPlayer mMediaPlayer = MediaPlayer.create(context, R.raw.wave);
-                //mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                //mMediaPlayer.setLooping(true);
-                mMediaPlayer.start();
+                media = MediaPlayer.create(context, R.raw.wave);
+                media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                media.setLooping(true);
+                media.start();
             } else {
-                MediaPlayer mediaPlayer = MediaPlayer.create(context, Settings.System.DEFAULT_NOTIFICATION_URI);
-                mediaPlayer.start();
+                media = MediaPlayer.create(context, Settings.System.DEFAULT_NOTIFICATION_URI);
+                media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                media.setLooping(true);
+                media.start();
             }
 
         }
@@ -97,17 +100,54 @@ public class alarmreceiver extends BroadcastReceiver {
 
         //ringtone = RingtoneManager.getRingtone(context, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE));
         //ringtone.play();
+
+        if(sf.getAlarmVibration().equals("Heartbeat")) {
+            mTimer = new Timer();
+            mTimer.scheduleAtFixedRate(new TimerTask() {
+                public void run() {
+                    Rumble.once(100);
+                }
+            }, 1000*1, 1000*1);
+        }
+        else if(sf.getAlarmVibration().equals("Ticktock")
+        ){
+            mTimer = new Timer();
+            mTimer.scheduleAtFixedRate(new TimerTask() {
+                public void run() {
+                    Rumble.once(300);
+                }
+            }, 1300*1, 1300*1);
+
+        }
+        else if(sf.getAlarmVibration().equals("Zig-zig-zig")){
+            mTimer = new Timer();
+            mTimer.scheduleAtFixedRate(new TimerTask() {
+                public void run() {
+                    Rumble.once(400);
+                }
+            }, 500*1, 500*1);
+        }
+        else {
+            mTimer = new Timer();
+            mTimer.scheduleAtFixedRate(new TimerTask() {
+                public void run() {
+                    Rumble.once(400);
+                }
+            }, 1000*1, 1000*1);
+        }
+              /*
         mTimer = new Timer();
         mTimer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
-                /*
+
                 if (!ringtone.isPlaying()) {
                     ringtone.play();
                 }
 
-                 */
+
             }
         }, 1000*1, 1000*1);
+   */
 
         context.startActivity(i);
 

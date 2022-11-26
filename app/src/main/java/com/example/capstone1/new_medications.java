@@ -80,7 +80,7 @@ public class new_medications extends AppCompatActivity implements TimePickerDial
     private static final String TAG = "new_medications";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-
+    FloatingActionButton uploadName, uploadInventory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,8 +103,30 @@ public class new_medications extends AppCompatActivity implements TimePickerDial
         helpinventory = findViewById(R.id.inventoryhelp);
         notfinInventory = findViewById(R.id.notifbutton);
 
+
+        uploadName = findViewById(R.id.ocr_btn_upload);
+        uploadInventory = findViewById(R.id.ocr_btn_upload2);
+
         timeButtonmedtst = findViewById(R.id.timeButtonmed);
         userId = rootAuthen.getCurrentUser().getUid();
+
+        uploadName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(new_medications.this, v2_ocr_gallery_medname.class);
+                intent.putExtra("ocrchoice", 1 );
+                startActivity(intent);
+            }
+        });
+
+        uploadInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(new_medications.this, v2_ocr_gallery_inventory.class);
+                intent.putExtra("ocrchoice", 1 );
+                startActivity(intent);
+            }
+        });
 
         helpdosage.setOnClickListener(new View.OnClickListener() {
             @Override

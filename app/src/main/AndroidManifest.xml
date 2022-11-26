@@ -24,7 +24,13 @@
             android:name=".simple.edit_dependent_simple"
             android:exported="true"/>
         <activity
+            android:name=".v2_ocr_gallery_inventory"
+            android:exported="true"/>
+        <activity
             android:name=".dependent.manageMedications"
+            android:exported="true"/>
+        <activity
+            android:name=".v2_ocr_gallery_medname"
             android:exported="true"/>
         <activity
             android:name=".v2.user_manage_medications"

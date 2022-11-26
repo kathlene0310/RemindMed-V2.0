@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.graphics.text.LineBreaker;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
@@ -69,7 +70,7 @@ public class create_account extends AppCompatActivity {
     public static final String TAG = "TAG";
     EditText first, last, emailInput, gender, birthyr, height, weight;
     TextInputEditText password, confirm;
-    TextView result, resultem;
+    TextView result, resultem, terms;
     Button buttonSignUp;
     Button buttonSave;
     //String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -111,6 +112,8 @@ public class create_account extends AppCompatActivity {
         confirm = findViewById(R.id.confimpasswordtxt);
         emailInput = findViewById(R.id.emailBox);
         buttonSignUp = findViewById(R.id.btnSign);
+
+        terms = findViewById(R.id.textView63);
         //gender = findViewById(R.id.editTextgender);
        // birthyr = findViewById(R.id.editTextbirth);
         //height = findViewById(R.id.editTextheight);
@@ -126,6 +129,17 @@ public class create_account extends AppCompatActivity {
         rootAuthen = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         //removeRippleEffectFromCheckBox(termsandconditions);
+
+        terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent viewIntent =
+                        new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://www.privacy.gov.ph/data-privacy-act/#:~:text=11.-,General%20Data%20Privacy%20Principles.,transparency%2C%20legitimate%20purpose%20and%20proportionality"));
+                startActivity(viewIntent);
+            }
+        });
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {

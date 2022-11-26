@@ -50,6 +50,13 @@
         <item>Prefer not to say</item>
     </string-array>
 
+    <string-array name="alarm_vibrations">
+        <item>Default</item>
+        <item>Heartbeat</item>
+        <item>Ticktock</item>
+        <item>Zig-zig-zig</item>
+    </string-array>
+
     <string name="medName"> MedName </string>
     <string name="dosage"> dose </string>
     <string name="daily"> freq </string>

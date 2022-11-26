@@ -96,7 +96,7 @@ public class manageMedications extends AppCompatActivity {
 
         addMed = (Button) findViewById(R.id.add_medications_btn);
         // addHM = (Button) findViewById(R.id.add_measurements_btn);
-        profileBtn = findViewById(R.id.profile_history);
+
         changeLayout = (Button) findViewById(R.id.changeLayout);
         changeLayout2 = (Button) findViewById(R.id.changeLayout2);
         //switchMeasurement = (Button) findViewById(R.id.switchMeasurement);
@@ -213,40 +213,7 @@ public class manageMedications extends AppCompatActivity {
         */
 
 
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                documentReference.addSnapshotListener(manageMedications.this, new EventListener<DocumentSnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error != null) {
-                            Log.w(TAG, "listen:error", error);
-                            firstname.setText(" ");
-                            return;
-                        }
-                        try {
-                            accounttype = value.getLong("accounttype");
-                            Log.d("TAG","ID: "+ accounttype);
 
-                            Log.d("TAG", "tag: " + accounttype);
-                            if (accounttype == 1)
-                            {
-                                Intent intent = new Intent(manageMedications.this, user_information.class);
-                                startActivity(intent);
-                            }
-                            else if (accounttype == 2)
-                            {
-                                Intent intent = new Intent(manageMedications.this, guestLogout.class);
-                                startActivity(intent);
-                            }
-                        }catch (Exception e){
-                            Intent intent = new Intent(manageMedications.this, guestLogout.class);
-                            startActivity(intent);
-                        }
-                    }
-                });
-            }
-        });
 
 
     }
@@ -262,8 +229,8 @@ public class manageMedications extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Home_To_User(View view) {
-        Intent intent = new Intent(this, profile.class);
+    public void Danage_To_Profile(View view) {
+        Intent intent = new Intent(manageMedications.this, account.class);
         startActivity(intent);
     }
 

@@ -69,6 +69,16 @@ public class SharedPref {
         this.myEdit.commit();
     }
 
+    public void setAlarmVibration(String vibration) {
+        this.myEdit.putString("vibration", vibration);
+        this.myEdit.commit();
+    }
+
+    public String getAlarmVibration() {
+        return this.sharedPreferences.getString("vibration", "Default");
+    }
+
+
     public String getAlarmSound() {
         return this.sharedPreferences.getString("alarm", "Default");
     }

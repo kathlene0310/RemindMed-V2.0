@@ -43,7 +43,9 @@ public class change_name extends AppCompatActivity {
     String userId;
     SharedPref sf;
     int snooze;
-    Spinner spinner;
+    Spinner spinner, spinner2;
+    String alarm_sound, alarm_vibration;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class change_name extends AppCompatActivity {
             editlastname = findViewById(R.id.editlastname);
             editemail = findViewById(R.id.editemail);
             spinner = findViewById(R.id.alarmsound_spinner3);
+            spinner2 = findViewById(R.id.alarmsound_spinner);
             savebtn = findViewById(R.id.buttonsave);
 
 
@@ -89,13 +92,33 @@ public class change_name extends AppCompatActivity {
             adapterUnit.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(adapterUnit);
 
-            spinner.setSelection(adapterUnit.getPosition("Clock"));
+            spinner.setSelection(adapterUnit.getPosition(sf.getAlarmSound()));
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    alarm_sound = parent.getItemAtPosition(position).toString();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
 
 
+            ArrayAdapter<String> adapterUnit2 = new ArrayAdapter<String>(change_name.this,
+                    android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.alarm_vibrations));
+
+            adapterUnit2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner2.setAdapter(adapterUnit2);
+
+            spinner2.setSelection(adapterUnit2.getPosition(sf.getAlarmVibration()));
+
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    alarm_vibration = parent.getItemAtPosition(position).toString();
                 }
 
                 @Override
@@ -112,11 +135,18 @@ public class change_name extends AppCompatActivity {
                         return;
                     }
 
-                    String alarm_sound = spinner.getSelectedItem().toString();
+
                     String email = editemail.getText().toString();
                     String snooze = editSnooze.getText().toString();
 
-                    sf.setAlarmSound(alarm_sound);
+                    if(alarm_sound != null) {
+                        Log.d("ALARM SOUND", alarm_sound);
+                        sf.setAlarmSound(alarm_sound);
+                    }
+
+                    if(alarm_vibration !=null) {
+                        sf.setAlarmVibration(alarm_vibration);
+                    }
                     sf.setSnooze(snooze);
                     user.updateEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

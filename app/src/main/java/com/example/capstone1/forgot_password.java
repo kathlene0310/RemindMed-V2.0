@@ -64,4 +64,8 @@ public class forgot_password extends AppCompatActivity {
         });
 
     }
+
+    public void Cancel(View view) {
+        finish();
+    }
 }

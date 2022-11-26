@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".home_page">
+    tools:context=".dependent.manageMedications">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_history"
@@ -29,7 +29,7 @@
         android:id="@+id/profile_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Home_To_User"
+        android:onClick="Danage_To_Profile"
         android:layout_marginEnd="136dp"
         android:clickable="true"
         android:focusable="true"
@@ -139,9 +139,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="124dp"
         android:fontFamily="@font/montserrat"
-        android:text="Profile"
+        android:text="Account"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

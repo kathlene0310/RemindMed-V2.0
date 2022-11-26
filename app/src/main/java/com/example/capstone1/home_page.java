@@ -1,5 +1,7 @@
 package com.example.capstone1;
-
+import android.content.Context;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import static com.example.capstone1.intake_confirmation.dateFormat;
 
 import android.app.ProgressDialog;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,10 +54,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class home_page extends AppCompatActivity {
     FirebaseFirestore fstore = FirebaseFirestore.getInstance();
     FirebaseAuth rootAuthen;
+    Vibrator vibrator;
+    Button vibrate;
     public static final String TAG = "TAG";
     String userId;
     TextView firstname;
@@ -97,6 +104,8 @@ public class home_page extends AppCompatActivity {
         //setContentView(R.layout.activity_home_page);
 
 
+
+
         addMed = (Button) findViewById(R.id.add_medications_btn);
         addHM = (Button) findViewById(R.id.add_measurements_btn);
         profileBtn = findViewById(R.id.profile_history);
@@ -123,6 +132,7 @@ public class home_page extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Unexpected Error occurred, please login again", Toast.LENGTH_LONG).show();
             userId = "";
         }
+
 
         if(userId == null) {
             Toast.makeText(getApplicationContext(), "Firebase error, configure your google-services-json", Toast.LENGTH_LONG).show();
@@ -453,4 +463,5 @@ public class home_page extends AppCompatActivity {
         recyclerviewMeasurement.setVisibility(View.GONE);
         recyclerlayout = 1;
     }
+
 }
