@@ -36,31 +36,30 @@
         android:id="@+id/home_chat2"
         android:layout_width="55dp"
         android:layout_height="61dp"
+        android:layout_marginTop="13dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Chat_To_Home"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline1241"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/homeiconv2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Chat_To_Profile"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
 
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline1241"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/profileiconv2" />
 
     <androidx.appcompat.widget.Toolbar
