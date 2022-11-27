@@ -327,7 +327,7 @@
     <Button
         android:id="@+id/startButton_date"
         android:layout_width="146dp"
-        android:layout_height="53dp"
+        android:layout_height="50dp"
         android:width="125dp"
         android:height="50dp"
         android:background="@drawable/edittext3"
@@ -433,32 +433,33 @@
 
     <ImageView
         android:id="@+id/dosageHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+
 
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toEndOf="@+id/dosage_txt"
         app:layout_constraintTop_toBottomOf="@+id/medicine_Box"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/typehelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toEndOf="@+id/type_txt"
         app:layout_constraintTop_toBottomOf="@+id/medicine_Box"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/inventoryhelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/inventory_txt"
         app:layout_constraintTop_toBottomOf="@+id/notifbutton"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline78"
