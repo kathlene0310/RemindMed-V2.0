@@ -74,7 +74,6 @@
         android:textSize="27sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -91,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="7dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Medicine Name"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -120,7 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Amount to Intake"
         android:textColor="#000000"
         android:textSize="17sp"
@@ -134,13 +133,13 @@
         android:layout_height="48dp"
         android:background="@drawable/edittext3"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Dosage"
         android:inputType="number"
         android:paddingStart="10dp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline81"
-        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline80"
         app:layout_constraintTop_toBottomOf="@+id/dosage_txt" />
 
@@ -149,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Type/Unit"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -175,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Time"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -187,8 +186,8 @@
         android:id="@+id/notifyTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratbold"
-        android:text="Notification for inventory"
+        android:fontFamily="@font/montserrat"
+        android:text="Notification for Inventory"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -236,7 +235,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Frequency"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -259,7 +258,7 @@
         android:id="@+id/inventory_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserrat"
         android:text="Inventory"
         android:textColor="#000000"
         android:textSize="21sp"
@@ -270,7 +269,7 @@
     <EditText
         android:id="@+id/inventoryBox"
         android:layout_width="118dp"
-        android:layout_height="55dp"
+        android:layout_height="54dp"
         android:background="@drawable/edittext3"
         android:ems="10"
         android:hint="Inventory"
@@ -420,39 +419,39 @@
 
     <ImageView
         android:id="@+id/helpDosageEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/DosageBox"
         app:layout_constraintEnd_toStartOf="@+id/guideline81"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dosage_txt"
         app:layout_constraintTop_toBottomOf="@+id/medicine_Box"
         app:layout_constraintVertical_bias="0.421"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/helpTypeEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/DosageBox"
         app:layout_constraintEnd_toStartOf="@+id/guideline77"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toEndOf="@+id/type_txt"
         app:layout_constraintTop_toBottomOf="@+id/medicine_Box"
         app:layout_constraintVertical_bias="0.526"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/helpInventoryEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/inventoryBox"
         app:layout_constraintEnd_toStartOf="@+id/guideline77"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toEndOf="@+id/type_txt"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.526"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline63"
