@@ -74,6 +74,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
     Spinner mySpinnerfrequency, mySpinnertype;
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private com.example.capstone1.medication_info medication_info;
+    String userChosenId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -341,6 +342,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
             dosage = getIntent().getStringExtra("dosage");
             alarmIDdb = getIntent().getIntExtra("AlarmID", 0);
             notify = getIntent().getStringExtra("NotifyChoice");
+            userChosenId = getIntent().getStringExtra("USER_CHOSEN");
 
 
 
@@ -420,12 +422,15 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
         notifButton.setText(notify);
     }
     private void deleteMedication() {
+        if(userChosenId == null) {
+            return;
+        }
         Intent intent = new Intent(this, alarmreceiver.class);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         PendingIntent pendingDB = PendingIntent.getBroadcast(this, alarmIDdb, intent, 0);
         alarmManager.cancel(pendingDB);
 
-        db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications").document(medication_info.getId()).delete()
+        db.collection("users").document(userChosenId).collection("New Medications").document(medication_info.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -532,6 +537,9 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
 
     private void startAlarm(Calendar c)
     {
+        if(userChosenId == null) {
+            return;
+        }
         int dynYear, dynMonth, dynDay, dynHour , dynMin;
         myAlarmDate = Calendar.getInstance();
         getData();
@@ -646,7 +654,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
 
             medication_info m = new medication_info(title, amount, startdate, time, enddate,
                     medicationTypeName, frequencyName, frequencychoide, dynHour, dynMin, alarmIDdb, dosage, notify, userId, "");
-            db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications")
+            db.collection("users").document(userChosenId).collection("New Medications")
                     .document(medication_info.getId()).update("Medication", m.getMedication(),
                             "InventoryMeds", m.getInventoryMeds(), "StartDate", m.getStartDate(),
                             "Time", m.getTime(), "EndDate", m.getEndDate(), "FrequencyName", m.getFrequencyName(), "Frequency", m.getFrequency(),
