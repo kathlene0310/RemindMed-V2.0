@@ -79,7 +79,8 @@ public class ViewDialog {
 
             dialog.show();
         }catch(Exception e) {
-            Toast.makeText(activity, "One or more notif failed to show message: " + notify.getMessage(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+            //Toast.makeText(activity, "One or more notif failed to show message: " + notify.getMessage(), Toast.LENGTH_LONG).show();
         }
 
     }
