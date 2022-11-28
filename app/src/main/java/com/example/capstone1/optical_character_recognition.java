@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone1.dependent.editDeleteMedicationsDependent;
 import com.example.capstone1.dependent.newMedications;
 import com.example.capstone1.v2.SharedPref;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -187,6 +188,16 @@ public class optical_character_recognition extends AppCompatActivity {
                 else if(ocrChoice == 3) {
                     try{
                         newMedications.medication.setText(displayText.getText().toString());
+                        finish();
+                    }catch (Exception e)
+                    {
+                        Toast.makeText(optical_character_recognition.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+                else if(ocrChoice == 4) {
+                    try{
+                        editDeleteMedicationsDependent.medName.setText(displayText.getText().toString());
                         finish();
                     }catch (Exception e)
                     {

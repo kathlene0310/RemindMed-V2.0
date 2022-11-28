@@ -33,7 +33,6 @@ import com.example.capstone1.alarmreceiver;
 import com.example.capstone1.medication_info;
 import com.example.capstone1.optical_character_recognition;
 import com.example.capstone1.optical_character_recognition_one;
-import com.example.capstone1.v2.Notification;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -41,8 +40,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -58,10 +55,10 @@ import java.util.Random;
 
 public class editDeleteMedicationsDependent extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
     EditText  dosageBoxET;
-    String userId;
-    static EditText medName, medInventory;
+    public static EditText medName;
+    public static EditText medInventory;
     static final SimpleDateFormat format = new SimpleDateFormat("M/d/yyyy");
-    String title, amount, time,  strDate, strEnd, frequencyDB, medTypeDB, dosage, chkstart, chkend, notify;
+    String userId, title, amount, time,  strDate, strEnd, frequencyDB, medTypeDB, dosage, chkstart, chkend, notify;
     Date startdate, enddate;
     final int start = 1;
     final int end = 2;
@@ -76,8 +73,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
     int hour, minuteDB, typechoice, frequencychoide, choice, alarmIDdb, alarmID, alarmYear, alarmMonth, alarmDay, hourchange, minchange;
     Spinner mySpinnerfrequency, mySpinnertype;
     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-    public com.example.capstone1.medication_info medication_info;
-    DatabaseReference RootRef;
+    private com.example.capstone1.medication_info medication_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,18 +99,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
         getData();
         getHourandMin();
 
-        RootRef= FirebaseDatabase.getInstance().getReference();
-
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                userId= null;
-            } else {
-                userId= extras.getString("USER_CHOSEN");
-            }
-        } else {
-            userId= (String) savedInstanceState.getSerializable("USER_CHOSEN");
-        }
+        userId = currentFirebaseUser.getUid();
 
         helpdosage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -246,7 +231,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition.class);
-                intent.putExtra("ocrchoice", 2 );
+                intent.putExtra("ocrchoice", 4 );
                 startActivity(intent);
 
 
@@ -257,7 +242,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition_one.class);
-                intent.putExtra("ocrchoice", 2 );
+                intent.putExtra("ocrchoice", 4 );
                 startActivity(intent);
 
 
@@ -440,7 +425,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
         PendingIntent pendingDB = PendingIntent.getBroadcast(this, alarmIDdb, intent, 0);
         alarmManager.cancel(pendingDB);
 
-        db.collection("users").document(userId).collection("New Medications").document(medication_info.getId()).delete()
+        db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications").document(medication_info.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -661,7 +646,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
 
             medication_info m = new medication_info(title, amount, startdate, time, enddate,
                     medicationTypeName, frequencyName, frequencychoide, dynHour, dynMin, alarmIDdb, dosage, notify, userId, "");
-            db.collection("users").document(userId).collection("New Medications")
+            db.collection("users").document(currentFirebaseUser.getUid()).collection("New Medications")
                     .document(medication_info.getId()).update("Medication", m.getMedication(),
                             "InventoryMeds", m.getInventoryMeds(), "StartDate", m.getStartDate(),
                             "Time", m.getTime(), "EndDate", m.getEndDate(), "FrequencyName", m.getFrequencyName(), "Frequency", m.getFrequency(),
@@ -669,29 +654,8 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
                         @Override
                         public void onSuccess(Void avoid) {
                             alarmManager.setExact(AlarmManager.RTC_WAKEUP, myAlarmDate.getTimeInMillis(), pendingIntent);
-
-
-
-                            Date c = Calendar.getInstance().getTime();
-                            System.out.println("Current time => " + c);
-                            SimpleDateFormat df = new SimpleDateFormat("MMM/dd/yyyy", Locale.getDefault());
-                            SimpleDateFormat df2 = new SimpleDateFormat("hh:mm:ss aa", Locale.getDefault());
-                            String formattedDate = df.format(c);
-                            String formattedTime = df2.format(c);
-
-
-                            Notification notify = new Notification(currentFirebaseUser.getUid(), userId, "Edited", title, formattedDate, formattedTime, dosage, strEnd, frequencychoide, frequencyName, hour,strDate, medicationTypeName, medInventory.getText().toString());
-                            notify.setMessage(notify.buildMessage());
-
-
-                            DatabaseReference notifKeyRef=RootRef.child("Notifications").child(userId).push();
-                            final String notifyPushID=notifKeyRef.getKey();
-                            //RootRef.child("Notifications").child(userId).child(notifyPushID).setValue("");
-                            RootRef.child("Notifications").child(userId).child(notifyPushID).setValue(notify);
-
-
                             Toast.makeText(editDeleteMedicationsDependent.this, "Measurement Alarm Changed", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(editDeleteMedicationsDependent.this, home.class));
+                            //startActivity(new Intent(edit_delete_medications.this, home_page.class));
                             finish();
                         }
                     });
