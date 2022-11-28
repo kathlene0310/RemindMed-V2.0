@@ -424,30 +424,30 @@
 
     <ImageView
         android:id="@+id/dosageHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/DosageBox"
         app:layout_constraintStart_toEndOf="@+id/dosage_txt"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/typehelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/type_spinner_one"
         app:layout_constraintStart_toEndOf="@+id/inventory_txt"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/inventoryhelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/inventoryBox"
         app:layout_constraintStart_toEndOf="@+id/inventory_txt"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline78"
