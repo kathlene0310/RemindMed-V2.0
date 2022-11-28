@@ -24,6 +24,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.capstone1.dependent.newMedications;
 import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.v2.take_medication;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -192,6 +193,17 @@ public class v2_ocr_gallery_medname extends AppCompatActivity {
                 {
                     try{
                         new_medications.inventory.setText(displayText.getText().toString());
+                        finish();
+                    }catch (Exception e)
+                    {
+                        Toast.makeText(v2_ocr_gallery_medname.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+                else if (ocrChoice == 3)
+                {
+                    try{
+                        newMedications.medication.setText(displayText.getText().toString());
                         finish();
                     }catch (Exception e)
                     {

@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.capstone1.dependent.newMedications;
 import com.example.capstone1.v2.SharedPref;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -129,6 +130,17 @@ public class v2_ocr_gallery_inventory extends AppCompatActivity {
 
                     }
 
+                }
+                else if (ocrChoice == 3)
+                {
+                    try{
+                        newMedications.medication.setText(numberOnly);
+                        finish();
+                    }catch (Exception e)
+                    {
+                        Toast.makeText(v2_ocr_gallery_inventory.this, "Scan your medicine inventory", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             }
         });

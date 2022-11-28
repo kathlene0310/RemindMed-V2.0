@@ -37,6 +37,8 @@ import com.example.capstone1.new_medications;
 import com.example.capstone1.optical_character_recognition;
 import com.example.capstone1.optical_character_recognition_one;
 import com.example.capstone1.v2.Notification;
+import com.example.capstone1.v2_ocr_gallery_inventory;
+import com.example.capstone1.v2_ocr_gallery_medname;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -82,11 +84,11 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
     Calendar myAlarmDate = Calendar.getInstance();
     static final SimpleDateFormat format = new SimpleDateFormat("M/dd/yyyy");
     Button timeButtonmedtst;
-    FloatingActionButton ocrMedName1, ocrCount1;
+    FloatingActionButton ocrMedName1, ocrCount1, ocrUpload1, ocrUpload2;
     int alarmYear, alarmMonth, alarmDay,alarmHour,alarmMin, choice, typechoice, frequencychoide, alarmID;
     String dateToday = String.valueOf(android.text.format.DateFormat.format("M/dd/yyyy", new java.util.Date()));
-    static EditText medication;
-    static EditText inventory;
+    public static EditText medication;
+    public static EditText inventory;
     private static final String TAG = "new_medications";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -112,7 +114,8 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
         helptype = findViewById(R.id.typehelp);
         helpinventory = findViewById(R.id.inventoryhelp);
         notfinInventory = findViewById(R.id.notifbutton);
-
+        ocrUpload1 = findViewById(R.id.ocr_btn_upload1);
+        ocrUpload2 = findViewById(R.id.ocr_btn_upload2);
         timeButtonmedtst = findViewById(R.id.timeButtonmed);
         //userId = rootAuthen.getCurrentUser().getUid();
         RootRef= FirebaseDatabase.getInstance().getReference();
@@ -129,6 +132,26 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
         }
 
         Log.d("USER_CHOSE_AT_BNEW", userId);
+
+
+        ocrUpload1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(newMedications.this, v2_ocr_gallery_medname.class);
+                intent.putExtra("ocrchoice", 3 );
+                startActivity(intent);
+            }
+        });
+
+        ocrUpload2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(newMedications.this, v2_ocr_gallery_inventory.class);
+                intent.putExtra("ocrchoice", 3 );
+                startActivity(intent);
+            }
+        });
 
         helpdosage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,7 +261,7 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(newMedications.this, optical_character_recognition.class);
-                intent.putExtra("ocrchoice", 1 );
+                intent.putExtra("ocrchoice", 3 );
                 startActivity(intent);
 
 
@@ -249,7 +272,7 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(newMedications.this, optical_character_recognition_one.class);
-                intent.putExtra("ocrchoice", 1 );
+                intent.putExtra("ocrchoice", 3 );
                 startActivity(intent);
 
 

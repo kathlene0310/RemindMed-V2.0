@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone1.dependent.home;
 import com.example.capstone1.simple.add_dependent;
 import com.example.capstone1.v2.Notification;
 import com.example.capstone1.v2.SharedPref;
@@ -85,6 +86,7 @@ public class home_page extends AppCompatActivity {
     List<ViewDialog> viewDialogs;
     ArrayList<String> ids;
     private DatabaseReference RootRef;
+    int role = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,11 +166,24 @@ public class home_page extends AppCompatActivity {
                         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                             Base64.Decoder decoder = Base64.getDecoder();
                             byte[] bytes = decoder.decode(value.getString("firstname"));
+
+
+
+                            if(value.get("role") != null) {
+
+                                int role = Integer.parseInt(value.get("role").toString());
+
+                                if(role == 1) {
+                                    startActivity(new Intent(home_page.this, home.class));
+                                }
+                            }
+
                             firstname.setText(new String(bytes));
 
                         }
 
                     } catch (Exception e) {
+                        Log.d("EXCEPTION", "E" + e);
                         firstname.setText(" ");
                     }
 
