@@ -198,14 +198,15 @@
 
     <TextView
         android:id="@+id/notifyTitle"
-        android:layout_width="187dp"
-        android:layout_height="28dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/montserrat"
         android:text="Notification for inventory"
         android:textColor="#000000"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline78"
+        app:layout_constraintEnd_toStartOf="@+id/guideline79"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
         app:layout_constraintTop_toBottomOf="@+id/type_spinner_one" />
 
