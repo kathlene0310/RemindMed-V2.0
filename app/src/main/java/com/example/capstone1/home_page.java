@@ -223,11 +223,12 @@ public class home_page extends AppCompatActivity {
                                       ViewDialog alert = new ViewDialog(home_page.this, id);
                                       viewDialogs.add(alert);
                                       ids.add(ds.getKey());
-                                      alert.showDialog(id, String.valueOf(count + 1), notify, userId);
+                                      alert.showDialog(home_page.this, id, String.valueOf(count + 1), notify, userId);
                                   }
                             }
+                            count++;
                         }
-                        count++;
+
                     }
 
 

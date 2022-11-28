@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -52,7 +53,7 @@ public class ViewDialog {
 
 
 
-    public void showDialog(String id, String number,Notification notify, String userId){
+    public void showDialog(Context activity, String id, String number,Notification notify, String userId){
 
 
 
@@ -74,7 +75,12 @@ public class ViewDialog {
             }
         });
 
-        dialog.show();
+        try {
+
+            dialog.show();
+        }catch(Exception e) {
+            Toast.makeText(activity, "One or more notif failed to show message: " + notify.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
     }
 
