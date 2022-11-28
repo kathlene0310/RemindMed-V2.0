@@ -59,6 +59,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Pattern;
+
 import javax.crypto.KeyGenerator;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -297,6 +299,13 @@ public class create_account extends AppCompatActivity {
                     confirm.setError("Password does not match");
                     return;
                 }
+                Pattern textPattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*\\W).+$");
+
+                if(!textPattern.matcher(Password).matches()){
+                    password.setError("Password must have atleast one capital, lowercase letter, one number, and one symbol");
+                    return;
+                }
+
                 /*
                 if(!termsandconditions.isChecked())
                 {

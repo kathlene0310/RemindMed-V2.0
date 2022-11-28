@@ -35,8 +35,6 @@ public class alarmreceiver extends BroadcastReceiver {
 
 
         try {
-
-
             String alarm = sf.getAlarmSound();
 
             if(alarm.equals("Beep")) {

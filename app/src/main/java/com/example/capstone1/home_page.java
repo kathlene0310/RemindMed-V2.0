@@ -3,6 +3,8 @@ import android.content.Context;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import static com.example.capstone1.intake_confirmation.dateFormat;
+import static com.example.capstone1.v2.CriticalLevel.getAllNotif;
+import static com.example.capstone1.v2.CriticalLevel.readCriticalLevel;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -80,6 +82,7 @@ public class home_page extends AppCompatActivity {
     long accounttype;
     int newLayout = 0;
     List<Notification> notificationList;
+    List<ViewDialog> viewDialogs;
     ArrayList<String> ids;
     private DatabaseReference RootRef;
 
@@ -122,7 +125,12 @@ public class home_page extends AppCompatActivity {
         firstname = findViewById(R.id.firstnameview);
         RootRef= FirebaseDatabase.getInstance().getReference();
 
+
+        //readCriticalLevel();
+        getAllNotif();
+
         notificationList = new ArrayList<Notification>();
+        viewDialogs = new ArrayList<ViewDialog>();
         ids = new ArrayList<String>();
         try {
             rootAuthen = FirebaseAuth.getInstance();
@@ -189,38 +197,40 @@ public class home_page extends AppCompatActivity {
         recyclerviewMeasurement.setAdapter(measurementAdapter);
 
 
-
         com.google.firebase.database.Query userRef = RootRef.child("Notifications").child(rootAuthen.getCurrentUser().getUid());
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     Log.d("SNAPSHOT", "TEST" + dataSnapshot.getValue());
-                    notificationList.clear();
-                    ids.clear();
+                    //viewDialogs.clear();
+                notificationList.clear();
+                //ids.clear();
 
+                int count = 0;
                     for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String id = ds.getKey();
                         Notification notify = ds.getValue(Notification.class);
                         if(notify.getRead() == false) {
+                            /*
                             notificationList.add(notify);
                             ids.add(ds.getKey());
+                             */
+
+
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                                  if(!ids.contains(id)) {
+                                      ViewDialog alert = new ViewDialog(home_page.this, id);
+                                      viewDialogs.add(alert);
+                                      ids.add(ds.getKey());
+                                      alert.showDialog(id, String.valueOf(count + 1), notify, userId);
+                                  }
+                            }
                         }
+                        count++;
                     }
 
 
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-
-
-
-                    if(notificationList.size() > 0) {
-                        ViewDialog alert = new ViewDialog();
-                        alert.showDialog(home_page.this,String.valueOf(notificationList.size()), notificationList.get(notificationList.size()-1).getMessage(),userId, ids, notificationList);
-                    }
-
-                    Log.d("COUNT AFTER", "C" + notificationList.size());
-
-
-                }
 
 
 
@@ -450,6 +460,7 @@ public class home_page extends AppCompatActivity {
         layout = 0;
     }
 
+
     private void switchRecyclerMeasurement()
     {
         recyclerView.setVisibility(View.GONE);
@@ -463,5 +474,6 @@ public class home_page extends AppCompatActivity {
         recyclerviewMeasurement.setVisibility(View.GONE);
         recyclerlayout = 1;
     }
+
 
 }

@@ -680,7 +680,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
                             String formattedTime = df2.format(c);
 
 
-                            Notification notify = new Notification(currentFirebaseUser.getUid(), userId, "Edited", title, formattedDate, formattedTime, dosage, strEnd, frequencychoide, frequencyName, hour,strDate, medicationTypeName);
+                            Notification notify = new Notification(currentFirebaseUser.getUid(), userId, "Edited", title, formattedDate, formattedTime, dosage, strEnd, frequencychoide, frequencyName, hour,strDate, medicationTypeName, medInventory.getText().toString());
                             notify.setMessage(notify.buildMessage());
 
 

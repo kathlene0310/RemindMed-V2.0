@@ -87,7 +87,7 @@ public class SharedPref {
     }
 
     public String getVoice() {
-        return this.sharedPreferences.getString("voice", "en");
+        return this.sharedPreferences.getString("voice", "en-gb-x-fis-local");
     }
     public Float getPitch() {
         return this.sharedPreferences.getFloat("pitch", 1);

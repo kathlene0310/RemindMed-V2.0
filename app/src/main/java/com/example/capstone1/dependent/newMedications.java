@@ -408,7 +408,7 @@ public class newMedications extends AppCompatActivity implements TimePickerDialo
                                         String StartDate = dateButton.getText().toString().trim();
                                         String EndDate = endDateButton.getText().toString().trim();
 
-                                        Notification notify = new Notification(rootAuthen.getCurrentUser().getUid(), userId, "Added", Medication, formattedDate, formattedTime, Dosage, EndDate, frequencychoide, frequencyName, alarmHour,StartDate, medicationTypeName);
+                                        Notification notify = new Notification(rootAuthen.getCurrentUser().getUid(), userId, "Added", Medication, formattedDate, formattedTime, Dosage, EndDate, frequencychoide, frequencyName, alarmHour,StartDate, medicationTypeName, Inventory);
                                         notify.setMessage(notify.buildMessage());
 
 

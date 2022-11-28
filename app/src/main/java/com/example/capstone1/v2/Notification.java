@@ -23,6 +23,7 @@ public class Notification {
     int hour;
     String startDate;
     String medicineTypeName;
+    String inventory;
 
 
 
@@ -31,7 +32,7 @@ public class Notification {
 
 
     }
-    public Notification(String from, String to, String operation, String medication, String date, String time, String dosage, String endDate, int frequency, String frequencyName, int hour, String startDate, String medicineTypeName) {
+    public Notification(String from, String to, String operation, String medication, String date, String time, String dosage, String endDate, int frequency, String frequencyName, int hour, String startDate, String medicineTypeName, String inventory) {
 
         this.from = from;
         this.to = to;
@@ -46,6 +47,7 @@ public class Notification {
         this.hour = hour;
         this.startDate = startDate;
         this.medicineTypeName = medicineTypeName;
+        this.inventory = inventory;
         this.read = false;
     }
 
@@ -172,7 +174,10 @@ public class Notification {
     }
     public String buildMessage() {
         return "Your dependent " + this.operation.toLowerCase() + " " + "your medicine, " + this.medication +  " " +  this.medicineTypeName.toLowerCase() + " to be taken " + this.frequencyName.toLowerCase()
-        + " every " + Integer.toString(this.hour) + " hour, starting from " + this.startDate + " to " + this.endDate;
+        + " at " + Integer.toString(this.hour) + "th hour, starting from " + this.startDate + " to " + this.endDate;
+    }
+    public String buildMessage2() {
+        return this.medication + " with remaining " + this.inventory + " " + this.medicineTypeName + " has reached the critical level. Go to refill medications to refill your supply";
     }
 
 }

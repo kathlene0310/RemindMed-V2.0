@@ -45,6 +45,7 @@ public class tts extends AppCompatActivity {
     Spinner voice;
     ArrayList<String> listVoice;
     String selectedVoice;
+    ArrayAdapter<String> adapter;
     long accounttype ;
     @Override
 
@@ -66,55 +67,57 @@ public class tts extends AppCompatActivity {
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS)
-                {
-                    int result = textToSpeech.setLanguage(Locale.US);
+                try {
+                    if (status == TextToSpeech.SUCCESS) {
+                        int result = textToSpeech.setLanguage(Locale.US);
 
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
-                    {
-                        Log.e("TTS", "Language not supported");
-                    }
-                    else
-                    {
+                        if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                            Log.e("TTS", "Language not supported");
+                        } else {
 
-                        listVoice = new ArrayList<String>();
-                        test.setEnabled(true);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            for (Voice tmpVoice : textToSpeech.getVoices()) {
+                            listVoice = new ArrayList<String>();
+                            test.setEnabled(true);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                for (Voice tmpVoice : textToSpeech.getVoices()) {
 
-                                listVoice.add(tmpVoice.getName().toString());
+                                    listVoice.add(tmpVoice.getName().toString());
+                                }
+                                Log.d("TTS", "VOICES:" + listVoice);
+
+                                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, listVoice);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                voice.setAdapter(adapter);
+                                Log.d("VOICE", sf.getVoice());
+                                voice.setSelection(adapter.getPosition(sf.getVoice()));
+                                voice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        String value = parent.getItemAtPosition(position).toString();
+
+
+                                        Log.d("D", value);
+
+                                        selectedVoice = value;
+
+
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+                                //voice.setSelection(35);
                             }
-                            Log.d("TTS", "VOICES:" + listVoice);
 
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, listVoice);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            voice.setAdapter(adapter);
-
-                            voice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                    String value = parent.getItemAtPosition(position).toString();
-
-                                    Log.d("D", value);
-
-                                    selectedVoice = value;
-
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> parent) {
-
-                                }
-                            });
-                            voice.setSelection(35);
                         }
 
+                    } else {
+                        Log.e("TTS", "Iniitialization failed");
                     }
-
-                }
-                else
-                {
-                    Log.e("TTS", "Iniitialization failed");
+                }catch(Exception e) {
+                    test.setEnabled(false);
+                    Toast.makeText(tts.this, "No TTS engine found on your phone", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -128,12 +131,14 @@ public class tts extends AppCompatActivity {
         pitch.setText(sf.getPitch().toString());
 
 
+
+
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sf.setPitch(1.0f);
                 sf.setSpeed(1.0f);
-                voice.setSelection(35);
+                voice.setSelection(adapter.getPosition("en-gb-x-fis-local"));
                 pitch.setText("1.0");
                 speed.setText("1.0");
 
@@ -148,7 +153,7 @@ public class tts extends AppCompatActivity {
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Log.d("TTS", "VOICES" + textToSpeech.getVoices());
-                    Voice va = new Voice("ja-jp-x-htm-network", new Locale("en", "US"), 400, 200, true, null);
+                    Voice va = new Voice("en-gb-x-fis-local", new Locale("en", "US"), 400, 200, true, null);
                     textToSpeech.setVoice(va);
                 }
 
@@ -176,6 +181,7 @@ public class tts extends AppCompatActivity {
             public void onClick(View v) {
                 sf.setPitch(Float.parseFloat(pitch.getText().toString()));
                 sf.setSpeed(Float.parseFloat(speed.getText().toString()));
+                Log.d("VOICESET", selectedVoice);
                 sf.setVoice(selectedVoice);
                 Toast.makeText(getApplicationContext(), "Saved Configuration", Toast.LENGTH_LONG).show();
             }
