@@ -15,6 +15,7 @@
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
+
         android:onClick="editMedication_To_OCRcount"
         app:fabSize="mini"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
@@ -317,7 +318,7 @@
         android:height="50dp"
         android:fontFamily="@font/montserrat"
         android:background="@drawable/edittext3"
-        android:drawableStart="@drawable/bg_calendar"
+        android:drawableStart="@drawable/ic_calendar"
         android:onClick="openDatePicker"
         android:paddingLeft="10dp"
         android:text="Start"
@@ -432,39 +433,39 @@
 
     <ImageView
         android:id="@+id/helpDosageEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/DosageBox"
         app:layout_constraintEnd_toStartOf="@+id/guideline81"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dosage_txt"
         app:layout_constraintTop_toBottomOf="@+id/medicine_Box"
         app:layout_constraintVertical_bias="0.421"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/helpTypeEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/DosageBox"
         app:layout_constraintEnd_toStartOf="@+id/guideline77"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toEndOf="@+id/type_txt"
         app:layout_constraintTop_toBottomOf="@+id/medicine_Box"
         app:layout_constraintVertical_bias="0.526"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/helpInventoryEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/inventoryBox"
         app:layout_constraintEnd_toStartOf="@+id/guideline77"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toEndOf="@+id/type_txt"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.526"
-        app:srcCompat="@drawable/help" />
+        app:srcCompat="@drawable/question" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline63"
