@@ -81,20 +81,17 @@ public class CriticalLevel {
 
         try {
             if (rootAuthen != null && fstore != null && userLog != null){
-                fstore.collection("users").document(userLog).collection("New Medications").addSnapshotListener(new EventListener<QuerySnapshot>() {
+                fstore.collection("users").document(userLog).collection("New Medications").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-
-                        if(error != null) {
-                            Log.w(TAG, "Listen failed.", error);
-                            return;
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                Log.d(TAG, doc.getId() + " => " + doc.getData());
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
                         }
-
-                        Log.d("ASD", "CALLED READ CRITICAL LEVEL");
-
-                        List<medication_info> medications = new ArrayList<>();
-
-                        for(QueryDocumentSnapshot doc : value) {
+                        for(QueryDocumentSnapshot doc : task.getResult()) {
                             Log.d(home_page.TAG, doc.getId() + " => " + doc.getData());
                             medication_info obj = doc.toObject(medication_info.class);
 
