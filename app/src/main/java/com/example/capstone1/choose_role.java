@@ -47,52 +47,55 @@ public class choose_role extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.v2_choose_role);
 
-        loginBtn = findViewById(R.id.loginBtn);
-        Spinner spinner = (Spinner) findViewById(R.id.coursesspinner);
+        try {
+            loginBtn = findViewById(R.id.loginBtn);
+            Spinner spinner = (Spinner) findViewById(R.id.coursesspinner);
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String value = parent.getItemAtPosition(position).toString();
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    String value = parent.getItemAtPosition(position).toString();
 
-                Log.d("D", value);
-                if(value.equals("Dependent")) {
-                    role = 1;
-                    Log.d("role", "ROLe" + role);
+                    Log.d("D", value);
+                    if (value.equals("Dependent")) {
+                        role = 1;
+                        Log.d("role", "ROLe" + role);
+                    } else if (value.equals("User")) {
+                        role = 2;
+                    } else {
+                        role = 0;
+                    }
                 }
-                else if(value.equals("User")) {
-                    role = 2;
-                } else{
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
                     role = 0;
                 }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                role = 0;
-            }
-        });
+            });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(role != 0) {
-                    Intent intent = new Intent(getApplicationContext(), create_account.class);
-                    intent.putExtra("role", role);
-                    startActivity(intent);
+            loginBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (role != 0) {
+                        Intent intent = new Intent(getApplicationContext(), create_account.class);
+                        intent.putExtra("role", role);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Please choose a role or role maybe invalid", Toast.LENGTH_LONG).show();
+                        return;
+                    }
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Please choose a role or role maybe invalid", Toast.LENGTH_LONG);
-                }
-            }
-        });
+            });
 
-
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

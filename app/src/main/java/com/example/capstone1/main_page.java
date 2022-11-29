@@ -37,30 +37,37 @@ public class main_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        create_account = findViewById(R.id.createacc_button);
-        login = (Button) findViewById(R.id.login_button);
-        guest = (Button) findViewById(R.id.guest_btn);
-        rootAuthen = FirebaseAuth.getInstance();
-        currentUser = rootAuthen.getCurrentUser();
+        try {
+            create_account = findViewById(R.id.createacc_button);
+            login = (Button) findViewById(R.id.login_button);
+            guest = (Button) findViewById(R.id.guest_btn);
+            rootAuthen = FirebaseAuth.getInstance();
+            currentUser = rootAuthen.getCurrentUser();
 
-
-        //guest
-
-        create_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Main_To_Create();
+            if(currentUser != null) {
+                rootAuthen.signOut();
             }
-        });
+
+            //guest
+
+            create_account.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Main_To_Create();
+                }
+            });
 
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openlogin_page();
-            }
-        });
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openlogin_page();
+                }
+            });
+        } catch(Exception e) {
+                e.printStackTrace();
 
+        }
 
     }
     public void openlogin_page(){
