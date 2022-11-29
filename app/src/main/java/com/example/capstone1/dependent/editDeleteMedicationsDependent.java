@@ -95,6 +95,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
         medInventory = findViewById(R.id.inventoryBox);
         helptype = findViewById(R.id.helpTypeEdit);
         notifButton = findViewById(R.id.notifbuttonEdit);
+
         final Calendar calendar = Calendar.getInstance();
         initDatePicker();
         getData();
@@ -246,7 +247,6 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
                 intent.putExtra("ocrchoice", 4 );
                 startActivity(intent);
 
-
             }
         });
 
@@ -318,15 +318,7 @@ public class editDeleteMedicationsDependent extends AppCompatActivity implements
 
         Log.d("K", "helo" +" " +alarmYear +" " + alarmMonth +" " + alarmDay +" " + hourchange+" " + minchange);
     }
-    public void edtMedication_To_OCR(View view) {
-        Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition.class);
-        startActivity(intent);
-    }
 
-    public void editMedication_To_OCRcount(View view) {
-        Intent intent = new Intent(editDeleteMedicationsDependent.this, optical_character_recognition_one.class);
-        startActivity(intent);
-    }
 
     private void getData()
     {

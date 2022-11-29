@@ -311,15 +311,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
 
         Log.d("K", "helo" +" " +alarmYear +" " + alarmMonth +" " + alarmDay +" " + hourchange+" " + minchange);
     }
-    public void edtMedication_To_OCR(View view) {
-        Intent intent = new Intent(edit_delete_medications.this, optical_character_recognition.class);
-        startActivity(intent);
-    }
 
-    public void editMedication_To_OCRcount(View view) {
-        Intent intent = new Intent(edit_delete_medications.this, optical_character_recognition_one.class);
-        startActivity(intent);
-    }
 
     private void getData()
     {
