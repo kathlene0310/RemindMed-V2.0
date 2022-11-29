@@ -44,10 +44,6 @@ public class main_page extends AppCompatActivity {
             rootAuthen = FirebaseAuth.getInstance();
             currentUser = rootAuthen.getCurrentUser();
 
-            if(currentUser != null) {
-                rootAuthen.signOut();
-            }
-
             //guest
 
             create_account.setOnClickListener(new View.OnClickListener() {
