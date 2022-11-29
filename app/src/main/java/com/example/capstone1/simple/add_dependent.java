@@ -324,7 +324,7 @@ public class add_dependent extends AppCompatActivity {
                                 Log.d("USERIDS", "userids: " + userIds.toString());
                                 Log.d("SIZE", "size: " + userIds.size());
                                 if (userIds.size() > 3) {
-                                    Toast.makeText(getApplicationContext(), "Target dependent has already 3 users", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Target dependent has already 4 users", Toast.LENGTH_LONG).show();
                                     userIds.clear();
                                     return;
                                 } else {

@@ -162,6 +162,7 @@ public class optical_character_recognition extends AppCompatActivity {
             public void onClick(View v) {
                 String numberOnly = displayText.getText().toString().replaceAll("[^0-9]", "");
                 ocrChoice = getIntent().getIntExtra("ocrchoice", 0);
+                Log.d("OCR" , "OCR:" + ocrChoice);
                 if (ocrChoice == 1)
                 {
                     try {
@@ -177,7 +178,7 @@ public class optical_character_recognition extends AppCompatActivity {
                 else if (ocrChoice == 2)
                 {
                     try{
-                        edit_delete_medications.medInventory.setText(displayText.getText().toString());
+                        edit_delete_medications.medName.setText(displayText.getText().toString());
                         finish();
                     }catch (Exception e)
                     {
