@@ -90,6 +90,16 @@
         app:layout_constraintStart_toStartOf="@+id/guideline26"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <ImageView
+        android:id="@+id/helpDosageEdit"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toEndOf="@+id/medicineName_txt"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/question" />
+
     <EditText
         android:id="@+id/medicine_Box"
         android:layout_width="0dp"

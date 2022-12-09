@@ -11,15 +11,15 @@
         android:id="@+id/changeLayout3"
         android:layout_width="189dp"
         android:layout_height="56dp"
+        android:layout_marginTop="148dp"
         android:background="@drawable/edit_round2"
+
         android:fontFamily="@font/montserrat"
-
         android:text="REMOVE DEPENDENT"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dFirstname2" />
@@ -28,43 +28,42 @@
         android:id="@+id/home_chat2"
         android:layout_width="55dp"
         android:layout_height="61dp"
+        android:layout_marginTop="15dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Edit_To_Home"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline1241"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/homeiconv2" />
 
     <TextView
         android:id="@+id/dFirstname2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="79dp"
         android:text="None found"
         android:textColor="#2e276c"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintTop_toBottomOf="@+id/textDependent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Edit_To_Profile"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/guideline108"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline1241"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/profileiconv2" />
 
     <androidx.appcompat.widget.Toolbar
@@ -120,17 +119,16 @@
         android:id="@+id/chat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/viewusers" />
 
     <TextView
@@ -141,12 +139,10 @@
         android:text="Dependent"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintTop_toBottomOf="@+id/chat2" />
 
     <View
         android:id="@+id/view5"
@@ -163,13 +159,14 @@
         android:id="@+id/textChatHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline108" />
+        app:layout_constraintTop_toBottomOf="@+id/home_chat2" />
 
     <TextView
         android:id="@+id/textChatProfile"

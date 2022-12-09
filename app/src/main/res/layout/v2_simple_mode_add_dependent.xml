@@ -42,38 +42,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/simple_mode_home_page_header"
-        android:layout_width="103dp"
-        android:layout_height="19dp"
-
-        android:fontFamily="@font/montserrat"
-        android:text="Simple Mode"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView46" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Send Report every Monday:"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
-
-    <TextView
         android:id="@+id/frequency_txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="84dp"
         android:fontFamily="@font/montserrat"
         android:text="Enter Dependents' Email Address"
         android:textColor="#000000"
@@ -82,16 +54,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <Spinner
-        android:id="@+id/frequency_set_later_bs"
-        android:layout_width="283dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="9dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_txt2" />
+
+    <ImageView
+        android:id="@+id/helpAddDependent"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="86dp"
+        app:layout_constraintStart_toEndOf="@+id/frequency_txt2"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/question" />
 
     <EditText
         android:id="@+id/dependentEmail"
@@ -103,27 +75,65 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/frequency_set_later_bs"
         app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs"
         app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.789" />
 
     <Spinner
         android:id="@+id/frequency_set_later_bs8"
         android:layout_width="283dp"
         android:layout_height="65dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/edittext3"
         android:backgroundTint="#2e276c"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="263dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/montserrat"
+        android:outlineSpotShadowColor="#2E276C"
+
+        app:layout_constraintBottom_toBottomOf="@+id/frequency_set_later_bs8"
+        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs8"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs8"
+        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs8"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Send Report Weekly"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
+
+    <Spinner
+        android:id="@+id/frequency_set_later_bs"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_txt2" />
+
     <Button
         android:id="@+id/save_bs_later"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="SUBMIT"
@@ -151,17 +161,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save_bs_later" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="263dp"
-        android:layout_height="55dp"
-        android:fontFamily="@font/montserrat"
-        android:outlineSpotShadowColor="#2E276C"
-
-        app:layout_constraintBottom_toBottomOf="@+id/frequency_set_later_bs8"
-        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs8"
-        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs8"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

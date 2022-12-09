@@ -214,6 +214,16 @@
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/weightView" />
 
+    <ImageView
+        android:id="@+id/helpSimpleMode"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toEndOf="@+id/weightView3"
+        app:layout_constraintTop_toBottomOf="@+id/weightView"
+        app:srcCompat="@drawable/question" />
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="247dp"

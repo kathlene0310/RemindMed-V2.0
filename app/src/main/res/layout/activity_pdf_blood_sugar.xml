@@ -56,11 +56,9 @@
         android:id="@+id/tableLayoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.081">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TableRow>
 
@@ -105,19 +103,20 @@
         android:id="@+id/btnSavePDF_BS"
         android:layout_width="247dp"
         android:layout_height="49dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
         android:text="SAVE as PDF"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
 
+        android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.371" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

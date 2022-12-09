@@ -55,11 +55,9 @@
         android:id="@+id/tableLayoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.081">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TableRow>
 
@@ -76,19 +74,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_column="1"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Date"
-                android:fontFamily="@font/montserrat"
                 android:textColor="#000000"
                 android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
                 android:padding="25dp"
                 android:text="Time"
-                android:fontFamily="@font/montserrat"
                 android:textColor="#000000"
                 android:textSize="20dp" />
         </TableRow>

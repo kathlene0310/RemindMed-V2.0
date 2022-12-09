@@ -12,7 +12,6 @@
         android:id="@+id/toolbar"
         android:layout_width="421dp"
         android:layout_height="92dp"
-        android:layout_marginBottom="20dp"
         android:background="#2e276c"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -25,19 +24,32 @@
         android:id="@+id/welcomeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+
         android:fontFamily="@font/montserratbold"
-        android:text="WELCOME!"
+        android:text="TODAY"
         android:textColor="#FFFFFF"
+
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
 
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/history_userText"
+        android:layout_width="108dp"
+        android:layout_height="21dp"
+
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="User"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
     <TextView
         android:id="@+id/firstnameview"
         android:layout_width="wrap_content"
@@ -47,22 +59,14 @@
         android:text="name"
         android:textColor="#FFFFFF"
 
-        android:textSize="30sp"
+        android:textSize="0sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeName" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="109dp"
-        android:layout_height="93dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pills" />
-
     <CalendarView
         android:id="@+id/calendarViewTD"
-        android:layout_width="365dp"
-        android:layout_height="338dp"
+        android:layout_width="354dp"
+        android:layout_height="306dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="32dp"
@@ -76,14 +80,15 @@
         android:id="@+id/textViewSched"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="Schedule"
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline36" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarViewTD" />
 
     <View
         android:id="@+id/view5"
@@ -271,6 +276,7 @@
         android:id="@+id/switchToday"
         android:layout_width="91dp"
         android:layout_height="31dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="CHANGE"
@@ -279,7 +285,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline35"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textViewSched"
-        app:layout_constraintTop_toTopOf="@+id/guideline36" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarViewTD" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/todayMeasurement"

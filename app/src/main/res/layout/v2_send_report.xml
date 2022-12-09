@@ -84,6 +84,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <ImageView
+        android:id="@+id/helpSendReport"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="184dp"
+        app:layout_constraintStart_toEndOf="@+id/frequency_txt2"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/question" />
+
     <TextView
         android:id="@+id/txtEmail"
         android:layout_width="wrap_content"

@@ -23,14 +23,15 @@
         android:id="@+id/set_now_btn"
         android:layout_width="314dp"
         android:layout_height="146dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
-        android:text="SET NOW"
         android:onClick="set_now"
+        android:text="SET NOW"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -61,15 +62,15 @@
         android:id="@+id/welcomeName"
         android:layout_width="285dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="4dp"
         android:fontFamily="@font/montserratbold"
-        android:text="HEALTH MEASUREMENTS"
+        android:text="ADD MEASUREMENTS"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view4"
