@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +72,7 @@ public class today_page_recycler extends AppCompatActivity {
     FirebaseAuth rootAuthen;
     String userId;
     long accounttype ;
+    ImageView helpDosageEdit;
 
 
 
@@ -83,6 +85,22 @@ public class today_page_recycler extends AppCompatActivity {
         userId = rootAuthen.getCurrentUser().getUid();
         switchDisplay = findViewById(R.id.switchToday);
         profileBtn = findViewById(R.id.Profile_page);
+
+        helpDosageEdit = findViewById(R.id.helpDosageEdit);
+
+
+        helpDosageEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(today_page_recycler.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Schedule");
+                aBuilder.setMessage("Choose a date to display the list of medications that the user will take for that day.\n\n" +
+                        "The Change button will switch the shown list from medication schedule to measurement schedule and vise versa");
+                aBuilder.show();
+
+            }
+        });
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {

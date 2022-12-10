@@ -400,11 +400,20 @@ public class intake_confirmation extends AppCompatActivity {
         getData();
         String Medication = medication_info.getMedication();
         String Time = medication_info.getTime();
+        String Qty = medication_info.getInventoryMeds();
+        String Expiration = medication_info.getExpiration();
+
+        if(Expiration.equals("") || Expiration == null) {
+            Expiration = "none";
+        }
+
         String StartDate = date;
         Map<String, Object> user = new HashMap<>();
         user.put("Medication", Medication);
         user.put("Time", Time);
         user.put("StartDate",  StartDate);
+        user.put("Qty", Qty);
+        user.put("Expiration", Expiration);
 
         db.collection("users").document(userId).collection("Medication History")
                 .add(user)

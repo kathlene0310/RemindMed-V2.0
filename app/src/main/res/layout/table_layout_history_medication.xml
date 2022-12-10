@@ -60,7 +60,7 @@
 
             <TextView
                 android:id="@+id/expirationPDF"
-                android:layout_width="88dp"
+                android:layout_width="76dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/montserratbold"
                 android:gravity="center"

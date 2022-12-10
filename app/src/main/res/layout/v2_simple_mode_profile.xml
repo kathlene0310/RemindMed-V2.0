@@ -293,6 +293,8 @@
         android:onClick="SProfile_To_AccountSettings"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/account_settingView"
         app:srcCompat="@drawable/backarrowreverse"
         tools:layout_editor_absoluteY="154dp" />

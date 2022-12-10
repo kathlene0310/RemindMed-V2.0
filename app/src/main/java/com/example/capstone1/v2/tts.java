@@ -2,6 +2,7 @@ package com.example.capstone1.v2;
 
 import static com.example.capstone1.home_page.TAG;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.speech.tts.TextToSpeech;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.R;
 import com.example.capstone1.guestLogout;
+import com.example.capstone1.history_for_measurements;
 import com.example.capstone1.user_information;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,6 +49,7 @@ public class tts extends AppCompatActivity {
     ArrayList<String> listVoice;
     String selectedVoice;
     ArrayAdapter<String> adapter;
+    ImageView helpTTS, helpSpeed, helpPitch, helpVoice;
     long accounttype ;
     @Override
 
@@ -54,6 +58,10 @@ public class tts extends AppCompatActivity {
         setContentView(R.layout.v2_account_settings_tts_config);
 
 
+        helpTTS = findViewById(R.id.helpTTS);
+        helpSpeed = findViewById(R.id.helpSpeed);
+        helpPitch = findViewById(R.id.helpPitch);
+        helpVoice = findViewById(R.id.helpVoice);
         reset = findViewById(R.id.btnReset);
         voice = findViewById(R.id.pronunciation_spinner);
         test = findViewById(R.id.btnTest);
@@ -61,6 +69,60 @@ public class tts extends AppCompatActivity {
         speed = findViewById(R.id.eSpeed);
         pitch = findViewById(R.id.ePitch);
         sf = new SharedPref(getApplicationContext());
+
+
+        helpTTS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(tts.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Text-To-Speech Configuration");
+                aBuilder.setMessage("This configuration will allow the user to edit the speed, pitch, and voice of their text-to-speech");
+                aBuilder.show();
+
+            }
+        });
+
+        helpSpeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(tts.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Speed");
+                aBuilder.setMessage("The speed of the user's text-to-speech can be modified by changing the number ranging from 0.1 to 2.00.\n\n" +
+                        "Entering a number lower than 0.1 will automatically change it to 0.1 \n\n\n" +
+                        "Entering a number above 2.00 will automatically change it to 2.00\n");
+                aBuilder.show();
+
+            }
+        });
+
+
+        helpPitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(tts.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Pitch");
+                aBuilder.setMessage("The pitch of the user's text-to-speech can be modified by changing the number ranging from 0.1 to 2.00.\n\n\n" +
+                        "Entering a number lower than 0.1 will automatically change it to 0.1 \n\n\n" +
+                        "Entering a number above 2.00 will automatically change it to 2.00\n");
+                aBuilder.show();
+
+            }
+        });
+
+        helpVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(tts.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Voice");
+                aBuilder.setMessage("The voice of the text-to-speech can be configured based on the user's preference");
+                aBuilder.show();
+
+            }
+        });
 
 
 
