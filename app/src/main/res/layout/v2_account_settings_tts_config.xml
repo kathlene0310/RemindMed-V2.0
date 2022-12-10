@@ -74,7 +74,7 @@
         android:id="@+id/speed_spinner"
         android:layout_width="140dp"
         android:layout_height="44dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="36dp"
         android:background="@drawable/edittext3"
         android:fontFamily="@font/montserrat"
@@ -85,13 +85,11 @@
         android:id="@+id/pronunciationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat"
         android:text="Voice"
         android:textColor="#000000"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/pronunciation_spinner"
-        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/pitchView" />
 
@@ -115,8 +113,6 @@
         android:text="Pitch"
         android:textColor="#000000"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/pitch_spinner"
-        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/speedView" />
 
@@ -124,13 +120,11 @@
         android:id="@+id/speedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat"
         android:text="Speed"
         android:textColor="#000000"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/speed_spinner"
-        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/year_of_birth" />
 
@@ -138,7 +132,7 @@
         android:id="@+id/year_of_birth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/montserrat"
         android:text="Text-to-Speech Configuration"
         android:textColor="#000000"
@@ -161,7 +155,7 @@
         android:id="@+id/btnTest"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="456dp"
+        android:layout_marginTop="46dp"
         android:background="@drawable/edit_round2"
         android:enabled="false"
         android:fontFamily="@font/montserrat"
@@ -171,7 +165,7 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pronunciation_spinner" />
 
     <Button
         android:id="@+id/btnCancel"
@@ -194,7 +188,7 @@
         android:id="@+id/btnReset"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:onClick="Back"
@@ -203,17 +197,15 @@
         android:textColor="#FFFFFF"
 
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTest"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTest" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
         android:text="SAVE"
@@ -222,7 +214,7 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnReset" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline93"

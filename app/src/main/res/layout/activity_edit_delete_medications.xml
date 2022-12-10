@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
-        android:id="@+id/helpDosageEdit"
+        android:id="@+id/helpMedicineName"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="9dp"
