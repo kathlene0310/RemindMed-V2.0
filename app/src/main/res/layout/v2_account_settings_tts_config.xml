@@ -140,6 +140,46 @@
         app:layout_constraintStart_toStartOf="@+id/guideline93"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <ImageView
+        android:id="@+id/helpSpeed"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintStart_toEndOf="@+id/speedView"
+        app:layout_constraintTop_toBottomOf="@+id/year_of_birth"
+        app:srcCompat="@drawable/question" />
+
+    <ImageView
+        android:id="@+id/helpTTS"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/year_of_birth"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/question" />
+
+    <ImageView
+        android:id="@+id/helpPitch"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="47dp"
+        app:layout_constraintStart_toEndOf="@+id/pitchView"
+        app:layout_constraintTop_toBottomOf="@+id/speedView"
+        app:srcCompat="@drawable/question" />
+
+    <ImageView
+        android:id="@+id/helpVoice"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="47dp"
+        app:layout_constraintStart_toEndOf="@+id/pronunciationView"
+        app:layout_constraintTop_toBottomOf="@+id/pitchView"
+        app:srcCompat="@drawable/question" />
+
     <Spinner
         android:id="@+id/pronunciation_spinner"
         android:layout_width="140dp"
