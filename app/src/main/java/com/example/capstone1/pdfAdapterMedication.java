@@ -33,7 +33,6 @@ public class pdfAdapterMedication extends RecyclerView.Adapter<pdfAdapterMedicat
         holder.Record.setText(measurment_info.Medication);
         holder.Time.setText(measurment_info.Time);
         holder.Date.setText(measurment_info.StartDate);
-
     }
 
     @Override
@@ -42,12 +41,14 @@ public class pdfAdapterMedication extends RecyclerView.Adapter<pdfAdapterMedicat
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView Record, Time,  Date;
+        TextView Record, Time,  Date, Qty, Expiration;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             Record = itemView.findViewById(R.id.measurementhistoryPDF);
             Time = itemView.findViewById(R.id.timehisoryPDF);
             Date = itemView.findViewById(R.id.datehistoryPDF);
+            Qty = itemView.findViewById(R.id.qtyHistoryPDF);
+            Expiration = itemView.findViewById(R.id.expirationPDF);
         }
     }
 }

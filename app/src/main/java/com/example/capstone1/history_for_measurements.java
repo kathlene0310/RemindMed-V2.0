@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,6 +52,7 @@ public class history_for_measurements extends AppCompatActivity {
     TextView firstname, clear;
     FirebaseAuth rootAuthen;
     String userId;
+    ImageView helpHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,22 @@ public class history_for_measurements extends AppCompatActivity {
         userId = rootAuthen.getCurrentUser().getUid();
         clear = findViewById(R.id.clearAll_measurements);
         profileBtn = findViewById(R.id.Profile_historyH);
+        helpHistory = findViewById(R.id.helpHistory);
 
+
+        helpHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(history_for_measurements.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("History");
+                aBuilder.setMessage("Choose between Measurement or Medication to show the list of taken medicine or measured measurement.\n\n" +
+                        "Clear All button will clear all of the history\n\n" +
+                        "PDF will print the history details of all the Measurement and Medicine");
+                aBuilder.show();
+
+            }
+        });
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {

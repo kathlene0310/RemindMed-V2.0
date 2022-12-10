@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone1.R;
+import com.example.capstone1.history_for_measurements;
 import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.change_name;
@@ -61,6 +63,7 @@ public class profile extends AppCompatActivity {
     Boolean simpleMode;
     SharedPref sf;
 
+    ImageView helpSimpleMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +79,7 @@ public class profile extends AppCompatActivity {
 
 
         email = (TextView) findViewById(R.id.emailview);
-
+        helpSimpleMode = findViewById(R.id.helpSimpleMode);
         spinner = findViewById(R.id.gender_spinner);
         birthyr = findViewById(R.id.editTextbirth);
         height = findViewById(R.id.editTextheight);
@@ -91,6 +94,20 @@ public class profile extends AppCompatActivity {
         spnHeight = findViewById(R.id.spinnerHeight);
         spnWeight = findViewById(R.id.spinnerWeight);
         switchSimpleMode = findViewById(R.id.switchSimpleMode);
+
+
+        helpSimpleMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.app.AlertDialog.Builder aBuilder = new android.app.AlertDialog.Builder(profile.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Simple Mode");
+                aBuilder.setMessage("Switching the button will allow the user to enter simple mode.\n\n" +
+                        "First, click the switch then click the back button on the upper left corner of the screen");
+                aBuilder.show();
+
+            }
+        });
 
 
 

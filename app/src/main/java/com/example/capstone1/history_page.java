@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone1.v2.refill_medication;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -57,7 +59,7 @@ public class history_page extends AppCompatActivity {
     medication_history_adapter myAdapter;
     FirebaseFirestore db;
     ProgressDialog progressDialog;
-
+    ImageView helpHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,21 @@ public class history_page extends AppCompatActivity {
         clear = findViewById(R.id.clearAll_medications);
         profileBtn = findViewById(R.id.profile_history_two);
         pdf = findViewById(R.id.textView54);
+        helpHistory = findViewById(R.id.helpHistory);
+
+        helpHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(history_page.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("History");
+                aBuilder.setMessage("Choose between Measurement or Medication to show the list of taken medicine or measured measurement.\n\n" +
+                        "Clear All button will clear all of the history\n\n" +
+                        "PDF will print the history details of all the Measurement and Medicine");
+                aBuilder.show();
+
+            }
+        });
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
         /*documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {

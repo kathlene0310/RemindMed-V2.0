@@ -163,11 +163,11 @@ public class take_medication extends AppCompatActivity {
                 public void onClick(View v) {
                     AlertDialog.Builder aBuilder = new AlertDialog.Builder(take_medication.this);
                     aBuilder.setCancelable(true);
-                    aBuilder.setTitle("Intake");
-                    aBuilder.setMessage("Enter the amount you will intake.\n\n" +
-                            "For solids: Enter the amount of pills, capsule or, tablets you will take\n\n" +
-                            "For liquids: Enter amount you will take in ml or press the tablespoon which will be equal to 15ml\n\n"+
-                            "This will subtract from you inventory total every time you intake your medication");
+                    aBuilder.setTitle("Take");
+                    aBuilder.setMessage("Enter the amount you will take.\n\n" +
+                            "For solids: Enter the amount of pills, capsule or tablets you will take\n\n" +
+                            "For liquids: Enter the amount you will take in ml\n\n"+
+                            "This will be deducted to the total of your inventory every time you take your medication");
                     aBuilder.show();
 
                 }

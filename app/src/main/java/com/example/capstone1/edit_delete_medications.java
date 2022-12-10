@@ -58,7 +58,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
     final int end = 2;
     Calendar calendar = Calendar.getInstance();
     Calendar c;
-    ImageView helpdosage, helptype, helpinvetory;
+    ImageView helpdosage, helptype, helpinvetory, helpMedicineName;
     Calendar myAlarmDate;
     Button timeButtonEdit, dateFormat, delete, change, enddatebutton, notifButton;
     FirebaseFirestore db;
@@ -88,6 +88,7 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
         medInventory = findViewById(R.id.inventoryBox);
         helptype = findViewById(R.id.helpTypeEdit);
         notifButton = findViewById(R.id.notifbuttonEdit);
+        helpMedicineName = findViewById(R.id.helpMedicineName);
         final Calendar calendar = Calendar.getInstance();
         initDatePicker();
         getData();
@@ -95,6 +96,18 @@ public class edit_delete_medications extends AppCompatActivity implements TimePi
 
        userId = currentFirebaseUser.getUid();
 
+        helpMedicineName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(edit_delete_medications.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Medicine Name");
+                aBuilder.setMessage("Input the name of the medicine that you are taking.\n\n" +
+                        "Two icons are located on the right side of where you will input the medicine name, the first one will redirect you to the optical character recognition page where-in you will be able to scan your medicine and it will automatically give you the name of your medicine after scanning. While the second icon will allow you to upload the medicine directly from your phone.");
+                aBuilder.show();
+
+            }
+        });
         helpdosage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

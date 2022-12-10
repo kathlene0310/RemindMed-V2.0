@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.example.capstone1.Faq;
 import com.example.capstone1.R;
 import com.example.capstone1.forgot_password;
 import com.example.capstone1.user_information;
+import com.example.capstone1.v2.take_medication;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -57,6 +59,7 @@ public class add_dependent extends AppCompatActivity {
     String [] options = {"Yes", "No"};
     Spinner spinner;
     Boolean autoReport;
+    ImageView helpAddDependent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,13 +68,27 @@ public class add_dependent extends AppCompatActivity {
         submit = findViewById(R.id.save_bs_later);
         cancel = findViewById(R.id.cancel_bs_later);
         spinner = findViewById(R.id.spinner);
-
+        helpAddDependent = findViewById(R.id.helpAddDependent);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, options);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
 
+
+
+        helpAddDependent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.app.AlertDialog.Builder aBuilder = new android.app.AlertDialog.Builder(add_dependent.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Add Dependent");
+                aBuilder.setMessage("Adding a dependent will give access to the dependent to add or edit the medicines of their chosen user.\n\n" +
+                        "The user and the dependent will be able to communicate through the chat feature of the");
+                aBuilder.show();
+
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

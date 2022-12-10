@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -23,6 +24,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone1.simple.profile;
 import com.example.capstone1.v2.SharedPref;
 import com.example.capstone1.v2.send_report;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -54,6 +56,7 @@ public class user_information extends AppCompatActivity {
     Switch switchSimpleMode;
     Boolean simpleMode;
     SharedPref sf;
+    ImageView helpSimpleMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,7 @@ public class user_information extends AppCompatActivity {
         spnHeight = findViewById(R.id.spinnerHeight);
         spnWeight = findViewById(R.id.spinnerWeight);
         switchSimpleMode = findViewById(R.id.switchSimpleMode);
+        helpSimpleMode = findViewById(R.id.helpSimpleMode);
         /*
         faq.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +95,19 @@ public class user_information extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+
+        helpSimpleMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.app.AlertDialog.Builder aBuilder = new android.app.AlertDialog.Builder(user_information.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Simple Mode");
+                aBuilder.setMessage("Switching the button will allow the user to enter simple mode.\n\n" +
+                        "First, click the switch then click the back button on the upper left corner of the screen");
+                aBuilder.show();
+
+            }
+        });
 
         ArrayAdapter<String> adapterWeight = new ArrayAdapter<String>(user_information.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array

@@ -2,6 +2,7 @@ package com.example.capstone1.v2;
 
 import static com.example.capstone1.home_page.TAG;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ import com.example.capstone1.dependent.User;
 import com.example.capstone1.dependent.UserAdapter;
 import com.example.capstone1.guestLogout;
 import com.example.capstone1.health_measurements;
+import com.example.capstone1.history_for_measurements;
 import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.today;
@@ -59,6 +62,7 @@ public class send_report extends AppCompatActivity {
     Spinner spinner;
     TextView txtEmail;
     Button chatRedirect;
+    ImageView helpSendReport;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +76,21 @@ public class send_report extends AppCompatActivity {
         cancel = findViewById(R.id.cancel_bs_later);
         spinner = findViewById(R.id.frequency_set_later_bs);
         txtEmail = findViewById(R.id.txtEmail);
-
+        helpSendReport = findViewById(R.id.helpSendReport);
         sendReport.setEnabled(false);
+
+
+        helpSendReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(send_report.this);
+                aBuilder.setCancelable(true);
+                aBuilder.setTitle("Send Report");
+                aBuilder.setMessage("Clicking the send report button will send a PDF version of the measurement and medications of the user.");
+                aBuilder.show();
+
+            }
+        });
 
 
         sendReport.setOnClickListener(new View.OnClickListener() {
