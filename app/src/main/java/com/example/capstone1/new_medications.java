@@ -134,8 +134,11 @@ public class new_medications extends AppCompatActivity implements TimePickerDial
             public void onClick(View v) {
                 AlertDialog.Builder aBuilder = new AlertDialog.Builder(new_medications.this);
                 aBuilder.setCancelable(true);
-                aBuilder.setTitle("Medicine Name");
-                aBuilder.setMessage("The medicine name is to input the name of the medicine that you are taking. Two icons are located on the right side of where you will input the medicine name, the first one will redirect you to the optical character recognition page where-in you will be able to scan your medicine and it will automatically give you the name of your medicine after scanning. While the second icon will allow you to upload the medicine directly from your phone.");
+                aBuilder.setTitle("Intake");
+                aBuilder.setMessage("Enter the amount you will intake.\n\n" +
+                        "For solids: Enter the amount of pills, capsule or tablets you will take\n\n"+
+                        "For liquids: Enter the amount you will take in ml or press the tablespoon will be equal to 15ml\n\n"+
+                        "This will be subtracted from your inventory total every time you inntake your medication");
                 aBuilder.show();
 
             }

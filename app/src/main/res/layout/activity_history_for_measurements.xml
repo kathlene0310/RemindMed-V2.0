@@ -266,7 +266,7 @@
         android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="Home_To_Chat"
+        android:onClick="HistoryHM_To_Chat"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/History_health"
         app:layout_constraintTop_toTopOf="@+id/guideline42"

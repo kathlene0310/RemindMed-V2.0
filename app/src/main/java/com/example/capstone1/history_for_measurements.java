@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone1.v2.chat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -240,6 +241,11 @@ public class history_for_measurements extends AppCompatActivity {
     }
     public void HistoryHM_To_User(View view) {
         Intent intent = new Intent(history_for_measurements.this, user_information.class);
+        startActivity(intent);
+    }
+
+    public void HistoryHM_To_Chat(View view) {
+        Intent intent = new Intent(history_for_measurements.this, chat.class);
         startActivity(intent);
     }
     public void HistoryHM_To_HistoryM(View view) {
