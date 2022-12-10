@@ -401,8 +401,11 @@ public class intake_confirmation extends AppCompatActivity {
         String Medication = medication_info.getMedication();
         String Time = medication_info.getTime();
         String Qty = medication_info.getInventoryMeds();
-        String Expiration = medication_info.getExpiration();
 
+        String Expiration = "";
+        if(medication_info.getExpiration() != null) {
+         Expiration = medication_info.getExpiration();
+        }
         if(Expiration.equals("") || Expiration == null) {
             Expiration = "none";
         }
