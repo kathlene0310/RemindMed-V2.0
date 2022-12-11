@@ -1,4 +1,9 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext {
+    var = 'asdqwe123'
+    var1 = 'asdqwe123'
+    var2 = 'key0'
+    var3 = 'C:\\Users\\jheed\\remindmedkey.jks'
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
         google()

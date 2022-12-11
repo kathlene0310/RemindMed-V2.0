@@ -1,5 +1,7 @@
 package com.example.capstone1;
 
+import static android.os.Build.VERSION.SDK_INT;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -13,8 +15,10 @@ import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.View;
@@ -29,6 +33,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
@@ -72,7 +77,12 @@ public class pdf_form extends AppCompatActivity {
         setContentView(R.layout.activity_pdf_form);
 
 
-        verifyStoragePermissions(pdf_form.this);
+        if(SDK_INT >= 30) {
+            checkPermission();
+        }
+        else {
+            verifyStoragePermissions(pdf_form.this);
+        }
         tableLayout = (TableLayout) findViewById(R.id.tableLayoutHeader);
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -216,6 +226,9 @@ public class pdf_form extends AppCompatActivity {
         }
         String targetPdf = folder + "RemindMedBP"  + ".pdf";
         File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) , "RemindMedBP.pdf");
+        if (!filePath.exists()) {
+            filePath.mkdirs();
+        }
         try {
             document.writeTo(new FileOutputStream(filePath));
             Toast.makeText(this, "Exported PDF to downloads folder", Toast.LENGTH_LONG).show();
@@ -229,6 +242,30 @@ public class pdf_form extends AppCompatActivity {
     public void pdf_To_hhm(View view) {
         Intent intent = new Intent(pdf_form.this, health_measurement_pdf_choices.class);
         startActivity(intent);
+    }
+
+    public void checkPermission() {
+        if (SDK_INT >= 30) {
+            if (!Environment.isExternalStorageManager()) {
+                Snackbar.make(findViewById(android.R.id.content), "Permission needed!", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Settings", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                try {
+                                    Uri uri = Uri.parse("package:" + BuildConfig.APPLICATION_ID);
+                                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, uri);
+                                    startActivity(intent);
+                                } catch (Exception ex) {
+                                    Intent intent = new Intent();
+                                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                                    startActivity(intent);
+                                }
+                            }
+                        })
+                        .show();
+            }
+        }
     }
 
     public void verifyStoragePermissions(Activity activity) {

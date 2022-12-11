@@ -1,5 +1,8 @@
 package com.example.capstone1;
 
+import static android.os.Build.VERSION.SDK_INT;
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -12,8 +15,11 @@ import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.View;
@@ -21,12 +27,18 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
@@ -50,6 +62,7 @@ public class pdf_medication extends AppCompatActivity {
     TableLayout tableLayout;
     Button savePDF;
     final int REQUEST_EXTERNAL_STORAGE = 1;
+    final int STORAGE_PERMISSION_CODE = 100;
     String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -60,7 +73,13 @@ public class pdf_medication extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_medication);
 
-        verifyStoragePermissions(pdf_medication.this);
+        if(SDK_INT >= 30) {
+            checkPermission();
+        }
+        else {
+            verifyStoragePermissions(pdf_medication.this);
+        }
+
         tableLayout = (TableLayout) findViewById(R.id.tableLayoutHeader);
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(true);
@@ -193,6 +212,7 @@ public class pdf_medication extends AppCompatActivity {
         document.finishPage(page);
         // draw text on the graphics object of the page
 
+
         // write the document content
         File folder = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
         File file = new File(folder,"RemindMedMedications.pdf");
@@ -200,7 +220,10 @@ public class pdf_medication extends AppCompatActivity {
             file.mkdirs();
         }
         String targetPdf = folder + "RemindMedMedications"  + ".pdf";
-        File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "RemindMedMedications.pdf");
+        File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) , "RemindMedBP.pdf");
+        if (!filePath.exists()) {
+            filePath.mkdirs();
+        }
         try {
             document.writeTo(new FileOutputStream(filePath));
             Toast.makeText(this, "Exported PDF to downloads folder", Toast.LENGTH_LONG).show();
@@ -215,6 +238,35 @@ public class pdf_medication extends AppCompatActivity {
         Intent intent = new Intent(pdf_medication.this, history_page.class);
         startActivity(intent);
     }
+
+
+
+    public void checkPermission() {
+        if (SDK_INT >= 30) {
+            if (!Environment.isExternalStorageManager()) {
+                Snackbar.make(findViewById(android.R.id.content), "Permission needed!", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Settings", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                try {
+                                    Uri uri = Uri.parse("package:" + BuildConfig.APPLICATION_ID);
+                                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, uri);
+                                    startActivity(intent);
+                                } catch (Exception ex) {
+                                    Intent intent = new Intent();
+                                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                                    startActivity(intent);
+                                }
+                            }
+                        })
+                        .show();
+            }
+        }
+    }
+
+
+
     public void verifyStoragePermissions(Activity activity) {
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
