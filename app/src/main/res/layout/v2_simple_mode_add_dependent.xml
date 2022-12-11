@@ -18,6 +18,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/frequency_set_later_bs"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext3"
+        android:backgroundTint="#2e276c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_txt2" />
+
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="79dp"
@@ -67,18 +78,17 @@
 
     <EditText
         android:id="@+id/dependentEmail"
-        android:layout_width="249dp"
-        android:layout_height="46dp"
+        android:layout_width="273dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/frequency_set_later_bs"
-        app:layout_constraintEnd_toEndOf="@+id/frequency_set_later_bs"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="@+id/frequency_set_later_bs"
-        app:layout_constraintTop_toTopOf="@+id/frequency_set_later_bs"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_txt2" />
 
     <Spinner
         android:id="@+id/frequency_set_later_bs8"
@@ -118,16 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frequency_set_later_bs" />
 
-    <Spinner
-        android:id="@+id/frequency_set_later_bs"
-        android:layout_width="283dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/edittext3"
-        android:backgroundTint="#2e276c"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frequency_txt2" />
+
 
     <Button
         android:id="@+id/save_bs_later"
