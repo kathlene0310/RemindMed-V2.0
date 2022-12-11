@@ -1,7 +1,10 @@
 package com.example.capstone1;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -20,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,10 +50,18 @@ public class pdf_heartrate extends AppCompatActivity {
     TableLayout tableLayout;
     Button savePDF;
 
+    final int REQUEST_EXTERNAL_STORAGE = 1;
+    String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_heartrate);
+
+
+        verifyStoragePermissions(pdf_heartrate.this);
 
         tableLayout = (TableLayout) findViewById(R.id.tableLayoutHeader);
         progressDialog = new ProgressDialog(this);
@@ -205,5 +217,20 @@ public class pdf_heartrate extends AppCompatActivity {
     public void pdfpulse_To_hhm(View view) {
         Intent intent = new Intent(pdf_heartrate.this, health_measurement_pdf_choices.class);
         startActivity(intent);
+    }
+
+
+    public void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
     }
 }
