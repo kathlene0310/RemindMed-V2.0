@@ -226,9 +226,6 @@ public class pdf_form extends AppCompatActivity {
         }
         String targetPdf = folder + "RemindMedBP"  + ".pdf";
         File filePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) , "RemindMedBP.pdf");
-        if (!filePath.exists()) {
-            filePath.mkdirs();
-        }
         try {
             document.writeTo(new FileOutputStream(filePath));
             Toast.makeText(this, "Exported PDF to downloads folder", Toast.LENGTH_LONG).show();
