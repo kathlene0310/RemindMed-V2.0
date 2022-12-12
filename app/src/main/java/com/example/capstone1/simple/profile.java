@@ -29,6 +29,7 @@ import com.example.capstone1.history_for_measurements;
 import com.example.capstone1.home_page;
 import com.example.capstone1.main_page;
 import com.example.capstone1.change_name;
+import com.example.capstone1.v2.send_report;
 import com.example.capstone1.user_information;
 import com.example.capstone1.v2.tts;
 import com.example.capstone1.v2.SharedPref;
@@ -316,7 +317,7 @@ public class profile extends AppCompatActivity {
     }
 
     public void SProfile_To_SendReport(View view) {
-        Intent intent = new Intent(this, tts.class);
+        Intent intent = new Intent(this, send_report.class);
         startActivity(intent);
     }
     @Override

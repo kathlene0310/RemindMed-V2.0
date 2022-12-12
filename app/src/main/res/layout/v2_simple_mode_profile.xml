@@ -30,16 +30,12 @@
 
     <ImageButton
         android:id="@+id/imageBack"
-        android:layout_width="61dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginBottom="23dp"
+        android:layout_width="59dp"
+        android:layout_height="91dp"
         android:backgroundTint="#2e276c"
         android:onClick="SProfile_To_Home"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.896"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backarrow" />
 
     <TextView
@@ -72,15 +68,14 @@
         android:id="@+id/editTextbirth"
         android:layout_width="140dp"
         android:layout_height="44dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/edittext3"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Year of Birth"
         android:inputType="number"
         android:paddingStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/genderView"
         app:layout_constraintTop_toBottomOf="@+id/gender_spinner" />
 
@@ -88,8 +83,8 @@
         android:id="@+id/editTextheight"
         android:layout_width="140dp"
         android:layout_height="44dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/edittext3"
         android:ems="10"
         android:fontFamily="@font/montserrat"
@@ -104,7 +99,7 @@
         android:layout_width="140dp"
         android:layout_height="44dp"
         android:layout_marginStart="144dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/edittext3"
         android:ems="10"
         android:fontFamily="@font/montserrat"
@@ -258,7 +253,7 @@
         android:id="@+id/btnSave"
         android:layout_width="247dp"
         android:layout_height="49dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="SAVE"
@@ -302,15 +297,13 @@
         android:id="@+id/accountSetting_button2"
         android:layout_width="37dp"
         android:layout_height="40dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="User_To_Account"
+        android:onClick="SProfile_To_SendReport"
         app:backgroundTint="#FFFFFF"
         app:fabSize="mini"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountSetting_button"
         app:srcCompat="@drawable/backarrowreverse" />
@@ -355,7 +348,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".62" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <Spinner
         android:id="@+id/spinnerHeight"
@@ -379,9 +372,9 @@
         android:id="@+id/switchSimpleMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="96dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/weightView3"
+        app:layout_constraintStart_toEndOf="@+id/helpSimpleMode"
         app:layout_constraintTop_toBottomOf="@+id/editTextweight" />
 
 
