@@ -50,7 +50,7 @@
 
             <TextView
                 android:id="@+id/timehisoryPDF"
-                android:layout_width="63dp"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
@@ -61,7 +61,7 @@
 
             <TextView
                 android:id="@+id/expirationPDF"
-                android:layout_width="74dp"
+                android:layout_width="79dp"
                 android:layout_height="70dp"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"

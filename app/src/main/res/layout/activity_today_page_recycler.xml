@@ -115,11 +115,12 @@
         android:id="@+id/textViewHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
         android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Home_page" />
 
@@ -127,63 +128,67 @@
         android:id="@+id/textViewToday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat"
         android:text="Today"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Today_page" />
 
     <TextView
         android:id="@+id/textViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat"
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewToday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/History_page" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat"
         android:text="Profile"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewChat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Profile_page" />
 
     <TextView
         android:id="@+id/textViewChat"
         android:layout_width="54dp"
         android:layout_height="23dp"
-        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat"
         android:text="Chat"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Profile_page" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Home_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
 
         android:clickable="true"
         android:focusable="true"
         android:onClick="Today_To_Home"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline51"
         app:srcCompat="@drawable/homeiconv2" />
@@ -192,13 +197,14 @@
         android:id="@+id/Today_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:clickable="true"
-        android:onClick="Today_To_Today"
         android:focusable="true"
+        android:onClick="Today_To_Today"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintStart_toEndOf="@+id/Home_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
         app:srcCompat="@drawable/todayiconv2" />
 
@@ -206,13 +212,13 @@
         android:id="@+id/History_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Today_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintStart_toEndOf="@+id/Today_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
         app:srcCompat="@drawable/historyiconv2" />
 
@@ -220,12 +226,13 @@
         android:id="@+id/chat_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:clickable="true"
         android:onClick="Today_To_Chat"
 
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/History_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.732"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline51"
         app:srcCompat="@drawable/chaticonv2" />
 
@@ -233,13 +240,14 @@
         android:id="@+id/Profile_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Today_To_User"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintStart_toEndOf="@+id/chat_dep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline51"
         app:srcCompat="@drawable/profileiconv2" />
 
