@@ -155,17 +155,18 @@
 
     <TextView
         android:id="@+id/health_measurementstxt"
-        android:layout_width="290dp"
-        android:layout_height="70dp"
+        android:layout_width="228dp"
+        android:layout_height="56dp"
         android:fontFamily="@font/montserratbold"
         android:text="HEALTH MEASUREMENTS"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="27sp"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/history_userText"
