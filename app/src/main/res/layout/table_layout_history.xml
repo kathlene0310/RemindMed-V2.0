@@ -14,7 +14,8 @@
 
             <TextView
                 android:id="@+id/measurementhistoryPDF"
-                android:layout_width="159dp"
+                android:layout_width="206dp"
+                android:layout_height="match_parent"
                 android:layout_column="1"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"

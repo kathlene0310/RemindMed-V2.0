@@ -62,7 +62,7 @@
         <TableRow>
 
             <TextView
-                android:layout_width="146dp"
+                android:layout_width="206dp"
                 android:layout_column="1"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"

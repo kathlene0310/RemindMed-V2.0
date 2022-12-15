@@ -203,7 +203,7 @@
         android:textColor="#2e276c"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/today_history_two" />
 
@@ -235,15 +235,15 @@
 
     <TextView
         android:id="@+id/textViewProfile3"
-        android:layout_width="49dp"
-        android:layout_height="23dp"
+        android:layout_width="48dp"
+        android:layout_height="20dp"
         android:layout_marginStart="28dp"
         android:fontFamily="@font/montserrat"
         android:text="Chat"
         android:textColor="#2e276c"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chat_dep2" />
 
