@@ -33,7 +33,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="Medication name"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,8 +41,8 @@
                 android:id="@+id/edit_time_medication"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/montserrat"
                 android:text="time"
                 android:textColor="#FFFFFF"
@@ -53,14 +53,16 @@
                 android:id="@+id/btnGotit"
                 android:layout_width="75dp"
                 android:layout_height="33dp"
-                android:layout_marginStart="47dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="28dp"
                 android:background="#afd6f7"
                 android:fontFamily="@font/montserrat"
                 android:text="Edit"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#000000"
                 android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
                 app:layout_constraintStart_toEndOf="@+id/edit_number"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

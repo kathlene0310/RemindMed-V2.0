@@ -25,7 +25,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline80"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
+        app:layout_constraintVertical_bias="0.738" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -97,8 +97,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline78"
         app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline1"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
     <EditText
         android:id="@+id/DosageBox"
@@ -144,7 +143,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toBottomOf="@+id/type_spinner_one" />
+        app:layout_constraintTop_toBottomOf="@+id/type_spinner_one"
+        app:layout_constraintVertical_bias="0.66" />
 
     <Button
         android:id="@+id/btnrefillmedication"
@@ -160,35 +160,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.892" />
 
     <TextView
         android:id="@+id/type_spinner_one"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="35dp"
         android:background="@drawable/edittext3"
-
         android:backgroundTint="#2e276c"
+        android:fontFamily="@font/montserrat"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline78"
         app:layout_constraintEnd_toStartOf="@+id/guideline81"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintEnd_toEndOf="@id/guideline78"
         app:layout_constraintStart_toStartOf="@+id/guideline80"
-        app:layout_constraintTop_toBottomOf="@+id/type_txt" />
+        app:layout_constraintTop_toTopOf="@+id/guideline105" />
 
     <TextView
         android:id="@+id/type_spinner_one2"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edittext3"
+        android:layout_height="35dp"
 
+        android:background="@drawable/edittext3"
         android:backgroundTint="#2e276c"
         app:layout_constraintEnd_toEndOf="@id/guideline78"
         app:layout_constraintEnd_toStartOf="@+id/guideline81"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline80"
-        app:layout_constraintTop_toBottomOf="@+id/type_txt" />
+        app:layout_constraintTop_toTopOf="@+id/type_spinner_one" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline26"
@@ -209,21 +209,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="233dp" />
+        app:layout_constraintGuide_begin="164dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline52"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="307dp" />
+        app:layout_constraintGuide_begin="238dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline105"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="429dp" />
+        app:layout_constraintGuide_begin="374dp" />
 
     <ImageView
         android:id="@+id/dosageHelp"
@@ -232,18 +232,22 @@
         android:layout_marginStart="29dp"
 
 
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toEndOf="@+id/DosageBox"
-        app:layout_constraintTop_toBottomOf="@+id/guideline52"
+        app:layout_constraintTop_toBottomOf="@+id/refill_medication_choose"
         app:srcCompat="@drawable/question" />
 
     <ImageView
         android:id="@+id/typehelp"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginEnd="116dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline79"
-        app:layout_constraintTop_toBottomOf="@+id/type_txt"
-        app:layout_constraintTop_toTopOf="@+id/guideline105"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/type_spinner_one"
+        app:layout_constraintStart_toEndOf="@+id/type_txt"
+        app:layout_constraintTop_toBottomOf="@+id/DosageBox"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/question" />
 
     <androidx.constraintlayout.widget.Guideline

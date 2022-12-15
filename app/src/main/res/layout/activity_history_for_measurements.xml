@@ -195,25 +195,24 @@
         android:id="@+id/textViewHistory3"
         android:layout_width="56dp"
         android:layout_height="22dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="29dp"
         android:fontFamily="@font/montserrat"
         android:text="Chat"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewToday"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
         app:layout_constraintTop_toTopOf="@+id/guideline43" />
 
     <TextView
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
         android:fontFamily="@font/montserrat"
         android:text="Profile"
         android:textColor="#2e276c"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toEndOf="@+id/guideline8"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistory3"
         app:layout_constraintTop_toBottomOf="@+id/Profile_historyH" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -254,7 +253,6 @@
         android:onClick="HistoryHM_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHistory"
         app:layout_constraintStart_toEndOf="@+id/Today_historyH"
         app:layout_constraintTop_toTopOf="@+id/guideline42"
         app:srcCompat="@drawable/historyiconv2" />
@@ -282,7 +280,6 @@
         android:onClick="HistoryHM_To_User"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewProfile"
         app:layout_constraintStart_toEndOf="@+id/chat_dep2"
         app:layout_constraintTop_toTopOf="@+id/guideline42"
         app:srcCompat="@drawable/profileiconv2" />

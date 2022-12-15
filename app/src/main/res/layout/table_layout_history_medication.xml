@@ -14,60 +14,61 @@
 
             <TextView
                 android:id="@+id/measurementhistoryPDF"
-                android:layout_width="99dp"
+                android:layout_width="141dp"
+                android:layout_height="70dp"
                 android:layout_column="1"
-                android:fontFamily="@font/montserratbold"
+                android:fontFamily="@font/montserrat"
+
                 android:gravity="center"
-                android:padding="16dp"
                 android:text="Medication"
                 android:textColor="#000000"
                 android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/datehistoryPDF"
-                android:layout_width="84dp"
+                android:layout_width="74dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:fontFamily="@font/montserratbold"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:padding="16dp"
+
                 android:text="Date"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/qtyHistoryPDF"
-                android:layout_width="72dp"
+                android:layout_width="57dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
-                android:fontFamily="@font/montserratbold"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:padding="16dp"
+
                 android:text="Qty"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/timehisoryPDF"
-                android:layout_width="79dp"
+                android:layout_width="63dp"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/montserratbold"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:padding="16dp"
+
                 android:text="Time"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/expirationPDF"
-                android:layout_width="76dp"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/montserratbold"
+                android:layout_width="74dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:padding="16dp"
+
                 android:text="Exp Date"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="12dp" />
 
         </TableRow>
     </TableLayout>

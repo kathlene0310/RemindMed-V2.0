@@ -25,7 +25,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toEndOf="@+id/textViewSched"
         app:layout_constraintTop_toBottomOf="@+id/calendarViewTD"
         app:srcCompat="@drawable/question" />
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat"
         android:text="Schedule"
         android:textColor="#000000"
@@ -245,8 +245,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewToday"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="369dp"
+        android:layout_height="101dp"
         android:layout_marginTop="20dp"
         app:layout_constraintDimensionRatio="1:0.34"
         app:layout_constraintEnd_toEndOf="@id/guideline35"
@@ -286,7 +286,7 @@
         android:id="@+id/switchToday"
         android:layout_width="91dp"
         android:layout_height="31dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/edit_round"
         android:fontFamily="@font/montserrat"
         android:text="CHANGE"
@@ -299,15 +299,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/todayMeasurement"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="371dp"
+        android:layout_height="103dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintDimensionRatio="1:0.34"
         app:layout_constraintEnd_toEndOf="@id/guideline35"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSched" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSched"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView25"

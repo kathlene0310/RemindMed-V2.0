@@ -33,14 +33,14 @@
                 android:id="@+id/medicationName"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="measurement name"
                 android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="measurement name"
                 android:textColor="#FFFF"
                 android:textSize="25dp"
-                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline20"
-                app:layout_constraintStart_toStartOf="@+id/guideline22"
+                app:layout_constraintStart_toStartOf="@+id/imageView9"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

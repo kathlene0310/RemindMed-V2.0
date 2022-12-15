@@ -11,13 +11,14 @@
         android:id="@+id/home_history"
         android:layout_width="55dp"
         android:layout_height="61dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_Home"
-        app:backgroundTint="#FFFFFF"
 
-        app:layout_constraintStart_toStartOf="@+id/guideline54"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/homeiconv2" />
 
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_Today"
@@ -42,13 +43,13 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="Home_To_History"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintEnd_toStartOf="@+id/chat_dep"
         app:layout_constraintStart_toEndOf="@+id/today_history"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/historyiconv2" />
@@ -57,13 +58,13 @@
         android:id="@+id/chat_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="24dp"
-        android:clickable="true"
+        android:layout_marginStart="24dp"
 
+        android:layout_marginTop="8dp"
+        android:clickable="true"
         android:onClick="Home_To_Chat"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/profile_history"
+        app:layout_constraintStart_toEndOf="@+id/home_historybtn"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/chaticonv2" />
 
@@ -72,12 +73,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
         app:fabSize="normal"
-        app:layout_constraintEnd_toStartOf="@+id/guideline53"
+        app:layout_constraintStart_toEndOf="@+id/chat_dep"
         app:layout_constraintTop_toBottomOf="@+id/view5"
         app:srcCompat="@drawable/profileiconv2" />
 
@@ -211,11 +213,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline54"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_history" />
 
     <TextView
@@ -235,14 +238,12 @@
         android:id="@+id/textViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
 
-        android:layout_marginEnd="31dp"
         android:fontFamily="@font/montserrat"
         android:text="History"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/textViewChat"
         app:layout_constraintStart_toEndOf="@+id/textViewToday"
         app:layout_constraintTop_toBottomOf="@+id/home_historybtn" />
 
@@ -251,12 +252,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
         android:fontFamily="@font/montserrat"
         android:text="Chat"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
+        app:layout_constraintStart_toEndOf="@+id/textViewHistory"
         app:layout_constraintTop_toBottomOf="@+id/chat_dep" />
 
     <TextView
@@ -264,11 +265,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginStart="31dp"
         android:fontFamily="@font/montserrat"
         android:text="Profile"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline53"
+        app:layout_constraintStart_toEndOf="@+id/textViewChat"
         app:layout_constraintTop_toBottomOf="@+id/profile_history" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -341,7 +343,8 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/edit_round2"
         android:fontFamily="@font/montserrat"
-        android:text="Edit Medications/Measurements"
+        android:text="Edit Medications/
+        Measurements"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"

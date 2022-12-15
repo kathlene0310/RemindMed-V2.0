@@ -27,36 +27,41 @@
 
             <TextView
                 android:id="@+id/medNameHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="227dp"
+                android:layout_height="29dp"
+                android:fontFamily="@font/montserrat"
                 android:text="TextView"
                 android:textColor="#ffffff"
-                android:textSize="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/medTimeHome"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
-                app:layout_constraintHorizontal_bias="0.561"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline6"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.156"
                 app:layout_constraintVertical_chainStyle="spread" />
 
             <TextView
                 android:id="@+id/medTimeHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/montserrat"
+                android:text="1"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
-                app:layout_constraintHorizontal_bias="0.925"
+                app:layout_constraintHorizontal_bias="0.98"
                 app:layout_constraintStart_toStartOf="@+id/guideline6"
-                app:layout_constraintTop_toBottomOf="@+id/medNameHome" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.813" />
 
             <TextView
                 android:id="@+id/medTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8:00 AM"
+                android:fontFamily="@font/montserrat"
                 android:textColor="#ffffff"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/buttonEdit"
@@ -68,42 +73,44 @@
                 android:id="@+id/medFrequency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
                 android:text="Daily"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline6"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.67" />
+                app:layout_constraintVertical_bias="0.813" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.08" />
+                app:layout_constraintGuide_percent="0.04" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent=".60" />
+                app:layout_constraintGuide_percent="0.7" />
 
             <Button
                 android:id="@+id/buttonEdit"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="#afd6f7"
-                android:fontFamily="@font/viga"
+                android:fontFamily="@font/montserrat"
                 android:text="Edit"
                 android:textSize="10dp"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:.5"
                 app:layout_constraintEnd_toStartOf="@+id/guideline17"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline18"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.616" />
