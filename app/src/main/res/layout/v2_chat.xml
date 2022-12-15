@@ -164,11 +164,12 @@
         android:id="@+id/textChatHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat"
         android:text="Home"
         android:textColor="#000000"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_chat2" />
 
@@ -212,7 +213,7 @@
         android:id="@+id/textChatProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="26dp"
         android:fontFamily="@font/montserrat"
         android:text="Profile"
         android:textColor="#000000"
