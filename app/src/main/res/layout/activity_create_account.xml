@@ -192,8 +192,8 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="196dp"
-        android:layout_height="169dp"
+        android:layout_width="172dp"
+        android:layout_height="166dp"
         android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -201,7 +201,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:srcCompat="@drawable/choose_user" />
+        app:srcCompat="@drawable/logov2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"

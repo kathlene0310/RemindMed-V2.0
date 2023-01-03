@@ -37,7 +37,7 @@
 
         android:fontFamily="@font/montserratbold"
         android:text="TODAY"
-        android:textColor="#FFFFFF"
+        android:textColor="#ffca3a"
 
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -54,7 +54,7 @@
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:text="User"
-        android:textColor="#FFFFFF"
+        android:textColor="#ffca3a"
         android:textSize="15sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"

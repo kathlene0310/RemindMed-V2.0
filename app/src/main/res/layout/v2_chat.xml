@@ -111,7 +111,7 @@
         android:layout_marginBottom="36dp"
         android:fontFamily="@font/montserratbold"
         android:text="CHAT"
-        android:textColor="#FFFFFF"
+        android:textColor="#ffca3a"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
