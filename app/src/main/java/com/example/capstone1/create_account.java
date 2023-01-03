@@ -141,12 +141,67 @@ public class create_account extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
+
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(create_account.this);
+                    builder.setTitle("Terms & Conditions");
+                    builder.setMessage("Health Privacy Code\n" +
+                            "\n" +
+                            "Our Health Privacy Code was last updated on January 02, 2023.\n" +
+                            "\n" +
+                            "Please read carefully before using Our Service.\n" +
+                            "\n" +
+                            "\n" +
+                            "Privacy rules\n" +
+                            "\n" +
+                            "Anyone legally authorized to make health care decisions for a person lacking such capacity has the same right of access to the person's personal medical information.\n" +
+                            "\n" +
+                            "People should normally be able to see and obtain copies of their medical records and request corrections if they find mistakes.\n" +
+                            "\n" +
+                            "Covered entities may disclose protected health information to law enforcement officials for law enforcement purposes as required by law (including court orders, court-ordered warrants, subpoenas) and administrative requests; or to identify or locate a suspect, a fugitive, a material witness, or a missing person.\n" +
+                            "\n" +
+                            "A covered entity may disclose PHI to certain parties to facilitate treatment, payment, or health care operations without a patient's express written authorization.\n" +
+                            "\n" +
+                            "The Privacy Rule gives individuals the right to request a covered entity to correct any inaccurate PHI.\n" +
+                            "\n" +
+                            "An individual who believes that the Privacy Rule is not being upheld can file a complaint with the Department of Health and Human Services Office for Civil Rights (OCR).\n" +
+                            "\n" +
+                            "Personal medical information may not be disclosed for marketing purposes.\n" +
+                            "\n" +
+                            "\n" +
+                            "\n" +
+                            "Security rules\n" +
+                            "\n" +
+                            "Access to equipment containing health information should be carefully controlled and monitored.\n" +
+                            "\n" +
+                            "Access to software must be limited to properly authorized individuals.\n" +
+                            "\n" +
+                            "Information systems housing PHI must be protected from intrusion. When information flows over open networks, some form of encryption must be utilized. If closed systems/networks are utilized, existing access controls are considered sufficient and encryption is optional.\n" +
+                            "\n" +
+                            "Each covered entity is responsible for ensuring that the data within its systems has not been changed or erased in an unauthorized manner.\n" +
+                            "\n" +
+                            "Data corroboration, including the use of a checksum, double-keying, message authentication, and digital signature may be used to ensure data integrity.\n");
+
+
+                    builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    AlertDialog ad = builder.create();
+                    ad.show();
+                    /*
                     Intent viewIntent =
                             new Intent(Intent.ACTION_VIEW,
                                     Uri.parse("https://www.privacy.gov.ph/data-privacy-act/#:~:text=11.-,General%20Data%20Privacy%20Principles.,transparency%2C%20legitimate%20purpose%20and%20proportionality"));
                     startActivity(viewIntent);
+
+                     */
                 }
             });
+
             ClickableSpan clickableSpan = new ClickableSpan() {
                 @Override
                 public void onClick(@NonNull View widget) {
